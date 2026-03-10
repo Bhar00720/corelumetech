@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for Focus Flow app by Antigravity. Learn how we handle your data.">
-    <title>Privacy Policy — Focus Flow</title>
+    <meta name="description"
+        content="Privacy Policy for Focus Flow app by Corelume Tech. Learn how we handle your data.">
+    <title>Privacy Policy — Corelume Tech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -15,35 +16,55 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="nav-brand"><span class="nav-logo">🌳</span><span class="nav-title">Focus
-                    Flow</span></a>
+            <a href="index.html" class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech"
+                    class="nav-logo-img"><span class="nav-title">Corelume
+                    Tech</span></a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html" class="active">Privacy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                        class="nav-cta" target="_blank">Download</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="index.html#apps" data-i18n="nav_apps">Our Apps</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="privacy.html" class="active" data-i18n="nav_privacy">Privacy</a></li>
+                <li><a href="terms.html" data-i18n="nav_terms">Terms</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn" id="langBtn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z" />
+                            </svg>
+                            <span class="lang-label">English</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option active" data-lang="en"><span class="flag">🇬🇧</span>
+                                English</button>
+                            <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                            <button class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                            <button class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                            <button class="lang-option" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
 
     <section class="page-header">
         <div class="container">
-            <h1>Privacy <span class="gradient-text">Policy</span></h1>
-            <p>Your privacy matters to us</p>
+            <h1><span data-i18n="privacy_title_1">Privacy </span><span class="gradient-text"
+                    data-i18n="privacy_title_2">Policy</span></h1>
+            <p data-i18n="privacy_subtitle">Your privacy matters to us</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
             <div class="content-body">
-                <div class="last-updated">Last updated: March 7, 2025</div>
+                <div class="last-updated">Last updated: March 10, 2026</div>
 
                 <h2>Introduction</h2>
-                <p>Antigravity ("we," "our," or "us") operates the Focus Flow mobile application (the "App"). This
+                <p>Corelume Tech ("we," "our," or "us") operates the Focus Flow mobile application (the "App"). This
                     Privacy Policy explains how we collect, use, and protect your information when you use our App.</p>
                 <p>By using Focus Flow, you agree to the collection and use of information as described in this policy.
                 </p>
@@ -52,88 +73,92 @@
                 <h3 style="margin-top:16px;font-size:16px;font-weight:600;">Information Stored Locally</h3>
                 <p>Focus Flow stores the following data <strong>locally on your device only</strong>:</p>
                 <ul>
-                    <li>Focus session history (duration, timestamps, tree species)</li>
+                    <li>Focus session history (duration, timestamps, tree species selected)</li>
                     <li>Forest data (planted trees, growth stages)</li>
                     <li>Habit tracking data (habits, completions, streaks)</li>
                     <li>App preferences (theme, language, sound settings, timer durations)</li>
                     <li>Notification settings</li>
                 </ul>
-                <p>This data is stored using Hive database and SharedPreferences, and <strong>does not leave your
-                        device</strong> unless you explicitly choose to export it.</p>
+                <p>This data is stored using local databases and shared preferences on your device, and <strong>does not
+                        leave your device</strong> unless you explicitly choose to export it.</p>
 
                 <h3 style="margin-top:16px;font-size:16px;font-weight:600;">Information Collected by Third Parties</h3>
                 <p>We use the following third-party services that may collect information:</p>
                 <ul>
                     <li><strong>Google Firebase Analytics</strong> — Collects anonymous usage analytics such as session
                         counts, screen views, and crash reports. This data is anonymized and used solely to improve the
-                        app experience.</li>
+                        app experience. No personally identifiable information is collected.</li>
                     <li><strong>Google AdMob</strong> — Displays ads within the app. AdMob may collect device
-                        identifiers and ad interaction data. See <a href="https://policies.google.com/privacy"
-                            target="_blank">Google's Privacy Policy</a> for details.</li>
+                        identifiers and ad interaction data as described in <a
+                            href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy
+                            Policy</a>.</li>
                     <li><strong>Google Play Billing</strong> — Processes in-app purchases and subscriptions. Payment
-                        processing is handled entirely by Google.</li>
-                    <li><strong>Firebase Remote Config</strong> — Fetches app configuration settings to customize the
-                        user experience. No personal data is transmitted.</li>
+                        processing is handled entirely by Google. We do not receive or store your payment details.</li>
                 </ul>
 
                 <h2>How We Use Information</h2>
                 <p>We use the collected information for the following purposes:</p>
                 <ul>
-                    <li>To provide and maintain the App's functionality</li>
-                    <li>To improve user experience based on anonymous analytics</li>
-                    <li>To display relevant advertisements to free-tier users</li>
-                    <li>To process subscription purchases</li>
-                    <li>To send in-app notifications about features and updates</li>
-                    <li>To detect and fix bugs and crashes</li>
+                    <li>To provide and maintain the App's core functionality</li>
+                    <li>To improve user experience based on anonymous, aggregated analytics</li>
+                    <li>To display advertisements to free-tier users</li>
+                    <li>To process subscription purchases through Google Play</li>
+                    <li>To detect, diagnose, and fix bugs and crashes</li>
                 </ul>
 
                 <h2>Data Storage & Security</h2>
                 <p>Your personal productivity data (focus sessions, habits, forest) is stored <strong>exclusively on
                         your device</strong>. We do not have access to this data and cannot retrieve it.</p>
                 <p>We implement reasonable security measures to protect the information processed by our third-party
-                    services. However, no method of electronic transmission is 100% secure.</p>
+                    services. However, no method of electronic storage or transmission is 100% secure, and we cannot
+                    guarantee absolute security.</p>
 
                 <h2>Advertisements</h2>
-                <p>Focus Flow displays advertisements through Google AdMob for free-tier users. You may encounter:</p>
-                <ul>
-                    <li><strong>Interstitial ads</strong> — Full-screen ads shown between screens</li>
-                    <li><strong>Rewarded ads</strong> — Optional ads you can watch for additional features</li>
-                </ul>
-                <p>You can remove all ads by subscribing to Focus Flow Pro. Ad personalization settings can be managed
-                    through your device's Google Account settings.</p>
+                <p>Focus Flow displays advertisements through Google AdMob for free-tier users. You can remove all ads
+                    by subscribing to Focus Flow Pro. Ad personalization settings can be managed through your device's
+                    Google Account settings.</p>
 
                 <h2>In-App Purchases</h2>
                 <p>Focus Flow offers optional premium subscriptions (monthly and yearly plans). All payment processing
-                    is handled by Google Play Billing. We do not store your payment information.</p>
+                    is handled by Google Play Billing. We do not store, collect, or have access to your payment
+                    information.</p>
 
                 <h2>Children's Privacy</h2>
-                <p>Focus Flow is not directed to children under 13. We do not knowingly collect personal information
-                    from children. If you believe a child has provided us with personal data, please contact us to have
-                    it removed.</p>
+                <p>Focus Flow is not directed to children under 13 (or the applicable age of consent in your
+                    jurisdiction). We do not knowingly collect personal information from children. If you believe a
+                    child has provided personal data through the App, please contact us so we can take appropriate
+                    action.</p>
 
                 <h2>Your Rights</h2>
-                <p>You have the right to:</p>
+                <p>Depending on your jurisdiction, you may have the following rights:</p>
                 <ul>
                     <li><strong>Delete your data</strong> — Clear all local data by uninstalling the app or using the
                         in-app data reset option</li>
-                    <li><strong>Opt out of analytics</strong> — Disable analytics through your device settings</li>
-                    <li><strong>Opt out of personalized ads</strong> — Adjust ad preferences in your Google Account
+                    <li><strong>Opt out of analytics</strong> — Disable analytics collection through your device
                         settings</li>
-                    <li><strong>Contact us</strong> — Request information about data we process via <a
-                            href="contact.html">our contact page</a></li>
+                    <li><strong>Opt out of personalized ads</strong> — Adjust ad preferences in your Google Account
+                        settings or device privacy settings</li>
+                    <li><strong>Data portability</strong> — Your data is stored locally on your device and is under your
+                        control at all times</li>
+                    <li><strong>Contact us</strong> — Request information about data we process</li>
                 </ul>
+
+                <h2>International Users</h2>
+                <p>Focus Flow is available globally. By using the App, you acknowledge that any information collected
+                    by third-party services may be processed in accordance with the laws of the jurisdictions where
+                    those services operate. We comply with applicable data protection regulations including the
+                    Information Technology Act, 2000 (India), GDPR (EU), and other applicable local privacy laws.</p>
 
                 <h2>Changes to This Policy</h2>
                 <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by
                     posting the updated policy within the App and updating the "Last updated" date at the top of this
-                    page.</p>
+                    page. Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
                 <h2>Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, please contact us:</p>
                 <ul>
-                    <li><strong>Email:</strong> <a
-                            href="mailto:antigravity.developer@gmail.com">antigravity.developer@gmail.com</a></li>
-                    <li><strong>Website:</strong> <a href="contact.html">Contact Page</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:contact@corelumetech.in">contact@corelumetech.in</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -143,25 +168,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="nav-brand"><span class="nav-logo">🌳</span><span class="nav-title">Focus Flow</span>
+                    <div class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img"><span
+                            class="nav-title">Corelume Tech</span>
                     </div>
-                    <p>Stay focused. Build habits. Grow your forest. A productivity app by Antigravity.</p>
+                    <p data-i18n="footer_desc">Building innovative mobile applications that make a difference. Crafting
+                        productivity tools with care.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Product</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
-                        href="contact.html">Contact</a>
+                    <h4 data-i18n="footer_company">Company</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="about.html" data-i18n="nav_about">About Us</a>
+                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a>
+                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+                    <a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Download</h4><a
-                        href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
+                    <h4 data-i18n="footer_download">Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
                         target="_blank">Google Play Store</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Antigravity. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 Corelume Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contact Antigravity — Get in touch about Focus Flow app support, feedback, and partnership inquiries.">
-    <title>Contact Us — Focus Flow</title>
+        content="Contact Corelume Tech — Get in touch for Focus Flow app support, feedback, and inquiries.">
+    <title>Contact Us — Corelume Tech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -16,88 +16,77 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="nav-brand"><span class="nav-logo">🌳</span><span class="nav-title">Focus
-                    Flow</span></a>
+            <a href="index.html" class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech"
+                    class="nav-logo-img"><span class="nav-title">Corelume Tech</span></a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                        class="nav-cta" target="_blank">Download</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="index.html#apps" data-i18n="nav_apps">Our Apps</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
+                <li><a href="terms.html" data-i18n="nav_terms">Terms</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn" id="langBtn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z" />
+                            </svg>
+                            <span class="lang-label">English</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option active" data-lang="en"><span class="flag">🇬🇧</span>
+                                English</button>
+                            <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                            <button class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                            <button class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                            <button class="lang-option" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
 
     <section class="page-header">
         <div class="container">
-            <h1>Contact <span class="gradient-text">Us</span></h1>
-            <p>We'd love to hear from you</p>
+            <h1><span data-i18n="contact_title_1">Contact </span><span class="gradient-text"
+                    data-i18n="contact_title_2">Us</span></h1>
+            <p data-i18n="contact_subtitle">We'd love to hear from you</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
-            <div class="content-body">
-                <p>Have questions, feedback, or need support? Reach out to us through any of the channels below. We
-                    typically respond within 24-48 hours.</p>
+            <div class="contact-center">
+                <p data-i18n="contact_intro">Have questions, feedback, or need support? Reach out to us via email. We
+                    typically respond within 24–48 hours.</p>
 
-                <div class="contact-grid">
-                    <div>
-                        <div class="contact-info-card">
-                            <div class="icon">📧</div>
-                            <div>
-                                <h4>Email Support</h4>
-                                <p>antigravity.developer@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-card">
-                            <div class="icon">🏢</div>
-                            <div>
-                                <h4>Company</h4>
-                                <p>Antigravity — Mobile App Development</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-card">
-                            <div class="icon">📱</div>
-                            <div>
-                                <h4>App Support</h4>
-                                <p>For in-app issues, use Settings → Help & Support</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-card">
-                            <div class="icon">⭐</div>
-                            <div>
-                                <h4>Rate Us</h4>
-                                <p><a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                                        target="_blank">Leave a review on Google Play</a></p>
-                            </div>
-                        </div>
+                <div class="contact-email-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="12" width="36" height="24" rx="4" stroke="var(--accent)"
+                                stroke-width="2.5" />
+                            <path d="M6 16L24 28L42 16" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
                     </div>
+                    <h3 data-i18n="contact_email_title">Email Us</h3>
+                    <a href="mailto:contact@corelumetech.in" class="email-link">contact@corelumetech.in</a>
+                    <p class="response-time" data-i18n="contact_response">We typically respond within 24–48 hours</p>
+                </div>
 
-                    <div>
-                        <form id="contactForm" onsubmit="handleSubmit(event)">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" placeholder="john@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" placeholder="App feedback, bug report, etc.">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
-                        </form>
+                <div class="contact-playstore">
+                    <div class="icon">
+                        <svg viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4L12.5 11.5L4 12.5L10 18L8.5 26L16 22L23.5 26L22 18L28 12.5L19.5 11.5L16 4Z"
+                                fill="var(--accent)" fill-opacity="0.8" />
+                        </svg>
                     </div>
+                    <p><span data-i18n="contact_rate_text">Enjoying Focus Flow?</span> <a
+                            href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
+                            target="_blank" data-i18n="contact_rate_link">Leave a review on Google Play</a></p>
                 </div>
             </div>
         </div>
@@ -107,40 +96,34 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="nav-brand"><span class="nav-logo">🌳</span><span class="nav-title">Focus Flow</span>
-                    </div>
-                    <p>Stay focused. Build habits. Grow your forest. A productivity app by Antigravity.</p>
+                    <div class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img"><span
+                            class="nav-title">Corelume Tech</span></div>
+                    <p data-i18n="footer_desc">Building innovative mobile applications that make a difference. Crafting
+                        productivity tools with care.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Product</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
-                        href="contact.html">Contact</a>
+                    <h4 data-i18n="footer_company">Company</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="about.html" data-i18n="nav_about">About Us</a>
+                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a>
+                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+                    <a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Download</h4><a
-                        href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
+                    <h4 data-i18n="footer_download">Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
                         target="_blank">Google Play Store</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Antigravity. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 Corelume Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <script src="js/main.js"></script>
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            const mailto = `mailto:antigravity.developer@gmail.com?subject=${encodeURIComponent(subject || 'Focus Flow Contact')}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
-            window.location.href = mailto;
-        }
-    </script>
 </body>
 
 </html>

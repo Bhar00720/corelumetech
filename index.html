@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Focus Flow — The ultimate focus timer & habit tracker. Grow virtual trees, build a forest, and stay productive with ambient sounds and Pomodoro technique.">
-    <meta name="keywords" content="focus timer, pomodoro, productivity, habit tracker, ambient sounds, study app">
-    <title>Focus Flow — Stay Focused, Grow Your Forest</title>
+        content="Corelume Tech — We build beautifully designed mobile apps that help people stay productive, focused, and mindful. Discover Focus Flow and more.">
+    <meta name="keywords" content="corelume tech, focus flow, productivity app, pomodoro, habit tracker, mobile apps">
+    <title>Corelume Tech — We Build Apps That Matter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -20,20 +20,38 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-brand">
-                <span class="nav-logo">🌳</span>
-                <span class="nav-title">Focus Flow</span>
+                <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                <span class="nav-title">Corelume Tech</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                        class="nav-cta" target="_blank">Download</a></li>
+                <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
+                <li><a href="#apps" data-i18n="nav_apps">Our Apps</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
+                <li><a href="terms.html" data-i18n="nav_terms">Terms</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn" id="langBtn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z" />
+                            </svg>
+                            <span class="lang-label">English</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option active" data-lang="en"><span class="flag">🇬🇧</span>
+                                English</button>
+                            <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                            <button class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                            <button class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                            <button class="lang-option" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -46,25 +64,81 @@
             <div class="shape shape-3"></div>
         </div>
         <div class="container hero-content">
-            <div class="hero-badge">🌿 Productivity Reimagined</div>
-            <h1 class="hero-title">Stay Focused.<br><span class="gradient-text">Grow Your Forest.</span></h1>
-            <p class="hero-subtitle">Transform your focus sessions into a beautiful virtual forest. Use the Pomodoro
-                technique with ambient sounds, track habits, and watch your productivity bloom.</p>
+            <div class="hero-badge">
+                <svg class="icon-inline" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
+                </svg>
+                <span data-i18n="hero_badge">Innovation Through Technology</span>
+            </div>
+            <h1 class="hero-title"><span data-i18n="hero_title_1">We Build Apps</span><br><span class="gradient-text"
+                    data-i18n="hero_title_2">That Matter.</span></h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Corelume Tech crafts beautifully designed mobile
+                applications that help people be more productive, focused, and mindful in their daily lives.</p>
             <div class="hero-actions">
-                <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                    class="btn btn-primary" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                    </svg>
-                    Get on Google Play
-                </a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+                <a href="#apps" class="btn btn-primary" data-i18n="hero_btn_primary">Explore Our Apps</a>
+                <a href="about.html" class="btn btn-secondary" data-i18n="hero_btn_secondary">Learn More</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Ambient Sounds</span></div>
-                <div class="stat"><span class="stat-num">4</span><span class="stat-label">Tree Species</span></div>
-                <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Focus Sessions</span></div>
+                <div class="stat"><span class="stat-num">1+</span><span class="stat-label" data-i18n="stat_apps">Apps
+                        Published</span></div>
+                <div class="stat"><span class="stat-num">5</span><span class="stat-label"
+                        data-i18n="stat_languages">Languages</span></div>
+                <div class="stat"><span class="stat-num">∞</span><span class="stat-label" data-i18n="stat_users">Growing
+                        Users</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ APP SHOWCASE ════════════════════════════════════ -->
+    <section class="app-showcase" id="apps">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="apps_badge">Our Apps</span>
+                <h2><span data-i18n="apps_title_1">Crafted with </span><span class="gradient-text"
+                        data-i18n="apps_title_2">Passion</span></h2>
+                <p data-i18n="apps_subtitle">Discover our apps designed to enhance your daily productivity</p>
+            </div>
+            <div class="app-card">
+                <div class="app-card-visual">
+                    <div class="app-icon-large">
+                        <img src="assets/focus-flow-icon.png" alt="Focus Flow" class="app-icon-img">
+                    </div>
+                    <h3 class="app-name" data-i18n="app_name">Focus Flow</h3>
+                    <p class="app-tagline" data-i18n="app_tagline">Stay Focused. Grow Your Forest.</p>
+                    <div class="app-badges">
+                        <span class="app-badge" data-i18n="app_badge_prod">Productivity</span>
+                        <span class="app-badge" data-i18n="app_badge_free">Free</span>
+                        <span class="app-badge lang-badge" data-i18n="app_badge_lang">5 Languages</span>
+                    </div>
+                </div>
+                <div class="app-card-info">
+                    <h3 data-i18n="app_info_title">Your Ultimate Focus Companion</h3>
+                    <p data-i18n="app_info_desc">Transform your focus sessions into a beautiful virtual forest. Use the
+                        Pomodoro technique with ambient sounds, track habits, and watch your productivity bloom.</p>
+                    <ul class="app-features-list">
+                        <li><span class="check">✓</span> <span data-i18n="app_feat_1">Pomodoro timer with customizable
+                                intervals</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="app_feat_2">Grow virtual trees across 3 unique
+                                species</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="app_feat_3">10+ calming ambient sounds for
+                                focus & breaks</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="app_feat_4">Daily habit tracking with
+                                streaks</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="app_feat_5">Detailed productivity
+                                statistics</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="app_feat_6">Available in 5 languages</span>
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
+                        class="btn btn-primary" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                        </svg>
+                        <span data-i18n="app_btn_playstore">Get it on Google Play</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -73,46 +147,103 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Features</span>
-                <h2>Everything You Need to <span class="gradient-text">Stay Focused</span></h2>
-                <p>A beautifully crafted productivity companion that makes focusing fun</p>
+                <span class="section-badge" data-i18n="feat_badge">Focus Flow Features</span>
+                <h2><span data-i18n="feat_title_1">Everything You Need to </span><span class="gradient-text"
+                        data-i18n="feat_title_2">Stay Focused</span></h2>
+                <p data-i18n="feat_subtitle">A beautifully crafted productivity companion that makes focusing fun</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🌲</div>
-                    <h3>Grow Virtual Trees</h3>
-                    <p>Plant and grow realistic trees during focus sessions. Different species, seasons, and growth
-                        stages make every session unique.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <path d="M20 4C20 4 13 12 13 22C13 27 16 31 20 33C24 31 27 27 27 22C27 12 20 4 20 4Z"
+                                fill="var(--accent)" fill-opacity="0.8" />
+                            <path d="M20 33V38" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="20" cy="18" r="2.5" fill="var(--bg)" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="feat_trees_title">Grow Virtual Trees</h3>
+                    <p data-i18n="feat_trees_desc">Plant and grow realistic trees during focus sessions. Different
+                        species and growth stages make every session unique.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Pomodoro Timer</h3>
-                    <p>Customizable focus and break intervals. Start a session, stay focused, and watch your tree grow
-                        as you complete each cycle.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="14" stroke="var(--accent)" stroke-width="2" />
+                            <path d="M20 10V20L26 26" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="20" cy="20" r="2" fill="var(--accent)" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="feat_timer_title">Pomodoro Timer</h3>
+                    <p data-i18n="feat_timer_desc">Customizable focus and break intervals. Start a session, stay
+                        focused, and watch your tree grow as you complete each cycle.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎵</div>
-                    <h3>Ambient Sounds</h3>
-                    <p>10+ calming sounds categorized into Focus and Break modes — from gentle rain and brown noise to
-                        birdsong and café chatter.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <path d="M8 28C8 28 12 20 16 20C20 20 20 28 24 28C28 28 28 12 32 12" stroke="var(--accent)"
+                                stroke-width="2.5" stroke-linecap="round" />
+                            <circle cx="10" cy="14" r="3" fill="var(--accent)" fill-opacity="0.3" />
+                            <circle cx="30" cy="8" r="2" fill="var(--accent)" fill-opacity="0.5" />
+                            <path d="M6 34H34" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"
+                                opacity="0.4" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="feat_sounds_title">Ambient Sounds</h3>
+                    <p data-i18n="feat_sounds_desc">10+ calming sounds categorized into Focus and Break modes — from
+                        gentle rain and brown noise to birdsong and café chatter.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌳</div>
-                    <h3>Your Forest</h3>
-                    <p>Every completed session adds a tree to your personal forest. Watch it grow over time as a visual
-                        record of your productivity.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <path d="M10 32C10 32 14 24 14 20C14 16 16 14 20 14" stroke="var(--accent)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M20 14C20 14 18 10 20 6C22 10 20 14 20 14Z" fill="var(--accent)"
+                                fill-opacity="0.6" />
+                            <path d="M20 14C20 14 24 12 28 14C24 16 20 14 20 14Z" fill="var(--accent)"
+                                fill-opacity="0.4" />
+                            <path d="M26 32C26 32 24 24 24 20C24 16 22 14 20 14" stroke="var(--accent)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M8 34H32" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"
+                                opacity="0.3" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="feat_forest_title">Your Forest</h3>
+                    <p data-i18n="feat_forest_desc">Every completed session adds a tree to your personal forest. Watch
+                        it grow over time as a visual record of your productivity.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Habit Tracking</h3>
-                    <p>Build positive habits alongside your focus practice. Track daily habits with streaks, reminders,
-                        and completion history.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="6" width="24" height="28" rx="3" stroke="var(--accent)" stroke-width="2" />
+                            <path d="M14 16L17 19L22 14" stroke="var(--accent)" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 24H26" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"
+                                opacity="0.5" />
+                            <path d="M14 28H22" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"
+                                opacity="0.3" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="feat_habits_title">Habit Tracking</h3>
+                    <p data-i18n="feat_habits_desc">Build positive habits alongside your focus practice. Track daily
+                        habits with streaks, reminders, and completion history.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Statistics</h3>
-                    <p>Detailed analytics of your focus time, sessions completed, habits tracked, and productivity
-                        trends over days and weeks.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <rect x="6" y="18" width="5" height="16" rx="1.5" fill="var(--accent)" fill-opacity="0.3" />
+                            <rect x="13" y="14" width="5" height="20" rx="1.5" fill="var(--accent)"
+                                fill-opacity="0.5" />
+                            <rect x="20" y="8" width="5" height="26" rx="1.5" fill="var(--accent)" fill-opacity="0.7" />
+                            <rect x="27" y="4" width="5" height="30" rx="1.5" fill="var(--accent)" />
+                            <path d="M8 36H34" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"
+                                opacity="0.4" />
+                        </svg>
+                    </div>
+                    <h3 data-i18n="feat_stats_title">Statistics</h3>
+                    <p data-i18n="feat_stats_desc">Detailed analytics of your focus time, sessions completed, habits
+                        tracked, and productivity trends over days and weeks.</p>
                 </div>
             </div>
         </div>
@@ -122,11 +253,10 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-card">
-                <h2>Ready to Boost Your Focus?</h2>
-                <p>Join thousands of focused minds. Download Focus Flow for free and start growing your forest today.
-                </p>
+                <h2 data-i18n="cta_title">Ready to Boost Your Focus?</h2>
+                <p data-i18n="cta_desc">Download Focus Flow for free and start growing your forest today.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                    class="btn btn-primary btn-lg" target="_blank">
+                    class="btn btn-primary btn-lg" target="_blank" data-i18n="cta_btn">
                     Download Free on Google Play
                 </a>
             </div>
@@ -139,30 +269,31 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="nav-brand">
-                        <span class="nav-logo">🌳</span>
-                        <span class="nav-title">Focus Flow</span>
+                        <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                        <span class="nav-title">Corelume Tech</span>
                     </div>
-                    <p>Stay focused. Build habits. Grow your forest. A productivity app by Antigravity.</p>
+                    <p data-i18n="footer_desc">Building innovative mobile applications that make a difference. Crafting
+                        productivity tools with care.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Product</h4>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
+                    <h4 data-i18n="footer_company">Company</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="about.html" data-i18n="nav_about">About Us</a>
+                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms & Conditions</a>
+                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+                    <a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Download</h4>
+                    <h4 data-i18n="footer_download">Download</h4>
                     <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
                         target="_blank">Google Play Store</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Antigravity. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 Corelume Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>

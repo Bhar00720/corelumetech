@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Terms and Conditions for Focus Flow app by Antigravity. Read our terms of service.">
-    <title>Terms & Conditions — Focus Flow</title>
+        content="Terms and Conditions for Focus Flow app by Corelume Tech. Read our terms of service.">
+    <title>Terms & Conditions — Corelume Tech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -16,37 +16,57 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="nav-brand"><span class="nav-logo">🌳</span><span class="nav-title">Focus
-                    Flow</span></a>
+            <a href="index.html" class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech"
+                    class="nav-logo-img"><span class="nav-title">Corelume
+                    Tech</span></a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="terms.html" class="active">Terms</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
-                        class="nav-cta" target="_blank">Download</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="index.html#apps" data-i18n="nav_apps">Our Apps</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
+                <li><a href="terms.html" class="active" data-i18n="nav_terms">Terms</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn" id="langBtn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z" />
+                            </svg>
+                            <span class="lang-label">English</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option active" data-lang="en"><span class="flag">🇬🇧</span>
+                                English</button>
+                            <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
+                            <button class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
+                            <button class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+                            <button class="lang-option" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
 
     <section class="page-header">
         <div class="container">
-            <h1>Terms & <span class="gradient-text">Conditions</span></h1>
-            <p>Please read these terms carefully before using Focus Flow</p>
+            <h1><span data-i18n="terms_title_1">Terms & </span><span class="gradient-text"
+                    data-i18n="terms_title_2">Conditions</span></h1>
+            <p data-i18n="terms_subtitle">Please read these terms carefully before using our services</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
             <div class="content-body">
-                <div class="last-updated">Last updated: March 7, 2025</div>
+                <div class="last-updated">Last updated: March 10, 2026</div>
 
                 <h2>1. Acceptance of Terms</h2>
                 <p>By downloading, installing, or using Focus Flow ("the App"), you agree to be bound by these Terms and
-                    Conditions ("Terms"). If you do not agree with these Terms, do not use the App.</p>
-                <p>These Terms constitute a legally binding agreement between you ("User") and Antigravity ("Company,"
+                    Conditions ("Terms"). If you do not agree with these Terms, please do not use the App.</p>
+                <p>These Terms constitute a legally binding agreement between you ("User") and Corelume Tech ("Company,"
                     "we," "us," or "our").</p>
 
                 <h2>2. Description of Service</h2>
@@ -57,24 +77,24 @@
                     <li>Ambient sound playback for focus and break sessions</li>
                     <li>Habit tracking with streak monitoring</li>
                     <li>Productivity statistics and analytics</li>
+                    <li>Multi-language support (English, Hindi, Portuguese, Spanish, Arabic)</li>
                 </ul>
 
-                <h2>3. User Accounts & Data</h2>
+                <h2>3. User Data</h2>
                 <p>Focus Flow does not require user account creation. All productivity data (sessions, habits, forest,
                     preferences) is stored <strong>locally on your device</strong>.</p>
                 <p>You are responsible for maintaining the security of your device. We are not responsible for data loss
                     due to device failure, uninstallation, or other circumstances beyond our control.</p>
+                <p>For details on how we handle your information, please refer to our <a href="privacy.html">Privacy
+                        Policy</a>.</p>
 
                 <h2>4. Free & Premium Tiers</h2>
                 <p><strong>Free Tier:</strong> Focus Flow is available for free with advertisements. All core features
                     including the focus timer, habit tracker, forest, and ambient sounds are available in the free tier.
                 </p>
                 <p><strong>Premium Tier (Focus Flow Pro):</strong> An optional subscription that removes all
-                    advertisements and may unlock additional features. Premium subscriptions are available as:</p>
-                <ul>
-                    <li>Monthly subscription</li>
-                    <li>Yearly subscription</li>
-                </ul>
+                    advertisements and may unlock additional features. Premium subscriptions are available as monthly
+                    and yearly plans.</p>
 
                 <h2>5. Subscriptions & Payments</h2>
                 <ul>
@@ -82,19 +102,20 @@
                     <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the
                         current billing period</li>
                     <li>You can manage or cancel your subscription through the Google Play Store → Subscriptions</li>
-                    <li>Refunds are handled according to Google Play's refund policies</li>
+                    <li>Refunds are handled according to <a href="https://support.google.com/googleplay/answer/2479637"
+                            target="_blank" rel="noopener">Google Play's refund policies</a></li>
                     <li>Prices may vary by region and are displayed in your local currency at the time of purchase</li>
                 </ul>
 
                 <h2>6. Advertisements</h2>
                 <p>The free tier of Focus Flow displays advertisements provided by Google AdMob. By using the free tier,
-                    you acknowledge and accept the display of advertisements including interstitial ads and optional
-                    rewarded ads.</p>
+                    you acknowledge and accept the display of advertisements. You may remove ads by upgrading to the
+                    premium subscription.</p>
 
                 <h2>7. Intellectual Property</h2>
                 <p>All content, features, and functionality of Focus Flow — including but not limited to text, graphics,
-                    logos, icons, animations, sounds, and code — are owned by Antigravity and are protected by
-                    intellectual property laws.</p>
+                    logos, icons, animations, sounds, and source code — are owned by Corelume Tech and are protected by
+                    applicable intellectual property laws.</p>
                 <p>You may not:</p>
                 <ul>
                     <li>Copy, modify, or distribute the App or any part thereof</li>
@@ -103,54 +124,32 @@
                     <li>Remove or alter any proprietary notices</li>
                 </ul>
 
-                <h2>8. Acceptable Use</h2>
-                <p>You agree to use Focus Flow only for its intended purpose as a personal productivity tool. You agree
-                    not to:</p>
-                <ul>
-                    <li>Interfere with or disrupt the App or its servers</li>
-                    <li>Attempt to gain unauthorized access to any portion of the App</li>
-                    <li>Use the App in any way that violates applicable laws or regulations</li>
-                    <li>Exploit bugs or vulnerabilities for unintended purposes</li>
-                </ul>
-
-                <h2>9. Disclaimer of Warranties</h2>
+                <h2>8. Disclaimer of Warranties</h2>
                 <p>Focus Flow is provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis
-                    without warranties of any kind, either express or implied. We do not warrant that:</p>
-                <ul>
-                    <li>The App will be uninterrupted or error-free</li>
-                    <li>Defects will be corrected in a timely manner</li>
-                    <li>The App will meet your specific requirements</li>
-                    <li>Data stored locally will be preserved in all circumstances</li>
-                </ul>
+                    without warranties of any kind, either express or implied, including but not limited to implied
+                    warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not
+                    warrant that the App will be uninterrupted, error-free, or that defects will be corrected.</p>
 
-                <h2>10. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law, Antigravity shall not be liable for any indirect, incidental,
-                    special, or consequential damages arising from your use of the App, including but not limited to
-                    loss of data, loss of productivity, or device issues.</p>
+                <h2>9. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, Corelume Tech shall not be liable for any
+                    indirect, incidental, special, consequential, or punitive damages arising from your use of the App,
+                    including but not limited to loss of data, loss of productivity, or device issues.</p>
 
-                <h2>11. Third-Party Services</h2>
+                <h2>10. Third-Party Services</h2>
                 <p>The App integrates with third-party services including Google Firebase, Google AdMob, and Google Play
-                    Billing. Your use of these services is subject to their respective terms and privacy policies.</p>
+                    Billing. Your use of these services is subject to their respective terms and privacy policies. We
+                    are not responsible for the practices of these third-party services.</p>
 
-                <h2>12. Modifications to the App</h2>
-                <p>We reserve the right to modify, update, or discontinue Focus Flow or any part thereof at any time,
-                    with or without notice. We shall not be liable to you or any third party for any modification,
-                    suspension, or discontinuance of the App.</p>
+                <h2>11. Modifications</h2>
+                <p>We reserve the right to modify, update, or discontinue Focus Flow or any part thereof at any time.
+                    We may also update these Terms from time to time. The updated Terms will be effective upon posting.
+                    Your continued use of the App after changes constitutes acceptance of the new Terms.</p>
 
-                <h2>13. Changes to Terms</h2>
-                <p>We may update these Terms from time to time. The updated Terms will be effective upon posting within
-                    the App. Your continued use of the App after changes constitutes acceptance of the new Terms.</p>
-
-                <h2>14. Governing Law</h2>
-                <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard
-                    to its conflict of law provisions.</p>
-
-                <h2>15. Contact Information</h2>
+                <h2>12. Contact Information</h2>
                 <p>For any questions about these Terms and Conditions, please contact us:</p>
                 <ul>
-                    <li><strong>Email:</strong> <a
-                            href="mailto:antigravity.developer@gmail.com">antigravity.developer@gmail.com</a></li>
-                    <li><strong>Website:</strong> <a href="contact.html">Contact Page</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:contact@corelumetech.in">contact@corelumetech.in</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -160,25 +159,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="nav-brand"><span class="nav-logo">🌳</span><span class="nav-title">Focus Flow</span>
+                    <div class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img"><span
+                            class="nav-title">Corelume Tech</span>
                     </div>
-                    <p>Stay focused. Build habits. Grow your forest. A productivity app by Antigravity.</p>
+                    <p data-i18n="footer_desc">Building innovative mobile applications that make a difference. Crafting
+                        productivity tools with care.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Product</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
-                        href="contact.html">Contact</a>
+                    <h4 data-i18n="footer_company">Company</h4>
+                    <a href="index.html" data-i18n="nav_home">Home</a>
+                    <a href="about.html" data-i18n="nav_about">About Us</a>
+                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a>
+                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+                    <a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Download</h4><a
-                        href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
+                    <h4 data-i18n="footer_download">Download</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.antigravity.focusflow.focus_flow"
                         target="_blank">Google Play Store</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Antigravity. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 Corelume Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>

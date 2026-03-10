@@ -1,4 +1,4 @@
-/* ── Focus Flow Website ────────────────────────────────── */
+/* ── Corelume Tech Website ────────────────────────────── */
 :root {
     --bg: #0a0a14;
     --bg-surface: #12121f;
@@ -8,6 +8,7 @@
     --accent-2: #16a34a;
     --accent-glow: rgba(34, 197, 94, 0.2);
     --purple: #8b5cf6;
+    --blue: #3b82f6;
     --text: #e8e8f0;
     --text-2: #9ca3af;
     --text-3: #6b7280;
@@ -82,8 +83,11 @@ a:hover {
     color: white;
 }
 
-.nav-logo {
-    font-size: 28px;
+.nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: contain;
 }
 
 .nav-title {
@@ -145,6 +149,89 @@ a:hover {
     transition: 0.3s;
 }
 
+/* ── LANGUAGE SWITCHER ──────────────────────────────── */
+.lang-switcher {
+    position: relative;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: var(--text-2);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.lang-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(18, 18, 31, 0.98);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 160px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.lang-dropdown.show {
+    display: block;
+    animation: fadeInUp 0.2s ease;
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: var(--text-2);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+}
+
+.lang-option.active {
+    color: var(--accent);
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.lang-option .flag {
+    font-size: 18px;
+}
+
 /* ── HERO ────────────────────────────────────────────── */
 .hero {
     min-height: 100vh;
@@ -189,7 +276,7 @@ a:hover {
 .shape-3 {
     width: 300px;
     height: 300px;
-    background: #3b82f6;
+    background: var(--blue);
     top: 40%;
     left: 50%;
     opacity: 0.06;
@@ -318,10 +405,124 @@ a:hover {
     font-weight: 500;
 }
 
+/* ── APP SHOWCASE ───────────────────────────────────── */
+.app-showcase {
+    padding: 120px 0;
+    background: var(--bg-surface);
+}
+
+.app-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 60px;
+    transition: all 0.4s;
+}
+
+.app-card:hover {
+    border-color: rgba(34, 197, 94, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.app-card-visual {
+    text-align: center;
+}
+
+.app-icon-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto 24px;
+    box-shadow: 0 12px 40px rgba(34, 197, 94, 0.3);
+}
+
+.app-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+}
+
+.app-name {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.app-tagline {
+    color: var(--text-2);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.app-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.app-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.app-badge.lang-badge {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+    color: var(--blue);
+}
+
+.app-card-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.app-card-info p {
+    color: var(--text-2);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.app-features-list {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.app-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--text-2);
+    font-size: 14px;
+}
+
+.app-features-list li .check {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+}
+
 /* ── FEATURES ────────────────────────────────────────── */
 .features {
     padding: 120px 0;
-    background: var(--bg-surface);
 }
 
 .section-header {
@@ -378,9 +579,17 @@ a:hover {
 }
 
 .feature-icon {
-    font-size: 36px;
+    width: 48px;
+    height: 48px;
     margin-bottom: 20px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .feature-card h3 {
@@ -574,8 +783,17 @@ a:hover {
 }
 
 .about-card .icon {
-    font-size: 36px;
-    margin-bottom: 16px;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-card .icon svg {
+    width: 100%;
+    height: 100%;
 }
 
 .about-card h3 {
@@ -589,76 +807,115 @@ a:hover {
     font-size: 14px;
 }
 
-/* ── CONTACT FORM ────────────────────────────────────── */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 40px;
+/* ── CONTACT PAGE ───────────────────────────────────── */
+.contact-center {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.contact-info-card {
+.contact-email-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin: 40px 0;
+    transition: all 0.3s;
+}
+
+.contact-email-card:hover {
+    border-color: rgba(34, 197, 94, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-email-card .icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-email-card .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-playstore .icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.contact-playstore .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-inline {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+    fill: currentColor;
+}
+
+.contact-email-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-email-card .email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent);
+    transition: color 0.2s;
+}
+
+.contact-email-card .email-link:hover {
+    color: var(--accent-2);
+}
+
+.contact-email-card p.response-time {
+    color: var(--text-3);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.contact-playstore {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
     padding: 28px;
-    margin-bottom: 16px;
     display: flex;
     align-items: center;
     gap: 16px;
+    justify-content: center;
+    transition: all 0.3s;
 }
 
-.contact-info-card .icon {
+.contact-playstore:hover {
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.contact-playstore .icon {
     font-size: 28px;
 }
 
-.contact-info-card h4 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.contact-info-card p {
+.contact-playstore p {
     color: var(--text-2);
-    font-size: 13px;
+    font-size: 14px;
     margin: 0;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-2);
-    margin-bottom: 8px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    font-family: inherit;
-    font-size: 14px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
+.contact-playstore a {
+    color: var(--accent);
+    font-weight: 500;
 }
 
 /* ── ANIMATIONS ──────────────────────────────────────── */
@@ -672,6 +929,64 @@ a:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ── RTL SUPPORT ─────────────────────────────────────── */
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .nav-container {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-brand {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-links {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-header,
+html[dir="rtl"] .cta-card,
+html[dir="rtl"] .footer-bottom,
+html[dir="rtl"] .page-header {
+    text-align: center;
+}
+
+html[dir="rtl"] .content-body {
+    text-align: right;
+}
+
+html[dir="rtl"] .content-body ul,
+html[dir="rtl"] .content-body ol {
+    padding-left: 0;
+    padding-right: 24px;
+}
+
+html[dir="rtl"] .footer-grid {
+    direction: rtl;
+}
+
+html[dir="rtl"] .app-card {
+    direction: rtl;
+}
+
+html[dir="rtl"] .app-features-list li {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+html[dir="rtl"] .lang-dropdown {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .contact-playstore {
+    flex-direction: row-reverse;
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────── */
@@ -713,7 +1028,21 @@ a:hover {
         grid-template-columns: 1fr;
     }
 
-    .contact-grid {
+    .app-card {
         grid-template-columns: 1fr;
+        padding: 40px 28px;
+        text-align: center;
+    }
+
+    .app-card-info {
+        text-align: left;
+    }
+
+    html[dir="rtl"] .app-card-info {
+        text-align: right;
+    }
+
+    .contact-email-card {
+        padding: 36px 24px;
     }
 }
