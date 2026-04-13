@@ -1,0 +1,95 @@
+[
+  {
+    "id": "f133d4d1-bfdb-4c39-b680-343caef136e1",
+    "title": "The Return of Couch Co-Op: Why 2-Player Web Games Rule",
+    "slug": "the-return-of-couch-co-op-why-2-player-web-games-rule",
+    "excerpt": "An exploration into why local multiplayer Shared Keyboard games are experiencing a massive resurgence in popularity.",
+    "category": "Top 2-Player Local Multiplayer Games",
+    "tags": [
+      "multiplayer",
+      "retro",
+      "co-op",
+      "orb clash"
+    ],
+    "author": "Corelume Tech SEO Team",
+    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-04-06T08:06:52.166Z",
+    "publishedAt": "2026-04-06",
+    "fileUrl": "articles/the-return-of-couch-co-op-why-2-player-web-games-rule.html"
+  },
+  {
+    "id": "45c7e4ef-9a58-4db3-a4e2-56968025420e",
+    "title": "How to Build a High-Performance HTML5 Physics Engine",
+    "slug": "how-to-build-a-high-performance-html5-physics-engine",
+    "excerpt": "A deep technical dive into building custom 2D collision detection and resolution systems for web browsers without relying on heavy external libraries.",
+    "category": "Physics Engine Mechanics in Web Games",
+    "tags": [
+      "html5",
+      "canvas",
+      "physics",
+      "javascript"
+    ],
+    "author": "Corelume Tech SEO Team",
+    "thumbnail": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-04-06T08:06:52.161Z",
+    "publishedAt": "2026-04-06",
+    "fileUrl": "articles/how-to-build-a-high-performance-html5-physics-engine.html"
+  },
+  {
+    "id": "c13c0061-06e0-436e-ba1a-5080fe7a8836",
+    "title": "Mastering the Hexagonal Puzzle: Advanced Tactics",
+    "slug": "mastering-the-hexagonal-puzzle-advanced-tactics",
+    "excerpt": "Learn how to predict cascade patterns and build massive chain multipliers in modern hexagonal browser puzzles like Hex Blast.",
+    "category": "How to Beat Browser Puzzle Games",
+    "tags": [
+      "puzzles",
+      "strategy",
+      "hex blast"
+    ],
+    "author": "Corelume Tech SEO Team",
+    "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-04-06T08:06:52.164Z",
+    "publishedAt": "2026-04-06",
+    "fileUrl": "articles/mastering-the-hexagonal-puzzle-advanced-tactics.html"
+  },
+  {
+    "id": "7ae76907-aef1-44ca-add2-e4d7bffbc791",
+    "title": "15 Unblocked Browser Games Perfect for Quick Breaks",
+    "slug": "15-unblocked-browser-games-perfect-for-quick-breaks",
+    "excerpt": "A curated list of entirely free, safe, and easily accessible HTML5 browser games that bypass most corporate and educational firewalls.",
+    "category": "Best Unblocked Games for School and Work",
+    "tags": [
+      "unblocked",
+      "free games",
+      "casual gaming"
+    ],
+    "author": "Corelume Tech SEO Team",
+    "thumbnail": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-04-06T08:06:52.162Z",
+    "publishedAt": "2026-04-06",
+    "fileUrl": "articles/15-unblocked-browser-games-perfect-for-quick-breaks.html"
+  },
+  {
+    "id": "51565779-5a0e-4f68-b221-92e2fc3d5f61",
+    "title": "10 Pro Strategies to Dominate IO Games in 2026",
+    "slug": "10-pro-strategies-to-dominate-io-games-in-2026",
+    "excerpt": "Discover specific, actionable strategies for ranking #1 in modern multiplayer IO games, focusing on resource management and latency optimization.",
+    "category": "Best IO Games 2026",
+    "tags": [
+      "io games",
+      "multiplayer",
+      "strategies",
+      "gaming"
+    ],
+    "author": "Corelume Tech SEO Team",
+    "thumbnail": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-04-06T08:06:52.157Z",
+    "publishedAt": "2026-04-06",
+    "fileUrl": "articles/10-pro-strategies-to-dominate-io-games-in-2026.html"
+  }
+]

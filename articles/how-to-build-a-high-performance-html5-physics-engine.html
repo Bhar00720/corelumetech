@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A deep technical dive into building custom 2D collision detection and resolution systems for web browsers without relying on heavy external libraries.">
+    <meta name="keywords" content="html5, canvas, physics, javascript">
+    <title>How to Build a High-Performance HTML5 Physics Engine — Corelume Tech</title>
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+    <link rel="canonical" href="https://www.corelumetech.in/articles/how-to-build-a-high-performance-html5-physics-engine.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="ad-enabled" content="true">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+    <style>
+        .article-header { padding: 120px 0 40px; text-align: center; }
+        .article-header h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; margin-bottom: 20px; line-height: 1.2; }
+        .article-meta { color: var(--text-3); font-size: 15px; font-weight: 500; }
+        .article-hero-img { width: 100%; max-width: 900px; height: 450px; object-fit: cover; border-radius: 20px; margin: 0 auto 40px; display: block; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid var(--border); }
+        .content-body { max-width: 800px; margin: 0 auto; padding: 0 20px 100px; }
+        .content-body h2 { font-size: 28px; font-weight: 800; color: var(--purple); margin: 50px 0 20px; border-bottom: 1px solid rgba(139, 92, 246, 0.2); padding-bottom: 10px; }
+        .content-body h3 { font-size: 22px; font-weight: 700; color: white; margin: 30px 0 15px; }
+        .content-body p, .content-body ul { font-size: 18px; line-height: 1.8; color: var(--text-2); margin-bottom: 24px; }
+        .content-body ul { padding-left: 20px; }
+        .content-body li { margin-bottom: 12px; }
+        .content-body code { background: #1a1a2e; padding: 2px 6px; border-radius: 4px; color: #a78bfa; font-family: monospace; }
+        .author-box { display: flex; align-items: center; gap: 20px; padding: 30px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-top: 60px; }
+        .author-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand"><img src="../assets/logo.png" alt="Corelume Tech" class="nav-logo-img"><span class="nav-title">Corelume Tech</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../game-hub.html">Game Hub</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="article-header container">
+        <h1>How to Build a High-Performance HTML5 Physics Engine</h1>
+        <img class="article-hero-img" src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=1200&q=80" alt="How to Build a High-Performance HTML5 Physics Engine">
+        <div class="article-meta">Published on 2026-04-06 • Corelume Tech SEO Team</div>
+    </header>
+
+    <main class="content-body">
+        <p>While libraries like Matter.js or Box2D are fantastic, relying on them for every project can lead to bloated codebases, slow load times, and unnecessary latency overhead. For our flagship game series (including <a href="https://tanks.game.corelumetech.in">War Tanks</a>), we decided to build a high-performance 2D physics engine native to HTML5 Canvas. Here is a definitive guide on how you can architect a lightweight, zero-dependency physics system for your web games.</p>
+
+        <h2>1. The Game Loop & Delta Time</h2>
+        <p>Physics engines survive on consistency. If your physics calculations are tied to the browser's framerate, a lag spike will break your collision logic (an issue known as tunneling). Always decouple simulation from rendering.</p>
+        <p>We use <code>requestAnimationFrame</code> passing a <code>deltaTime</code> scalar to update positions. This ensures that an object traveling 100 pixels per second covers the exact same distance whether the browser renders 30 frames or 144 frames per second.</p>
+
+        <h2>2. Broad-Phase vs. Narrow-Phase Collision</h2>
+        <p>Checking every object against every other object results in an <code>O(n²)</code> catastrophe. If you have 1,000 projectiles, that's 1,000,000 checks per frame.</p>
+        
+        <h3>Broad-Phase: Spatial Hashing</h3>
+        <p>We divide the canvas screen into a grid (e.g., 50x50 pixel cells). As entities move, they register which cell they occupy. During hit detection, an entity *only* checks for collisions against objects residing in the exact same cell or immediately adjacent cells. This drops complexity down to near <code>O(n)</code>.</p>
+        
+        <h3>Narrow-Phase: The actual math</h3>
+        <p>Once two objects share a cell, we use AABB (Axis-Aligned Bounding Box) logic for squares, or radial distance checks for circles. Because computing square roots is incredibly slow in JavaScript (`Math.sqrt`), we optimize circle collisions by comparing the squared distances against the squared radii.</p>
+        <code>if ((dx*dx + dy*dy) &lt; (radius1+radius2)*(radius1+radius2)) { // Collision! }</code>
+
+        <h2>3. Solving the Tunneling Problem (CCD)</h2>
+        <p>If a bullet travels 100 pixels a frame, and a wall is 10 pixels thick, the bullet will teleport entirely *through* the wall between frames without ever mathematically triggering an intersection. This is tunneling.</p>
+        <p>To fix this, we implemented a lightweight Continuous Collision Detection (CCD) algorithm via Raycasting. Instead of checking if the bullet's current position overlaps the wall, we cast a mathematical line between the bullet's previous frame position and current position, checking if that invisible vector intersects the wall line.</p>
+
+        <h2>4. Destructible Terrain (The War Tanks Method)</h2>
+        <p>War Tanks features procedurally generated terrain that permanently deforms when hit. Handling pixel-perfect physics on moving destructible terrain is intensely CPU heavy. </p>
+        <p>Our solution? We maintain a secondary, invisible "collision canvas". When a bomb explodes, we use the `globalCompositeOperation = 'destination-out'` rule on the Canvas API to carve a literal circle out of the terrain image array. A quick `getImageData` pixel check confirms if a tank has fallen into empty space or is still standing on solid ground, eliminating complex polygon collision mapping.</p>
+
+        <h2>5. Memory Pooling for Garbage Collection</h2>
+        <p>JavaScript's garbage collector (GC) is the biggest enemy of 60 FPS HTML5 games. Every time you create a `new Vector()` or `new Bullet()`, you trigger memory allocation. When that bullet dies, the GC eventually pauses the game to wipe it, causing noticeable stutter.</p>
+        <p>We bypassed native GC pauses by using Object Pools. We instantiate an array of 500 bullet objects when the game boots. When a gun fires, we grab a "dead" bullet from the pool, enable it, and update its trajectory. Upon impact, we set its `active` flag to false without destroying the object. The result? Zero garbage collection pauses during intense combat.</p>
+
+        <h2>The Result</h2>
+        <p>By writing our physics calculations natively with heavily optimized math and spatial hashing grids, games like <strong>War Tanks</strong> load instantly and process thousands of particles on 5-year-old mobile devices without breaking a sweat. Sometimes, going back to basics is the best path to modern performance.</p>
+
+        <div class="author-box">
+            <img src="../assets/logo.png" alt="Corelume Tech Team" class="author-img">
+            <div class="author-info">
+                <h4>Corelume Tech Development Team</h4>
+                <p>We are pioneers in HTML5 performance optimization and web-based interactive entertainment.</p>
+            </div>
+        </div>
+    </main>
+    <script src="../js/main.js"></script>
+    <script src="../js/readability.js"></script>
+</body>
+</html>

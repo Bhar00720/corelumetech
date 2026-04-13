@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Master War Tanks with this comprehensive game guide. Learn controls, weapons, tips, and strategies for our 2-player browser tank game.">
+    <meta name="keywords" content="war tanks guide, play tank games online, free browser games, artillery game strategy, web game guide">
+    <title>War Tanks Guide: How to Play and Win — Corelume Tech</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="canonical" href="https://www.corelumetech.in/war-tanks-guide.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="War Tanks Guide: How to Play and Win">
+    <meta property="og:description" content="Master War Tanks with this guide. Learn controls, weapons, tips & strategies for this free 2-player browser game.">
+    <meta property="og:url" content="https://www.corelumetech.in/war-tanks-guide.html">
+    <meta property="og:image" content="https://tanks.game.corelumetech.in/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="War Tanks Guide: How to Play and Win">
+    <meta name="twitter:description" content="Master War Tanks — learn controls, weapons, tips & strategies for this free browser game.">
+    <meta name="twitter:image" content="https://tanks.game.corelumetech.in/og-image.png">
+    <meta name="ad-enabled" content="true">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+    <!-- JSON-LD: Article + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "War Tanks Official Guide: How to Play and Win",
+          "description": "Complete guide to War Tanks — controls, weapons, strategies, and tips.",
+          "url": "https://www.corelumetech.in/war-tanks-guide.html",
+          "author": { "@type": "Organization", "name": "Corelume Tech" },
+          "publisher": { "@type": "Organization", "name": "Corelume Tech", "logo": { "@type": "ImageObject", "url": "https://www.corelumetech.in/assets/logo.png" } },
+          "datePublished": "2026-03-24",
+          "dateModified": "2026-04-13"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Is War Tanks completely free to play?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, War Tanks is 100% free to play directly in your web browser. There are no downloads, subscriptions, or pay-to-win mechanics." } },
+            { "@type": "Question", "name": "Can I play against an AI opponent?", "acceptedAnswer": { "@type": "Answer", "text": "Currently, War Tanks is optimized for 2-player local multiplayer. An AI mode is currently in active development for solo players." } },
+            { "@type": "Question", "name": "Does the terrain change every game?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Every time you start a new match, the game procedurally generates a brand new terrain profile ensuring no two matches ever play exactly the same." } },
+            { "@type": "Question", "name": "What browsers are supported?", "acceptedAnswer": { "@type": "Answer", "text": "War Tanks runs perfectly on any modern web browser that supports HTML5 Canvas, including Chrome, Firefox, Safari, and Edge." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.corelumetech.in/" },
+            { "@type": "ListItem", "position": 2, "name": "Game Hub", "item": "https://www.corelumetech.in/game-hub.html" },
+            { "@type": "ListItem", "position": 3, "name": "War Tanks Guide", "item": "https://www.corelumetech.in/war-tanks-guide.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .guide-header {
+            padding: 140px 0 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(34, 197, 94, 0.1) 0%, var(--bg) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .guide-header h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .guide-content {
+            padding: 60px 0 120px;
+        }
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 60px;
+        }
+        .guide-article {
+            background: var(--bg-surface);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        .guide-article h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.05);
+            padding-bottom: 10px;
+            color: var(--accent);
+        }
+        .guide-article h2:first-child {
+            margin-top: 0;
+        }
+        .guide-article h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: white;
+        }
+        .guide-article p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-2);
+        }
+        .guide-article ul, .guide-article ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: var(--text-2);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .guide-article li {
+            margin-bottom: 10px;
+        }
+        .guide-article img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .guide-sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+        .play-card {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.1);
+        }
+        .play-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .faq-item h4 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .faq-item p {
+            color: var(--text-2);
+            font-size: 15px;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        @media (max-width: 992px) {
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+            .guide-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                <span class="nav-title">Corelume Tech</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="game-hub.html">Game Hub</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ══ HEADER ══════════════════════════════════════════ -->
+    <header class="guide-header">
+        <div class="container">
+            <h1><span class="gradient-text">War Tanks</span> Official Guide</h1>
+            <p style="color: var(--text-2); font-size: 18px; max-width: 700px; margin: 0 auto;">Everything you need to know to master the battlefield. From basic controls to advanced ballistics and weapon strategies.</p>
+        </div>
+    </header>
+
+    <!-- ══ CONTENT ═════════════════════════════════════════ -->
+    <section class="guide-content container">
+        <div class="guide-layout">
+            <div class="guide-article">
+                <h2>Game Overview & Story</h2>
+                <img src="https://images.unsplash.com/photo-1585620385456-4759f36df17b?auto=format&fit=crop&w=1000&q=80" alt="War Tanks Gameplay Visualization">
+                <p>Welcome to <strong>War Tanks</strong>, the premier 2-player artillery browser game developed by Corelume Tech. Set in a dystopian world where resources are scarce, two rival factions face off across procedurally generated terrains. Your mission is simple but incredibly challenging: calculate the perfect trajectory, deploy your arsenal wisely, and annihilate the enemy tank before they land a direct hit on you.</p>
+                <p>Unlike modern shooter games that rely on twitch reflexes, War Tanks requires a tactical, mathematical mindset. You must account for terrain elevation, wind (in advanced modes), and the unique blast radius of every weapon. The game is played entirely in the browser using HTML5, requiring no downloads or installations, making it one of the most accessible free browser games online today.</p>
+
+                <h2>How to Play (The Basics)</h2>
+                <p>The core gameplay loop of War Tanks revolves around turn-based combat. If you have ever played classic artillery games, you will feel right at home here. Here is a step-by-step breakdown of how a typical match unfolds:</p>
+                <ol>
+                    <li><strong>Positioning:</strong> In some modes, you can drive your tank slightly to find better cover or get a cleaner shot over a hill.</li>
+                    <li><strong>Weapon Selection:</strong> Each player starts with a randomized or pre-selected loadout of weapons. Press 'W' or click the weapon button to open the armory.</li>
+                    <li><strong>Setting the Angle:</strong> Use the up and down arrow keys to set your turret's elevation. The angle ranges from 0 (horizontal) to 180 (facing backward).</li>
+                    <li><strong>Setting the Power:</strong> Use the left and right arrow keys to adjust the power of your shot. High power and high angle produce steep arcs.</li>
+                    <li><strong>Firing:</strong> Press the Spacebar or 'Fire' button to launch your projectile. Watch the tracer closely to adjust your next shot!</li>
+                </ol>
+
+                <h2>Detailed Weapons Guide</h2>
+                <p>An artillery commander is only as good as their understanding of their arsenal. Here are the primary weapons you will encounter in the game, along with strategies on how to maximize their potential.</p>
+                
+                <h3>1. Single Shot (Standard Armor Piercing)</h3>
+                <p>The default weapon with infinite ammo. It creates a medium-sized explosion. <strong>Strategy:</strong> Use this early in the game as a "range-finder" to determine your opponent's exact distance without wasting your high-value ordinance.</p>
+
+                <h3>2. The Dirt Mover</h3>
+                <p>This massive shell deals very little damage to the enemy tank directly, but it removes huge chunks of terrain. <strong>Strategy:</strong> Use the Dirt Mover to drop enemies into holes, ruining their firing angles, or to shoot through a mountain to hit an opponent hiding behind it.</p>
+
+                <h3>3. Sniper Rifle</h3>
+                <p>Fires perfectly straight with almost zero arc drop over short distances, dealing massive direct damage but leaving no blast radius. <strong>Strategy:</strong> Only use this when you have a direct, unobstructed line of sight to the enemy tank.</p>
+
+                <h3>4. Cluster Bomb</h3>
+                <p>Fires a large shell that splits into five smaller bomblets at the apex of its arc. <strong>Strategy:</strong> Fire this extremely high into the air. When it splits, the resulting shower of bombs covers a wide area, making it perfect when you aren't exactly sure of the enemy's location.</p>
+
+                <h2>Pro Strategies & Tips</h2>
+                <p>If you want to win consistently and frustrate your friends, keep these advanced strategies in mind:</p>
+                <ul>
+                    <li><strong>The "High Arc" Principle:</strong> Whenever possible, use an angle above 70 degrees with higher power, rather than a low-angle direct shot. High arcs mean the projectile comes down almost vertically, making it much harder for terrain obstacles to block your shot.</li>
+                    <li><strong>Dig In:</strong> If your opponent has a bead on your exact location, sometimes the best defense is to shoot a low-powered explosive directly in front of you. This destroys the terrain and drops you into a trench, breaking their line of sight.</li>
+                    <li><strong>Conserve Busters:</strong> Save weapons capable of melting through dirt for the late game. As the terrain gets destroyed, matches often end in deep craters where only specialized weapons can secure a kill.</li>
+                </ul>
+
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <h4>Is War Tanks completely free to play?</h4>
+                    <p>Yes, War Tanks is 100% free to play directly in your web browser. There are no downloads, subscriptions, or pay-to-win mechanics.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Can I play against an AI opponent?</h4>
+                    <p>Currently, War Tanks is optimized for 2-player local multiplayer. You play with a friend sharing the same keyboard or screen. An AI mode is currently in active development for solo players.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Does the terrain change every game?</h4>
+                    <p>Yes! Every time you start a new match, the game procedurally generates a brand new terrain profile with different hills, valleys, and bumps ensuring no two matches ever play exactly the same.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What browsers are supported?</h4>
+                    <p>War Tanks runs perfectly on any modern web browser that supports HTML5 Canvas, including Google Chrome, Mozilla Firefox, Safari, and Microsoft Edge.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Will there be online multiplayer networking in the future?</h4>
+                    <p>We are currently exploring real-time websocket integration with Node.js to bring fully online matchmaking to the game in a future update. Stay tuned to our <a href="blog.html">blog</a> for updates!</p>
+                </div>
+
+            </div>
+
+            <div class="guide-sidebar">
+                <div class="play-card">
+                    <img src="https://tanks.game.corelumetech.in/og-image.png" alt="War Tanks Thumbnail">
+                    <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 10px;">Play War Tanks</h3>
+                    <p style="color: var(--text-2); font-size: 14px; margin-bottom: 20px;">Ready to test your artillery skills? Play best out of 5 against a friend right now.</p>
+                    <a href="https://tanks.game.corelumetech.in" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 16px;">Launch Game 🚀</a>
+                </div>
+
+                <div class="faq-item" style="background: var(--bg-card);">
+                    <h4 style="margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Related Articles</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="articles/how-to-play-tank-games-online.html" style="font-size: 14px;">How to Play Tank Games Online</a></li>
+                        <li style="margin-bottom: 10px;"><a href="articles/best-free-browser-games-2026.html" style="font-size: 14px;">Best Free Browser Games 2026</a></li>
+                        <li style="margin-bottom: 10px;"><a href="articles/10-pro-strategies-to-dominate-io-games-in-2026.html" style="font-size: 14px;">10 Pro Strategies for IO Games</a></li>
+                        <li style="margin-bottom: 10px;"><a href="blog.html" style="font-size: 14px;">Read the Dev Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                        <span class="nav-title">Corelume Tech</span>
+                    </div>
+                    <p>Building innovative applications and engaging free web games that make a difference.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="/">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Games</h4>
+                    <a href="game-hub.html">Game Hub</a>
+                    <a href="https://tanks.game.corelumetech.in" target="_blank">Play War Tanks</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Corelume Tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

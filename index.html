@@ -5,21 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Corelume Tech — We build engaging web games like War Tanks. Discover our awesome free browser games.">
-    <meta name="keywords" content="corelume tech, war tanks, free online tank game, web game, 2 player tank game, browser game, game hub">
-    <title>Corelume Tech — Epic Web Games</title>
+        content="Play free online games at Corelume Tech! Enjoy War Tanks, Hex Blast, Sky Dodge & more HTML5 browser games — no download needed. Play instantly!">
+    <meta name="keywords" content="free online games, play games online, browser games, HTML5 games, free gaming website, play tank games online, no download games, web games 2026">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>Free Online Games — Play Browser Games Instantly | Corelume Tech</title>
     <link rel="icon" href="assets/logo.png" type="image/png">
     <link rel="canonical" href="https://www.corelumetech.in/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Online Games — Play Browser Games Instantly | Corelume Tech">
+    <meta property="og:description" content="Play free online games at Corelume Tech! Enjoy War Tanks, Hex Blast, Sky Dodge & more HTML5 browser games — no download needed.">
+    <meta property="og:url" content="https://www.corelumetech.in/">
+    <meta property="og:site_name" content="Corelume Tech">
+    <meta property="og:image" content="https://www.corelumetech.in/assets/logo.png">
+    <meta property="og:locale" content="en_US">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Games — Play Instantly | Corelume Tech">
+    <meta name="twitter:description" content="Enjoy free HTML5 browser games like War Tanks, Hex Blast & Sky Dodge. No downloads, play instantly!">
+    <meta name="twitter:image" content="https://www.corelumetech.in/assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <meta name="ad-enabled" content="true">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Corelume Tech",
+          "url": "https://www.corelumetech.in/",
+          "description": "Play free online games at Corelume Tech. HTML5 browser games with no downloads needed.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.corelumetech.in/game-hub.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Corelume Tech",
+          "url": "https://www.corelumetech.in/",
+          "logo": "https://www.corelumetech.in/assets/logo.png",
+          "sameAs": [],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@corelumetech.in",
+            "contactType": "customer support"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.corelumetech.in/" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .home-hero { padding: 160px 0 100px; text-align: center; position: relative; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.15) 0%, transparent 70%); z-index: -1; }
+        .home-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
+        .platform-desc { max-width: 800px; margin: 0 auto; color: var(--text-2); font-size: 18px; line-height: 1.8; margin-bottom: 40px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--border); }
+        .featured-games { padding: 100px 0; background: var(--bg-surface); }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; }
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .game-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
+        .game-card:hover { transform: translateY(-10px); border-color: rgba(34, 197, 94, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .game-img { width: 100%; height: 220px; object-fit: cover; }
+        .game-info { padding: 30px; }
+        .game-title { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: white; }
+        .game-desc { color: var(--text-2); font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+        
+        .latest-articles { padding: 100px 0; }
+        .article-flex { display: flex; flex-direction: column; gap: 20px; }
+        .article-row { display: flex; align-items: center; gap: 30px; background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border); transition: all 0.2s; }
+        .article-row:hover { background: rgba(255,255,255,0.05); border-color: var(--accent); }
+        .article-row img { width: 150px; height: 100px; border-radius: 10px; object-fit: cover; }
+        .article-details { flex-grow: 1; }
+        .article-details h3 { font-size: 20px; color: white; margin-bottom: 6px; }
+        .article-details p { font-size: 14px; color: var(--text-2); margin: 0; }
+        @media (max-width: 600px) { .article-row { flex-direction: column; align-items: flex-start; } .article-row img { width: 100%; height: 200px; } }
+        
+        .about-developer { padding: 100px 0; background: var(--bg-surface); }
+        .dev-container { display: flex; align-items: center; gap: 60px; max-width: 1000px; margin: 0 auto; }
+        .dev-img { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border); }
+        .dev-bio h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; color: white; }
+        .dev-bio p { font-size: 17px; line-height: 1.8; color: var(--text-2); margin-bottom: 20px; }
+        @media (max-width: 900px) { .dev-container { flex-direction: column; text-align: center; } }
+    </style>
 </head>
 
 <body>
-
     <!-- ══ NAVBAR ══════════════════════════════════════════ -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -31,101 +114,121 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="/" class="active" data-i18n="nav_home">Home</a></li>
-                <li><a href="game-hub.html" data-i18n="nav_game_hub">Game Hub</a></li>
-                <li><a href="about.html" data-i18n="nav_about">About</a></li>
-                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
-                <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
-                <li><a href="terms.html" data-i18n="nav_terms">Terms</a></li>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="game-hub.html">Game Hub</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li>
                     <div class="lang-switcher">
                         <button class="lang-btn" id="langBtn">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z" />
-                            </svg>
                             <span class="lang-label">English</span>
                         </button>
-                        <div class="lang-dropdown" id="langDropdown">
-                            <button class="lang-option active" data-lang="en"><span class="flag">🇬🇧</span>
-                                English</button>
-                            <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
-                            <button class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
-                            <button class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
-                            <button class="lang-option" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
-                        </div>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- ══ HERO ════════════════════════════════════════════ -->
-    <section class="hero">
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+    <!-- ══ HERO & SEO PLATFORM DESC ════════════════════════ -->
+    <header class="home-hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-badge" style="display:inline-block; padding: 8px 16px; background: rgba(34,197,94,0.1); color: var(--accent); border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(34,197,94,0.3);">
+                Next-Gen Browser Gaming
+            </div>
+            <h1>Your Browser is Now a <br><span class="gradient-text">Gaming Console.</span></h1>
+            
+            <div class="platform-desc">
+                <p>Welcome to <strong>Corelume Tech</strong>, the ultimate destination for high-quality, free browser games online. We believe that gaming should be instant and frictionless. Our platform leverages the latest advancements in HTML5 and WebGL to deliver console-quality multiplayer experiences directly to your desktop or mobile browser. Whether you want to play tank games online with a friend or test your reflexes in fast-paced arcade racers, you can jump in immediately without a single download or installation.</p>
+            </div>
+
+            <div class="hero-actions" style="display: flex; gap: 20px; justify-content: center;">
+                <a href="game-hub.html" class="btn btn-primary btn-lg">Browse The Hub</a>
+                <a href="#featured" class="btn btn-secondary btn-lg">See Featured Games</a>
+            </div>
         </div>
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <svg class="icon-inline" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
-                </svg>
-                <span data-i18n="hero_badge">Interactive Entertainment</span>
+    </header>
+
+    <!-- ══ FEATURED GAMES ══════════════════════════════════ -->
+    <section id="featured" class="featured-games">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Ranked Games</h2>
+                <p style="color: var(--text-2); font-size: 18px;">Instantly play our most popular web games of 2026.</p>
             </div>
-            <h1 class="hero-title"><span data-i18n="hero_title_1">We Build Epic</span><br><span class="gradient-text"
-                    data-i18n="hero_title_2">Web Games.</span></h1>
-            <p class="hero-subtitle" data-i18n="hero_subtitle">Corelume Tech crafts highly engaging web games for players worldwide.</p>
-            <div class="hero-actions">
-                <a href="game-hub.html" class="btn btn-primary" data-i18n="hero_btn_primary">Play Web Games</a>
-                <a href="about.html" class="btn btn-secondary" data-i18n="hero_btn_secondary">Learn More</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><span class="stat-num">1+</span><span class="stat-label" data-i18n="stat_apps">Hit Games</span></div>
-                <div class="stat"><span class="stat-num">5</span><span class="stat-label"
-                        data-i18n="stat_languages">Languages</span></div>
-                <div class="stat"><span class="stat-num">∞</span><span class="stat-label" data-i18n="stat_users">Growing
-                        Players</span></div>
+            <div class="game-grid">
+                <!-- GAME 1 -->
+                <div class="game-card">
+                    <img src="https://tanks.game.corelumetech.in/og-image.png" alt="War Tanks Cover" class="game-img">
+                    <div class="game-info">
+                        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(34,197,94,0.1); color: var(--accent);">Action</span>
+                        </div>
+                        <a href="https://tanks.game.corelumetech.in"><h3 class="game-title">War Tanks</h3></a>
+                        <p class="game-desc">A physics-heavy 2-player artillery game. Calculate angles, adjust your power, and destroy your friend's tank.</p>
+                        <a href="https://tanks.game.corelumetech.in" style="color: var(--accent); font-weight: 600;">Play Now →</a>
+                    </div>
+                </div>
+
+                <!-- GAME 2 -->
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(135deg, #0a0a14, #12121f); padding: 20px;">
+                        <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;"><polygon points="50,15 80,30 80,70 50,85 20,70 20,30" fill="#22c55e" opacity="0.6"/></svg>
+                    </div>
+                    <div class="game-info">
+                        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(59,130,246,0.1); color: var(--blue);">Puzzle</span>
+                        </div>
+                        <a href="https://hexblast.game.corelumetech.in"><h3 class="game-title">Hex Blast</h3></a>
+                        <p class="game-desc">Mesmerizing hexagonal puzzle game. Tap matching clusters to clear the board create massive combos.</p>
+                        <a href="https://hexblast.game.corelumetech.in" style="color: var(--blue); font-weight: 600;">Play Now →</a>
+                    </div>
+                </div>
+
+                <!-- GAME 3 -->
+                <div class="game-card">
+                    <div class="game-img" style="background: linear-gradient(180deg, #050510, #0a0a2a); padding: 20px;">
+                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;"><circle cx="50" cy="50" r="15" fill="#3b82f6"/><rect x="20" y="20" width="60" height="4" fill="#ef4444" opacity="0.8"/></svg>
+                    </div>
+                    <div class="game-info">
+                        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(139,92,246,0.1); color: var(--purple);">Arcade</span>
+                        </div>
+                        <a href="https://skydodge.game.corelumetech.in"><h3 class="game-title">Sky Dodge</h3></a>
+                        <p class="game-desc">Endless space avoider. Test your reflexes as you dodge procedural obstacles at increasing speeds.</p>
+                        <a href="https://skydodge.game.corelumetech.in" style="color: var(--purple); font-weight: 600;">Play Now →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- ══ GAME HUB HOMEPAGE SECTION ═══════════════════════ -->
-    <section class="app-showcase" id="game-hub">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge" data-i18n="games_badge">Game Hub</span>
-                <h2><span data-i18n="games_title_1">Epic </span><span class="gradient-text"
-                        data-i18n="games_title_2">Web Games</span></h2>
-                <p data-i18n="games_subtitle">Play our newest browser-based adventures instantly.</p>
+    <!-- ══ LATEST ARTICLES ═════════════════════════════════ -->
+    <section class="latest-articles container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; text-align: left; margin-bottom: 40px;">
+            <div>
+                <h2>Gaming Intelligence & News</h2>
+                <p style="color: var(--text-2); font-size: 18px; margin: 0;">Strategies, game development insights, and tech trends.</p>
             </div>
-            <div class="app-card" style="flex-direction: row-reverse;">
-                <div class="app-card-visual" style="flex: 1.5;">
-                    <img src="https://tanks.game.corelumetech.in/og-image.png" alt="War Tanks Game" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                </div>
-                <div class="app-card-info" style="flex: 1;">
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                        <span class="app-badge" data-i18n="app_badge_game">Action / Strategy</span>
-                        <span class="app-badge" data-i18n="app_badge_browser">Browser Game</span>
-                        <span class="app-badge" data-i18n="app_badge_free">Free</span>
-                    </div>
-                    <h3 class="app-name" data-i18n="game_name" style="font-size: 2.5rem; margin-bottom: 10px;">War Tanks</h3>
-                    <p data-i18n="game_info_desc">Engage in epic tank warfare right in your browser! Choose weapons, set angles, and blast your opponent into oblivion. 2-player artillery warfare across varied terrain.</p>
-                    <ul class="app-features-list">
-                        <li><span class="check">✓</span> <span data-i18n="game_feat_1">2-Player Artillery Battle</span></li>
-                        <li><span class="check">✓</span> <span data-i18n="game_feat_2">Multiple Weapons & Maps</span></li>
-                        <li><span class="check">✓</span> <span data-i18n="game_feat_3">No Download Required</span></li>
-                    </ul>
-                    <a href="https://tanks.game.corelumetech.in" class="btn btn-primary" target="_blank" style="margin-top: 20px; font-weight: 700; background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); border: none;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        <span data-i18n="game_btn_play">Play Now</span>
-                    </a>
+            <a href="blog.html" class="btn btn-secondary">Read All Posts</a>
+        </div>
+        
+        <div class="article-flex" id="index-article-container">
+            <!-- Index Article API Auto-Injected -->
+        </div>
+    </section>
+
+    <!-- ══ ABOUT DEVELOPER ═════════════════════════════════ -->
+    <section class="about-developer">
+        <div class="container dev-container">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Developers collaborating" class="dev-img">
+            <div class="dev-bio">
+                <h2>Built by passionate gamers.</h2>
+                <p>Hello! We are the Corelume Tech team. What started as a late-night weekend passion project to recreate the nostalgic feeling of early 2000s browser gaming has exploded into a full-scale web entertainment platform.</p>
+                <p>We grew tired of the modern mobile gaming ecosystem filled with intrusive ads, paywalls, and bloated 2GB downloads. We believe in the power of the open web. We write our games from scratch using precise mathematics, HTML5 Canvas, and pure JavaScript. Our mission is to keep gaming accessible, highly competitive, and absolutely frictionless.</p>
+                <div style="margin-top: 30px;">
+                    <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
                 </div>
             </div>
         </div>
@@ -140,32 +243,33 @@
                         <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
                         <span class="nav-title">Corelume Tech</span>
                     </div>
-                    <p data-i18n="footer_desc">Building innovative applications and engaging web games that make a difference.</p>
+                    <p>Building innovative applications and engaging free web games that make a difference.</p>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_company">Company</h4>
-                    <a href="/" data-i18n="nav_home">Home</a>
-                    <a href="about.html" data-i18n="nav_about">About Us</a>
-                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                    <h4>Company</h4>
+                    <a href="/">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_legal">Legal</h4>
-                    <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
-                    <a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a>
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_games">Games</h4>
+                    <h4>Games</h4>
                     <a href="game-hub.html">Game Hub</a>
+                    <a href="war-tanks-guide.html">War Tanks Guide</a>
                     <a href="https://tanks.game.corelumetech.in" target="_blank">Play War Tanks</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2026 Corelume Tech. All rights reserved.</p>
+                <p>&copy; 2026 Corelume Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
-
 </html>
