@@ -3,18 +3,12 @@
 
 User-agent: *
 Allow: /
-Disallow: /data/
-Disallow: /js/
-Disallow: /css/
-
-# Allow CSS/JS for rendering (overrides above for Googlebot)
-User-agent: Googlebot
 Allow: /css/
 Allow: /js/
-Allow: /
-
-# Crawl rate
-Crawl-delay: 1
+Allow: /assets/
+Disallow: /data/
+Disallow: /submit-indexnow.sh
+Disallow: /submit-indexnow.ps1
 
 # Sitemap
 Sitemap: https://www.corelumetech.in/sitemap.xml
