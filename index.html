@@ -70,11 +70,13 @@
     <style>
         .home-hero { padding: 160px 0 100px; text-align: center; position: relative; overflow: hidden; }
         .hero-bg { position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.15) 0%, transparent 70%); z-index: -1; }
-        .home-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
+        .home-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; color: white; }
+        .home-hero h1 .gradient-text { background: linear-gradient(135deg, #22c55e, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .platform-desc { max-width: 800px; margin: 0 auto; color: var(--text-2); font-size: 18px; line-height: 1.8; margin-bottom: 40px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--border); }
         .featured-games { padding: 100px 0; background: var(--bg-surface); }
         .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; }
+        .section-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 15px; color: white; }
+        .section-header p { color: var(--text-2); font-size: 18px; }
         .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
         .game-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
         .game-card:hover { transform: translateY(-10px); border-color: rgba(34, 197, 94, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
@@ -82,23 +84,44 @@
         .game-info { padding: 30px; }
         .game-title { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: white; }
         .game-desc { color: var(--text-2); font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
-        
+
+        .how-it-works { padding: 100px 0; }
+        .hiw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .hiw-step { text-align: center; padding: 30px 20px; }
+        .hiw-num { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #8b5cf6); display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: #000; margin: 0 auto 20px; }
+        .hiw-step h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: white; }
+        .hiw-step p { font-size: 15px; line-height: 1.7; color: var(--text-2); }
+
+        .why-us { padding: 100px 0; background: var(--bg-surface); }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+        .why-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 30px; transition: all 0.2s; }
+        .why-card:hover { border-color: rgba(34,197,94,0.3); }
+        .why-card h3 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px; }
+        .why-card p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin: 0; }
+
         .latest-articles { padding: 100px 0; }
         .article-flex { display: flex; flex-direction: column; gap: 20px; }
-        .article-row { display: flex; align-items: center; gap: 30px; background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border); transition: all 0.2s; }
+        .article-row { display: flex; align-items: center; gap: 30px; background: var(--bg-card); padding: 20px; border-radius: 16px; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; }
         .article-row:hover { background: rgba(255,255,255,0.05); border-color: var(--accent); }
-        .article-row img { width: 150px; height: 100px; border-radius: 10px; object-fit: cover; }
+        .article-row img { width: 150px; height: 100px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
         .article-details { flex-grow: 1; }
-        .article-details h3 { font-size: 20px; color: white; margin-bottom: 6px; }
-        .article-details p { font-size: 14px; color: var(--text-2); margin: 0; }
+        .article-details h3 { font-size: 18px; color: white; margin-bottom: 6px; font-weight: 700; }
+        .article-details p { font-size: 14px; color: var(--text-2); margin: 0; line-height: 1.5; }
         @media (max-width: 600px) { .article-row { flex-direction: column; align-items: flex-start; } .article-row img { width: 100%; height: 200px; } }
-        
+
         .about-developer { padding: 100px 0; background: var(--bg-surface); }
         .dev-container { display: flex; align-items: center; gap: 60px; max-width: 1000px; margin: 0 auto; }
-        .dev-img { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border); }
+        .dev-img { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border); flex-shrink: 0; }
         .dev-bio h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; color: white; }
         .dev-bio p { font-size: 17px; line-height: 1.8; color: var(--text-2); margin-bottom: 20px; }
         @media (max-width: 900px) { .dev-container { flex-direction: column; text-align: center; } }
+
+        .home-faq { padding: 100px 0; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; margin-top: 40px; }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+        .faq-item h4 { font-size: 17px; font-weight: 700; color: white; margin-bottom: 10px; }
+        .faq-item p { font-size: 15px; color: var(--text-2); line-height: 1.7; margin: 0; }
+        @media (max-width: 500px) { .faq-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 
@@ -119,13 +142,6 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li>
-                    <div class="lang-switcher">
-                        <button class="lang-btn" id="langBtn">
-                            <span class="lang-label">English</span>
-                        </button>
-                    </div>
-                </li>
             </ul>
         </div>
     </nav>
@@ -134,39 +150,65 @@
     <header class="home-hero">
         <div class="hero-bg"></div>
         <div class="container">
-            <div class="hero-badge" style="display:inline-block; padding: 8px 16px; background: rgba(34,197,94,0.1); color: var(--accent); border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(34,197,94,0.3);">
+            <div style="display:inline-block; padding: 8px 16px; background: rgba(34,197,94,0.1); color: var(--accent); border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(34,197,94,0.3);">
                 Next-Gen Browser Gaming
             </div>
             <h1>Your Browser is Now a <br><span class="gradient-text">Gaming Console.</span></h1>
-            
+
             <div class="platform-desc">
                 <p>Welcome to <strong>Corelume Tech</strong>, the ultimate destination for high-quality, free browser games online. We believe that gaming should be instant and frictionless. Our platform leverages the latest advancements in HTML5 and WebGL to deliver console-quality multiplayer experiences directly to your desktop or mobile browser. Whether you want to play tank games online with a friend or test your reflexes in fast-paced arcade racers, you can jump in immediately without a single download or installation.</p>
             </div>
 
-            <div class="hero-actions" style="display: flex; gap: 20px; justify-content: center;">
+            <div style="display: flex; gap: 20px; justify-content: center;">
                 <a href="game-hub.html" class="btn btn-primary btn-lg">Browse The Hub</a>
                 <a href="#featured" class="btn btn-secondary btn-lg">See Featured Games</a>
             </div>
         </div>
     </header>
 
+    <!-- ══ HOW IT WORKS ═══════════════════════════════════ -->
+    <section class="how-it-works container">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Playing free browser games has never been easier. Three steps, zero downloads.</p>
+        </div>
+        <div class="hiw-grid">
+            <div class="hiw-step">
+                <div class="hiw-num">1</div>
+                <h3>Choose a Game</h3>
+                <p>Browse our curated library of original HTML5 games. From strategic artillery battles to mind-bending puzzles and fast-paced arcade action — there's something for everyone.</p>
+            </div>
+            <div class="hiw-step">
+                <div class="hiw-num">2</div>
+                <h3>Click Play</h3>
+                <p>No downloads, no installations, no accounts required. Just click "Play" and the game loads directly in your browser in under 3 seconds. Works on any device.</p>
+            </div>
+            <div class="hiw-step">
+                <div class="hiw-num">3</div>
+                <h3>Enjoy & Compete</h3>
+                <p>Challenge a friend in local 2-player mode, compete against AI opponents, or try to beat your personal high score. Every match is unique thanks to procedural generation.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- ══ FEATURED GAMES ══════════════════════════════════ -->
     <section id="featured" class="featured-games">
         <div class="container">
             <div class="section-header">
                 <h2>Top Ranked Games</h2>
-                <p style="color: var(--text-2); font-size: 18px;">Instantly play our most popular web games of 2026.</p>
+                <p>Instantly play our most popular web games of 2026.</p>
             </div>
             <div class="game-grid">
                 <!-- GAME 1 -->
                 <div class="game-card">
-                    <img src="https://tanks.game.corelumetech.in/og-image.png" alt="War Tanks Cover" class="game-img">
+                    <img src="https://tanks.game.corelumetech.in/og-image.png" alt="War Tanks — Free Online 2-Player Tank Battle Game" class="game-img">
                     <div class="game-info">
                         <div style="display: flex; gap: 10px; margin-bottom: 12px;">
                             <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(34,197,94,0.1); color: var(--accent);">Action</span>
+                            <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(139,92,246,0.1); color: var(--purple);">2-Player</span>
                         </div>
                         <a href="https://tanks.game.corelumetech.in"><h3 class="game-title">War Tanks</h3></a>
-                        <p class="game-desc">A physics-heavy 2-player artillery game. Calculate angles, adjust your power, and destroy your friend's tank.</p>
+                        <p class="game-desc">A physics-heavy 2-player artillery game with procedurally generated terrain, 15+ weapons, and destructible environments. Calculate angles, adjust your power, and destroy your friend's tank in this strategic browser battle.</p>
                         <a href="https://tanks.game.corelumetech.in" style="color: var(--accent); font-weight: 600;">Play Now →</a>
                     </div>
                 </div>
@@ -181,7 +223,7 @@
                             <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(59,130,246,0.1); color: var(--blue);">Puzzle</span>
                         </div>
                         <a href="https://hexblast.game.corelumetech.in"><h3 class="game-title">Hex Blast</h3></a>
-                        <p class="game-desc">Mesmerizing hexagonal puzzle game. Tap matching clusters to clear the board create massive combos.</p>
+                        <p class="game-desc">Mesmerizing hexagonal puzzle game with 4 game modes. Tap matching clusters to create massive chain reactions and earn combo multipliers. Features special tiles, progressive difficulty, and a procedural soundtrack.</p>
                         <a href="https://hexblast.game.corelumetech.in" style="color: var(--blue); font-weight: 600;">Play Now →</a>
                     </div>
                 </div>
@@ -196,9 +238,45 @@
                             <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(139,92,246,0.1); color: var(--purple);">Arcade</span>
                         </div>
                         <a href="https://skydodge.game.corelumetech.in"><h3 class="game-title">Sky Dodge</h3></a>
-                        <p class="game-desc">Endless space avoider. Test your reflexes as you dodge procedural obstacles at increasing speeds.</p>
+                        <p class="game-desc">Endless space avoider with procedural obstacles, power-ups (Shield, Slow-Mo, Magnet), boss encounters every 500 points, and 4 difficulty modes from Zen to Insane. Test your reflexes at increasing speeds.</p>
                         <a href="https://skydodge.game.corelumetech.in" style="color: var(--purple); font-weight: 600;">Play Now →</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ WHY CHOOSE US ══════════════════════════════════ -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Corelume Tech?</h2>
+                <p>What makes our browser games different from the rest.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>⚡ Instant Play</h3>
+                    <p>Every game loads in under 3 seconds. No downloads, no installations, no accounts. Just click and play — on any device with a modern browser.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🎯 Built From Scratch</h3>
+                    <p>We don't use third-party game engines. Every game is hand-crafted using pure JavaScript and HTML5 Canvas for maximum performance and minimum load times.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🎲 Infinite Replayability</h3>
+                    <p>Procedural generation means no two matches are ever the same. New terrain, new challenges, and new strategies every single time you play.</p>
+                </div>
+                <div class="why-card">
+                    <h3>👥 Local Multiplayer</h3>
+                    <p>Bring back couch gaming! War Tanks and Orb Clash support 2-player local multiplayer. Share a keyboard and compete against your friend in the same room.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🔒 Privacy First</h3>
+                    <p>No accounts, no personal data collection, no tracking. Your gameplay stays in your browser. We respect your privacy completely.</p>
+                </div>
+                <div class="why-card">
+                    <h3>💰 100% Free</h3>
+                    <p>No paywalls, no subscriptions, no pay-to-win. Every weapon, every level, every game mode is free. We sustain our platform through non-intrusive advertising.</p>
                 </div>
             </div>
         </div>
@@ -209,20 +287,47 @@
         <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; text-align: left; margin-bottom: 40px;">
             <div>
                 <h2>Gaming Intelligence & News</h2>
-                <p style="color: var(--text-2); font-size: 18px; margin: 0;">Strategies, game development insights, and tech trends.</p>
+                <p style="color: var(--text-2); font-size: 18px; margin: 0;">Strategies, game development insights, and gaming trends.</p>
             </div>
             <a href="blog.html" class="btn btn-secondary">Read All Posts</a>
         </div>
-        
-        <div class="article-flex" id="index-article-container">
-            <!-- Index Article API Auto-Injected -->
+
+        <div class="article-flex">
+            <a href="articles/best-free-browser-games-2026.html" class="article-row">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=300&q=80" alt="15 Best Free Browser Games to Play in 2026">
+                <div class="article-details">
+                    <h3>15 Best Free Browser Games to Play in 2026</h3>
+                    <p>Discover the top HTML5 games you can play online with no downloads. Curated list featuring action, puzzle, and strategy games.</p>
+                </div>
+            </a>
+            <a href="articles/how-to-play-tank-games-online.html" class="article-row">
+                <img src="https://tanks.game.corelumetech.in/og-image.png" alt="How to Play Tank Games Online for Free">
+                <div class="article-details">
+                    <h3>How to Play Tank Games Online for Free</h3>
+                    <p>Complete guide to playing tank games in your browser — controls, strategies, weapons, and tips for dominating every match.</p>
+                </div>
+            </a>
+            <a href="articles/html5-games-no-download.html" class="article-row">
+                <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&w=300&q=80" alt="HTML5 Games No Download — Play Free Instantly">
+                <div class="article-details">
+                    <h3>HTML5 Games — Play Free, No Download Required</h3>
+                    <p>Why HTML5 browser games are safer, faster, and more accessible than ever. Plus our top picks for instant play.</p>
+                </div>
+            </a>
+            <a href="articles/the-return-of-couch-co-op-why-2-player-web-games-rule.html" class="article-row">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=300&q=80" alt="The Return of Couch Co-Op: Why 2-Player Web Games Rule">
+                <div class="article-details">
+                    <h3>The Return of Couch Co-Op: Why 2-Player Web Games Rule</h3>
+                    <p>An exploration into why local multiplayer shared-keyboard games are experiencing a massive resurgence in popularity.</p>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- ══ ABOUT DEVELOPER ═════════════════════════════════ -->
     <section class="about-developer">
         <div class="container dev-container">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Developers collaborating" class="dev-img">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Corelume Tech developers collaborating on browser games" class="dev-img">
             <div class="dev-bio">
                 <h2>Built by passionate gamers.</h2>
                 <p>Hello! We are the Corelume Tech team. What started as a late-night weekend passion project to recreate the nostalgic feeling of early 2000s browser gaming has exploded into a full-scale web entertainment platform.</p>
@@ -230,6 +335,40 @@
                 <div style="margin-top: 30px;">
                     <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FAQ SECTION ═════════════════════════════════════ -->
+    <section class="home-faq container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about playing free browser games at Corelume Tech.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>Are all games really free?</h4>
+                <p>Yes, every game on Corelume Tech is 100% free to play. No downloads, no subscriptions, no in-app purchases, and no pay-to-win mechanics. We sustain our platform through non-intrusive advertising.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do I need to download anything?</h4>
+                <p>No. All our games are HTML5 browser games that run directly in Chrome, Firefox, Safari, or Edge. Just click "Play" and the game loads instantly. No executables, no plugins, no storage space used.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I play on my phone or tablet?</h4>
+                <p>Yes! Our games are built with responsive design and work on any device with a modern browser — Windows, Mac, Linux, Chromebook, iPad, Android, and more.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I play with a friend?</h4>
+                <p>War Tanks and Orb Clash support local 2-player multiplayer. Two players share the same device and keyboard. Player 1 uses one set of controls and Player 2 uses another. Just open the game and start playing together!</p>
+            </div>
+            <div class="faq-item">
+                <h4>Are the games safe to play?</h4>
+                <p>Absolutely. Browser games run in a sandboxed environment and cannot access your files or install anything on your computer. Our games don't require accounts and don't collect personal data.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How often do you release new games?</h4>
+                <p>We focus on quality over quantity. We currently have four original games in our library, with new titles in active development. Follow our blog for announcements about upcoming releases and feature updates.</p>
             </div>
         </div>
     </section>

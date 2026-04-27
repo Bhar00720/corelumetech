@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contact Corelume Tech — Get in touch for game feedback, support, or questions about our free browser games like War Tanks.">
-    <meta name="keywords" content="contact corelume tech, game support, browser game help, war tanks support">
+        content="Contact Corelume Tech — Get in touch for game feedback, bug reports, partnership inquiries, or support for our free browser games like War Tanks.">
+    <meta name="keywords" content="contact corelume tech, game support, browser game help, war tanks support, game feedback, report a bug">
     <meta name="robots" content="index, follow">
-    <title>Contact Us — Corelume Tech Game Support</title>
+    <title>Contact Us — Corelume Tech Game Support & Feedback</title>
     <link rel="icon" href="assets/logo.png" type="image/png">
     <link rel="canonical" href="https://www.corelumetech.in/contact.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Contact Corelume Tech — Game Support">
-    <meta property="og:description" content="Have feedback or questions? Contact the Corelume Tech team.">
+    <meta property="og:title" content="Contact Corelume Tech — Game Support & Feedback">
+    <meta property="og:description" content="Have feedback, bug reports, or questions? Get in touch with the Corelume Tech team.">
     <meta property="og:url" content="https://www.corelumetech.in/contact.html">
     <meta property="og:image" content="https://www.corelumetech.in/assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,50 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="ad-enabled" content="true">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "name": "Contact Corelume Tech",
+          "url": "https://www.corelumetech.in/contact.html",
+          "description": "Get in touch with Corelume Tech for game feedback, bug reports, or partnership inquiries."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.corelumetech.in/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.corelumetech.in/contact.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .contact-hero { padding: 140px 0 60px; text-align: center; background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, var(--bg) 100%); }
+        .contact-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; margin-bottom: 16px; }
+        .contact-hero p { color: var(--text-2); font-size: 18px; max-width: 700px; margin: 0 auto; }
+        .contact-content { max-width: 900px; margin: 0 auto; padding: 60px 20px 40px; }
+        .contact-content h2 { font-size: 26px; font-weight: 800; margin: 50px 0 20px; color: var(--accent); border-bottom: 2px solid rgba(34,197,94,0.15); padding-bottom: 10px; }
+        .contact-content h2:first-child { margin-top: 0; }
+        .contact-content p { font-size: 17px; line-height: 1.85; color: var(--text-2); margin-bottom: 20px; }
+        .contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin: 30px 0; }
+        .contact-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; padding: 30px; text-align: center; transition: all 0.3s; }
+        .contact-card:hover { border-color: rgba(34, 197, 94, 0.3); transform: translateY(-4px); }
+        .contact-card .icon-circle { width: 60px; height: 60px; border-radius: 50%; background: rgba(34,197,94,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 28px; }
+        .contact-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: white; }
+        .contact-card p { font-size: 15px; line-height: 1.7; color: var(--text-2); margin-bottom: 12px; }
+        .contact-card a { color: var(--accent); font-weight: 600; font-size: 15px; }
+        .bug-format { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; padding: 30px; margin: 20px 0; }
+        .bug-format code { display: block; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; font-size: 14px; line-height: 1.8; color: var(--text-2); white-space: pre-wrap; margin: 15px 0; }
+        .faq-section { margin: 30px 0; }
+        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: all 0.2s; }
+        .faq-item:hover { border-color: rgba(34,197,94,0.2); }
+        .faq-item h4 { color: white; font-size: 18px; margin-bottom: 10px; font-weight: 600; }
+        .faq-item p { color: var(--text-2); font-size: 15px; margin-bottom: 0; line-height: 1.7; }
+    </style>
 </head>
 
 <body>
@@ -31,67 +75,106 @@
                     class="nav-logo-img"><span class="nav-title">Corelume Tech</span></a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="/" data-i18n="nav_home">Home</a></li>
-                <li><a href="game-hub.html" data-i18n="nav_game_hub">Game Hub</a></li>
-                <li><a href="about.html" data-i18n="nav_about">About</a></li>
-                <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
-                <li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li>
-                <li><a href="terms.html" data-i18n="nav_terms">Terms</a></li>
-                <li>
-                    <div class="lang-switcher">
-                        <button class="lang-btn" id="langBtn">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z" />
-                            </svg>
-                            <span class="lang-label">English</span>
-                        </button>
-                        <div class="lang-dropdown" id="langDropdown">
-                            <button class="lang-option active" data-lang="en"><span class="flag">🇬🇧</span>
-                                English</button>
-                            <button class="lang-option" data-lang="hi"><span class="flag">🇮🇳</span> हिन्दी</button>
-                            <button class="lang-option" data-lang="pt"><span class="flag">🇧🇷</span> Português</button>
-                            <button class="lang-option" data-lang="es"><span class="flag">🇪🇸</span> Español</button>
-                            <button class="lang-option" data-lang="ar"><span class="flag">🇸🇦</span> العربية</button>
-                        </div>
-                    </div>
-                </li>
+                <li><a href="/">Home</a></li>
+                <li><a href="game-hub.html">Game Hub</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-header">
+    <header class="contact-hero">
         <div class="container">
-            <h1><span data-i18n="contact_title_1">Contact </span><span class="gradient-text"
-                    data-i18n="contact_title_2">Us</span></h1>
-            <p data-i18n="contact_subtitle">We'd love to hear from you</p>
+            <h1>Contact <span class="gradient-text">Us</span></h1>
+            <p>We love hearing from our players! Whether it's game feedback, a bug report, a partnership inquiry, or just a friendly hello — we're here to listen.</p>
         </div>
-    </section>
+    </header>
 
-    <section class="content-section">
-        <div class="container">
-            <div class="contact-center">
-                <p data-i18n="contact_intro">Have questions, feedback, or need support? Reach out to us via email. We
-                    typically respond within 24–48 hours.</p>
+    <main class="contact-content">
 
-                <div class="contact-email-card">
-                    <div class="icon">
-                        <svg viewBox="0 0 48 48" fill="none">
-                            <rect x="6" y="12" width="36" height="24" rx="4" stroke="var(--accent)"
-                                stroke-width="2.5" />
-                            <path d="M6 16L24 28L42 16" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <h3 data-i18n="contact_email_title">Email Us</h3>
-                    <a href="mailto:contact@corelumetech.in" class="email-link">contact@corelumetech.in</a>
-                    <p class="response-time" data-i18n="contact_response">We typically respond within 24–48 hours</p>
-                </div>
+        <h2>Get In Touch</h2>
+        <p>We're a small team that genuinely reads every single email we receive. Whether you have a game suggestion, found a bug, want to discuss a partnership, or just want to tell us about your favorite War Tanks moment — we'd love to hear from you. Most messages receive a response within 24-48 hours.</p>
 
-
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="icon-circle">📧</div>
+                <h3>General Inquiries</h3>
+                <p>Questions about our games, website, or platform? Send us an email and we'll get back to you promptly.</p>
+                <a href="mailto:contact@corelumetech.in">contact@corelumetech.in</a>
+            </div>
+            <div class="contact-card">
+                <div class="icon-circle">🐛</div>
+                <h3>Report a Bug</h3>
+                <p>Found a glitch, crash, or unexpected behavior in one of our games? Help us fix it by sending a detailed report.</p>
+                <a href="mailto:contact@corelumetech.in?subject=Bug Report">Send Bug Report</a>
+            </div>
+            <div class="contact-card">
+                <div class="icon-circle">🤝</div>
+                <h3>Business & Partnerships</h3>
+                <p>Interested in collaborating, sponsorships, or featuring our games on your platform? Let's talk.</p>
+                <a href="mailto:contact@corelumetech.in?subject=Partnership Inquiry">Partner With Us</a>
             </div>
         </div>
-    </section>
+
+        <h2>How to Write a Great Bug Report</h2>
+        <p>If you've encountered a bug or issue in one of our games, the more details you provide, the faster we can fix it. Here's a template you can use when emailing us:</p>
+
+        <div class="bug-format">
+            <code>Subject: Bug Report — [Game Name]
+
+Game: (e.g., War Tanks, Hex Blast, Sky Dodge, Orb Clash)
+Browser: (e.g., Chrome 120, Firefox 115, Safari 17)
+Device: (e.g., Windows 11 Desktop, iPad Air, Android Phone)
+
+What happened:
+Describe the issue clearly. What did you see?
+
+Steps to reproduce:
+1. Open the game
+2. Click on / do this...
+3. The bug occurs when...
+
+Expected behavior:
+What should have happened instead?
+
+Screenshot (optional):
+Attach a screenshot if possible.</code>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <h4>Are your games really free to play?</h4>
+                <p>Yes, 100% free. All of our games — War Tanks, Hex Blast, Sky Dodge, and Orb Clash — are completely free to play in your browser. No downloads, no subscriptions, no hidden fees, and no pay-to-win mechanics. We sustain our platform through non-intrusive advertising.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Which browsers do your games support?</h4>
+                <p>Our games work on any modern browser that supports HTML5 Canvas. This includes Google Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge. We recommend using the latest version of your browser for the best performance. Both desktop and mobile browsers are fully supported.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I play games with a friend?</h4>
+                <p>War Tanks and Orb Clash support local 2-player multiplayer. Two players share the same keyboard — Player 1 uses one set of controls and Player 2 uses another. Just open the game, and both players can start immediately. Online multiplayer is currently in development.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I request a new game or feature?</h4>
+                <p>Absolutely! We love hearing game ideas and feature requests from our community. Send your suggestions to contact@corelumetech.in with the subject line "Game Suggestion" or "Feature Request." While we can't guarantee every idea will be implemented, we carefully consider all feedback.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you collect personal data?</h4>
+                <p>No. Our games don't require accounts and don't collect personally identifiable information. Gameplay settings are stored locally in your browser. We use Google Analytics for anonymous usage statistics and Google AdSense for displaying advertisements. For full details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+            <div class="faq-item">
+                <h4>My game is lagging or running slowly. What can I do?</h4>
+                <p>Try these steps: (1) Close other browser tabs to free up memory, (2) Make sure your browser is updated to the latest version, (3) Disable browser extensions that might interfere with Canvas rendering, (4) Try using Chrome for the best HTML5 Canvas performance. If issues persist, send us a bug report with your device and browser details.</p>
+            </div>
+        </div>
+
+        <h2>Response Times</h2>
+        <p>We aim to respond to all emails within <strong>24-48 hours</strong>. Bug reports and player feedback are our highest priority. Partnership inquiries may take slightly longer as we evaluate each opportunity carefully.</p>
+        <p>For instant answers, check our <a href="blog.html">Gaming Blog</a> for game guides and tips, or visit the <a href="war-tanks-guide.html">War Tanks Official Guide</a> for comprehensive gameplay help.</p>
+
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -99,27 +182,29 @@
                 <div class="footer-brand">
                     <div class="nav-brand"><img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img"><span
                             class="nav-title">Corelume Tech</span></div>
-                    <p data-i18n="footer_desc">Building innovative applications and engaging web games that make a difference.</p>
+                    <p>Building innovative applications and engaging free web games that make a difference.</p>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_company">Company</h4>
-                    <a href="/" data-i18n="nav_home">Home</a>
-                    <a href="about.html" data-i18n="nav_about">About Us</a>
-                    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+                    <h4>Company</h4>
+                    <a href="/">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_legal">Legal</h4>
-                    <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
-                    <a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a>
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
                 </div>
                 <div class="footer-links">
-                    <h4 data-i18n="footer_games">Games</h4>
+                    <h4>Games</h4>
                     <a href="game-hub.html">Game Hub</a>
+                    <a href="war-tanks-guide.html">War Tanks Guide</a>
                     <a href="https://tanks.game.corelumetech.in" target="_blank">Play War Tanks</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2026 Corelume Tech. All rights reserved.</p>
+                <p>&copy; 2026 Corelume Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>
