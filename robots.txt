@@ -7,8 +7,10 @@ Allow: /css/
 Allow: /js/
 Allow: /assets/
 Disallow: /data/
+Disallow: /focusflow/
 Disallow: /submit-indexnow.sh
 Disallow: /submit-indexnow.ps1
 
 # Sitemap
 Sitemap: https://www.corelumetech.in/sitemap.xml
+
