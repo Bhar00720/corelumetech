@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Play War Tanks free online! Our 2-player browser artillery game features destructible terrains and procedurally generated physics maps. No download required.">
+    <meta name="keywords" content="play war tanks online, free tank game, browser tank game, 2-player local multiplayer, HTML5 artillery game, no download games">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>Play War Tanks Free Online — 2-Player Artillery Game | Corelume Tech</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="canonical" href="https://www.corelumetech.in/play-war-tanks.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Play War Tanks Free Online — 2-Player Artillery Game | Corelume Tech">
+    <meta property="og:description" content="Engage in strategic tank warfare! Procedural terrain, 15+ weapons, destructible environments. No download needed.">
+    <meta property="og:url" content="https://www.corelumetech.in/play-war-tanks.html">
+    <meta property="og:image" content="https://tanks.game.corelumetech.in/og-image.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Play War Tanks Free Online | Corelume Tech">
+    <meta name="twitter:description" content="Procedural terrains, destructible environments, 15+ weapons. Play turn-based tank battles instantly in your browser.">
+    <meta name="twitter:image" content="https://tanks.game.corelumetech.in/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="ad-enabled" content="true">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+    <style>
+        .player-hero {
+            padding: 130px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, var(--bg) 100%);
+        }
+        .player-hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .player-hero p {
+            color: var(--text-2);
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .game-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(34, 197, 94, 0.08);
+        }
+        .iframe-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .game-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding: 8px 6px 0;
+        }
+        .game-status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-2);
+            font-weight: 500;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+        .game-actions-group {
+            display: flex;
+            gap: 10px;
+        }
+        .bar-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .bar-btn:hover {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(34,197,94,0.3);
+        }
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 900px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .detail-article {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+        }
+        .detail-article h2 {
+            font-size: 24px;
+            color: white;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .detail-article h2:first-of-type {
+            margin-top: 0;
+        }
+        .detail-article h3 {
+            font-size: 18px;
+            color: var(--accent);
+            margin: 25px 0 10px;
+        }
+        .detail-article p {
+            color: var(--text-2);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .detail-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .detail-article li {
+            color: var(--text-2);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .sidebar-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .sidebar-section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+        .ctrl-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .ctrl-row:last-child {
+            border-bottom: none;
+        }
+        .ctrl-label {
+            font-size: 14px;
+            color: var(--text-2);
+        }
+        .kbd-style {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--accent);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+        }
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .rec-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .rec-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .rec-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+        .rec-card-body {
+            padding: 20px;
+        }
+        .rec-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        .rec-desc {
+            font-size: 13px;
+            color: var(--text-2);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .adsense-box {
+            min-height: 250px;
+            background: rgba(255,255,255,0.01);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+            color: var(--text-3);
+            font-size: 13px;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                <span class="nav-title">Corelume Tech</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="game-hub.html" class="active">Game Hub</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ══ HERO ════════════════════════════════════════════ -->
+    <header class="player-hero">
+        <div class="container">
+            <h1>Play <span class="gradient-text">War Tanks</span></h1>
+            <p>Destructible environments, 2-player local combat, and trajectory calculations.</p>
+        </div>
+    </header>
+
+    <!-- ══ MAIN PLAYER ═════════════════════════════════════ -->
+    <main class="container">
+        <div class="game-wrapper">
+            <div class="iframe-container">
+                <iframe src="https://tanks.game.corelumetech.in/" id="gameFrame" allowfullscreen="true" scrolling="no"></iframe>
+            </div>
+            <div class="game-bar">
+                <div class="game-status-indicator">
+                    <span class="status-dot"></span>
+                    <span>Game Mode: Standard WebGL/Canvas (HTML5)</span>
+                </div>
+                <div class="game-actions-group">
+                    <button class="bar-btn" onclick="reloadGame()">🔄 Reload</button>
+                    <button class="bar-btn" onclick="toggleFullscreen()">🎎 Fullscreen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ LAYOUT DETAIL ═══════════════════════════════════ -->
+        <div class="detail-layout">
+            
+            <!-- LEFT ARTICLE -->
+            <article class="detail-article">
+                <h2>Comprehensive Battle Strategy & Trajectory Guide</h2>
+                <p>Welcome to <strong>War Tanks</strong>, the premier zero-dependency physics artillery battle simulator. Designed using high-performance HTML5 Canvas and native JavaScript vector math, War Tanks pits two commanders against each other on a procedurally generated, fully destructible landscape. Succeeding requires more than just firing at random; you must calculate angles, adapt to fluctuating wind speeds, select appropriate weapon payloads, and utilize terrain modifications to secure victory.</p>
+
+                <h2>Calculating Trajectory Vectors</h2>
+                <p>The core mechanic of War Tanks revolves around classical 2D kinematics. When a shell is fired, its position vector is updated each frame based on initial velocity, firing angle, gravity, and horizontal wind resistance. The basic motion of a projectile is modeled by the following kinematic formulas:</p>
+                <p style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 14px; text-align: center; color: var(--accent); border: 1px solid var(--border);">
+                    x(t) = v₀ * cos(θ) * t + 0.5 * a_wind * t² <br>
+                    y(t) = v₀ * sin(θ) * t - 0.5 * g * t²
+                </p>
+                <p>Where <code>v₀</code> represents firing power, <code>θ</code> represents the launch angle, <code>g</code> is gravity, and <code>a_wind</code> represents horizontal wind acceleration. Each frame, wind shifts dynamically, meaning you must adjust your launch angle to account for wind shear, especially when using lighter weapon payloads.</p>
+
+                <h2>Destructible Terrain Tactics</h2>
+                <p>Every mountain, hill, and valley in War Tanks is represented by a height map bitmap. Weapons don't just damage opponent tanks; they permanently carve craters into the ground. Understanding terrain deformation opens up powerful defensive and offensive strategies:</p>
+                <ul>
+                    <li><strong>The Bunker Defense:</strong> Fire a standard mortar shell directly in front of your tank. The resulting crater forms a protective pocket, shielding your chassis from low-angle direct tank fire.</li>
+                    <li><strong>Sinking the Enemy:</strong> If your opponent is sitting on a steep precipice, do not aim for the tank. Target the terrain directly beneath their treads. Carving a crater under them forces their tank to fall, inflicting severe fall damage and throwing off their pre-calculated firing vectors.</li>
+                    <li><strong>Clearing Blocking Peaks:</strong> Use high-yield Dirt Movers or heavy shells to level tall hills that block your trajectory. Flat terrains make direct, low-angle shots far easier to land.</li>
+                </ul>
+
+                <div class="adsense-box">
+                    <span>[Advertisement Slot - AdSense Approved]</span>
+                </div>
+
+                <h2>Weapons Arsenal Overview</h2>
+                <p>War Tanks features over 15 unique, procedural weapon types. Choosing the correct payload for the specific terrain layout is vital:</p>
+                <ul>
+                    <li><strong>Standard Shell:</strong> Reliable, medium-damage projectile with predictable aerodynamics. Great for early-game calibration.</li>
+                    <li><strong>Dirt Mover:</strong> Low direct damage but massive terrain displacement radius. Used to sink enemies or reshape blocking ridges.</li>
+                    <li><strong>Splitter:</strong> A shell that splits into 3 sub-munitions at the apex of its trajectory. Perfect for blanket coverage against hidden targets.</li>
+                    <li><strong>The Roller:</strong> A heavy bomb that does not explode on impact. Instead, it rolls down terrain slopes, detonating only when it rests in a valley or impacts a tank chassis.</li>
+                </ul>
+            </article>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="sidebar">
+                
+                <!-- CONTROLS SECTION -->
+                <div class="sidebar-section">
+                    <h3>Player 1 Controls</h3>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Aim Tank Barrel</span>
+                        <span class="kbd-style">A / D</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Adjust Power</span>
+                        <span class="kbd-style">W / S</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Cycle Weapon</span>
+                        <span class="kbd-style">Q / E</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Fire Weapon</span>
+                        <span class="kbd-style">Spacebar</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Player 2 Controls</h3>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Aim Tank Barrel</span>
+                        <span class="kbd-style">← / →</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Adjust Power</span>
+                        <span class="kbd-style">↑ / ↓</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Cycle Weapon</span>
+                        <span class="kbd-style">Shift / Ctrl</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Fire Weapon</span>
+                        <span class="kbd-style">Enter</span>
+                    </div>
+                </div>
+
+                <!-- QUICK RECOMMENDATION -->
+                <div class="sidebar-section" style="background: rgba(34, 197, 94, 0.03); border-color: rgba(34, 197, 94, 0.15);">
+                    <h3 style="color: var(--accent); border-color: var(--accent);">AdSense Tips</h3>
+                    <p style="font-size: 13px; color: var(--text-2); line-height: 1.6; margin: 0;">
+                        Playing this game inside the main domain keeps session times high. For the best experience, share a keyboard with a friend on local multiplayer. Ensure you allow fullscreen permission for immersive combat.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ══ RECOMMENDATIONS ═════════════════════════════════ -->
+        <section style="margin-bottom: 100px;">
+            <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                <h2>Explore More Original Games</h2>
+                <p style="margin: 0;">Zero download required. Play instantly on the Corelume Tech platform.</p>
+            </div>
+            <div class="rec-grid">
+                <!-- HEX BLAST -->
+                <div class="rec-card">
+                    <div class="rec-card-body">
+                        <span class="app-badge" style="margin-bottom: 12px; background: rgba(59,130,246,0.1); color: var(--blue); border-color: rgba(59,130,246,0.2);">Puzzle</span>
+                        <h4 class="rec-title">Hex Blast</h4>
+                        <p class="rec-desc">Blast matching hexagonal grids to trigger cascade multipliers and high-score chain combos.</p>
+                        <a href="play-hex-blast.html" style="font-weight:600; font-size:13px; color: var(--blue);">Play Hex Blast →</a>
+                    </div>
+                </div>
+                <!-- SKY DODGE -->
+                <div class="rec-card">
+                    <div class="rec-card-body">
+                        <span class="app-badge" style="margin-bottom: 12px; background: rgba(139,92,246,0.1); color: var(--purple); border-color: rgba(139,92,246,0.2);">Arcade</span>
+                        <h4 class="rec-title">Sky Dodge</h4>
+                        <p class="rec-desc">Dodge procedural obstacles at hyper speeds while timing shield power-ups and score bonuses.</p>
+                        <a href="play-sky-dodge.html" style="font-weight:600; font-size:13px; color: var(--purple);">Play Sky Dodge →</a>
+                    </div>
+                </div>
+                <!-- ORB CLASH -->
+                <div class="rec-card">
+                    <div class="rec-card-body">
+                        <span class="app-badge" style="margin-bottom: 12px; background: rgba(220,38,38,0.1); color: #ef4444; border-color: rgba(220,38,38,0.2);">Multiplayer</span>
+                        <h4 class="rec-title">Orb Clash</h4>
+                        <p class="rec-desc">Engage in fast-paced arena battle using bouncing projectiles, shield dynamics and elastic collision physics.</p>
+                        <a href="play-orb-clash.html" style="font-weight:600; font-size:13px; color: #ef4444;">Play Orb Clash →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                        <span class="nav-title">Corelume Tech</span>
+                    </div>
+                    <p>Building innovative applications and engaging free web games that make a difference.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="/">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Games</h4>
+                    <a href="game-hub.html">Game Hub</a>
+                    <a href="play-war-tanks.html">Play War Tanks</a>
+                    <a href="play-hex-blast.html">Play Hex Blast</a>
+                    <a href="play-sky-dodge.html">Play Sky Dodge</a>
+                    <a href="play-orb-clash.html">Play Orb Clash</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Corelume Tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ SCRIPTS ═════════════════════════════════════════ -->
+    <script>
+        function reloadGame() {
+            const iframe = document.getElementById('gameFrame');
+            iframe.src = iframe.src;
+        }
+
+        function toggleFullscreen() {
+            const iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

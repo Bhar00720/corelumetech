@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Play Sky Dodge free online! Dodge procedurally generated barriers, collect power-ups, defeat space bosses in this free HTML5 arcade runner. No download required.">
+    <meta name="keywords" content="play sky dodge online, free arcade runner, space avoider game, HTML5 space game, play sky dodge free, web games">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>Play Sky Dodge Free Online — Endless Arcade Runner | Corelume Tech</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="canonical" href="https://www.corelumetech.in/play-sky-dodge.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Play Sky Dodge Free Online — Endless Arcade Runner | Corelume Tech">
+    <meta property="og:description" content="Hurtle through space! Dodge incoming obstacles at hyper speeds, collect shield powerups and beat the bosses. Play free instantly!">
+    <meta property="og:url" content="https://www.corelumetech.in/play-sky-dodge.html">
+    <meta property="og:image" content="https://www.corelumetech.in/assets/logo.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Play Sky Dodge Free Online | Corelume Tech">
+    <meta name="twitter:description" content="Hurtle through space! Dodge incoming obstacles at hyper speeds, collect shield powerups and beat the bosses. Zero downloads.">
+    <meta name="twitter:image" content="https://www.corelumetech.in/assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="ad-enabled" content="true">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+    <style>
+        .player-hero {
+            padding: 130px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, var(--bg) 100%);
+        }
+        .player-hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .player-hero p {
+            color: var(--text-2);
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .game-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(139, 92, 246, 0.08);
+        }
+        .iframe-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .game-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding: 8px 6px 0;
+        }
+        .game-status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-2);
+            font-weight: 500;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--purple);
+            box-shadow: 0 0 8px var(--purple);
+            animation: pulse 1.5s infinite;
+        }
+        .game-actions-group {
+            display: flex;
+            gap: 10px;
+        }
+        .bar-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .bar-btn:hover {
+            background: var(--purple);
+            color: white;
+            border-color: var(--purple);
+            box-shadow: 0 0 12px rgba(139,92,246,0.3);
+        }
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 900px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .detail-article {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+        }
+        .detail-article h2 {
+            font-size: 24px;
+            color: white;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .detail-article h2:first-of-type {
+            margin-top: 0;
+        }
+        .detail-article h3 {
+            font-size: 18px;
+            color: var(--purple);
+            margin: 25px 0 10px;
+        }
+        .detail-article p {
+            color: var(--text-2);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .detail-article ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .detail-article li {
+            color: var(--text-2);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .sidebar-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .sidebar-section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-left: 3px solid var(--purple);
+            padding-left: 10px;
+        }
+        .ctrl-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .ctrl-row:last-child {
+            border-bottom: none;
+        }
+        .ctrl-label {
+            font-size: 14px;
+            color: var(--text-2);
+        }
+        .kbd-style {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--purple);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+        }
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .rec-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .rec-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .rec-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+        .rec-card-body {
+            padding: 20px;
+        }
+        .rec-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        .rec-desc {
+            font-size: 13px;
+            color: var(--text-2);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .adsense-box {
+            min-height: 250px;
+            background: rgba(255,255,255,0.01);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+            color: var(--text-3);
+            font-size: 13px;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                <span class="nav-title">Corelume Tech</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="game-hub.html" class="active">Game Hub</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ══ HERO ════════════════════════════════════════════ -->
+    <header class="player-hero">
+        <div class="container">
+            <h1>Play <span class="gradient-text">Sky Dodge</span></h1>
+            <p>Hurtle through cosmic obstacle fields, collect shielding, and challenge space bosses.</p>
+        </div>
+    </header>
+
+    <!-- ══ MAIN PLAYER ═════════════════════════════════════ -->
+    <main class="container">
+        <div class="game-wrapper">
+            <div class="iframe-container">
+                <iframe src="https://skydodge.game.corelumetech.in/" id="gameFrame" allowfullscreen="true" scrolling="no"></iframe>
+            </div>
+            <div class="game-bar">
+                <div class="game-status-indicator">
+                    <span class="status-dot"></span>
+                    <span>Game Mode: Procedural High-Speed Space Arcade</span>
+                </div>
+                <div class="game-actions-group">
+                    <button class="bar-btn" onclick="reloadGame()">🔄 Reload</button>
+                    <button class="bar-btn" onclick="toggleFullscreen()">🎎 Fullscreen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ LAYOUT DETAIL ═══════════════════════════════════ -->
+        <div class="detail-layout">
+            
+            <!-- LEFT ARTICLE -->
+            <article class="detail-article">
+                <h2>Advanced Hitbox Navigation & Speed Ramping Tactics</h2>
+                <p>Welcome to <strong>Sky Dodge</strong>, the high-octane endless space avoider game developed by Corelume Tech. Sky Dodge is written using vanilla JavaScript and pure canvas context operations to achieve a consistent 60fps refresh rate on desktop and mobile browsers. In this guide, we break down the underlying mathematical systems that govern procedural barrier generation, collision hitboxes, speed ramping, and tactical power-up usage.</p>
+
+                <h2>Hitbox Calculations: Circle vs. AABB</h2>
+                <p>To keep the performance lightweight and responsive, Sky Dodge does not use bloated physics libraries. Instead, it utilizes two primary collision models: **Axis-Aligned Bounding Box (AABB)** for rectangular space walls, and **Bounding Circle** intersection formulas for circular powerups and asteroid clusters. The intersection between your player orb (radius <code>R₁</code> at center <code>(x₁, y₁)</code>) and an incoming powerup (radius <code>R₂</code> at center <code>(x₂, y₂)</code>) is checked using Euclidean distance calculations:</p>
+                <p style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 14px; text-align: center; color: var(--purple); border: 1px solid var(--border);">
+                    Distance² = (x₂ - x₁)² + (y₂ - y₁)² <br>
+                    Collision = Distance² &le; (R₁ + R₂)²
+                </p>
+                <p>For rectangular obstacles, the engine clamps the circle's center coordinates to the closest point on the rectangle and checks if the distance is less than the circle's radius. Understanding these precise hitboxes allows you to squeeze through narrow gaps with pixel-perfect accuracy.</p>
+
+                <h2>Near-Miss Score Multiplier</h2>
+                <p>A key system that separates novice players from tournament masters is the **Near-Miss Bonus**. The engine calculates the distance to the closest active barrier every frame. If your player orb passes within **10 pixels** of a barrier without triggering a collision, the screen flashes a glowing ripple, and your score multiplier increases dramatically. This "high-risk, high-reward" mechanic incentivizes players to stay close to obstacles rather than drifting safely in empty space.</p>
+                <ul>
+                    <li><strong>Speed Ramping Curve:</strong> Every 10 seconds of survival, the scroll speed of the barrier field increases by 8%. At higher speed tiers, your reaction window shrinks to under 150 milliseconds. Consistent practice is required to anticipate barriers at speed level 10+.</li>
+                    <li><strong>Boss Encounter Patterns:</strong> At score thresholds of 500, 1000, and 1500, the background dims, and a Boss Mothership appears. Bosses fire tracking lasers and target grids. You must dodge these tracking lines while maintaining horizontal positioning.</li>
+                </ul>
+
+                <div class="adsense-box">
+                    <span>[Advertisement Slot - AdSense Approved]</span>
+                </div>
+
+                <h2>Tactical Powerup Configurations</h2>
+                <p>Green, glowing orbs float in the obstacle lanes. Snatching them yields temporary, game-changing powerup states:</p>
+                <ul>
+                    <li><strong>Energy Shield (Blue Aura):</strong> Grays out your hitbox for 5 seconds. You can pass directly through one solid red barrier without detonating, after which the shield collapses.</li>
+                    <li><strong>Slow-Mo (Green Pulse):</strong> Dilates time by 50% for 6 seconds. This slows down obstacle scroll speeds and tracking lasers, allowing you to easily navigate complex maze formations.</li>
+                    <li><strong>Cosmic Magnet (Orange Ring):</strong> Creates an electromagnetic pull around your orb, dragging in all score multiplier stars from adjacent lanes automatically for 8 seconds.</li>
+                </ul>
+            </article>
+
+            <!-- RIGHT SIDEBAR -->
+            <div class="sidebar">
+                
+                <!-- CONTROLS SECTION -->
+                <div class="sidebar-section">
+                    <h3>Controls (Desktop)</h3>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Move Player Up</span>
+                        <span class="kbd-style">↑ / W Key</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Move Player Down</span>
+                        <span class="kbd-style">↓ / S Key</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Move Player Left</span>
+                        <span class="kbd-style">← / A Key</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Move Player Right</span>
+                        <span class="kbd-style">→ / D Key</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Controls (Mobile)</h3>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Control Player Orb</span>
+                        <span class="ctrl-label" style="font-weight:600; color:white;">Drag / Touch Screen</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Difficulty Tiers</h3>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Zen Mode</span>
+                        <span class="ctrl-label" style="font-weight:600; color:white;">Slow Speed</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Hard Mode</span>
+                        <span class="ctrl-label" style="font-weight:600; color:white;">Standard Speed</span>
+                    </div>
+                    <div class="ctrl-row">
+                        <span class="ctrl-label">Insane Mode</span>
+                        <span class="ctrl-label" style="font-weight:600; color:white;">Hyper Speed</span>
+                    </div>
+                </div>
+
+                <!-- QUICK RECOMMENDATION -->
+                <div class="sidebar-section" style="background: rgba(139, 92, 246, 0.03); border-color: rgba(139, 92, 246, 0.15);">
+                    <h3 style="color: var(--purple); border-color: var(--purple);">AdSense Tips</h3>
+                    <p style="font-size: 13px; color: var(--text-2); line-height: 1.6; margin: 0;">
+                        Because of its hyper-speed gameplay, Sky Dodge keeps players highly focused, increasing active engagement on `corelumetech.in`. Use full-screen mode to eliminate input distractions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ══ RECOMMENDATIONS ═════════════════════════════════ -->
+        <section style="margin-bottom: 100px;">
+            <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                <h2>Explore More Original Games</h2>
+                <p style="margin: 0;">Zero download required. Play instantly on the Corelume Tech platform.</p>
+            </div>
+            <div class="rec-grid">
+                <!-- WAR TANKS -->
+                <div class="rec-card">
+                    <div class="rec-card-body">
+                        <span class="app-badge" style="margin-bottom: 12px; background: rgba(34,197,94,0.1); color: var(--accent); border-color: rgba(34,197,94,0.2);">Action</span>
+                        <h4 class="rec-title">War Tanks</h4>
+                        <p class="rec-desc">Engage in epic 2-player tank combat with fully destructible procedural terrain levels.</p>
+                        <a href="play-war-tanks.html" style="font-weight:600; font-size:13px; color: var(--accent);">Play War Tanks →</a>
+                    </div>
+                </div>
+                <!-- HEX BLAST -->
+                <div class="rec-card">
+                    <div class="rec-card-body">
+                        <span class="app-badge" style="margin-bottom: 12px; background: rgba(59,130,246,0.1); color: var(--blue); border-color: rgba(59,130,246,0.2);">Puzzle</span>
+                        <h4 class="rec-title">Hex Blast</h4>
+                        <p class="rec-desc">Blast matching hexagonal grids to trigger cascade multipliers and high-score chain combos.</p>
+                        <a href="play-hex-blast.html" style="font-weight:600; font-size:13px; color: var(--blue);">Play Hex Blast →</a>
+                    </div>
+                </div>
+                <!-- ORB CLASH -->
+                <div class="rec-card">
+                    <div class="rec-card-body">
+                        <span class="app-badge" style="margin-bottom: 12px; background: rgba(220,38,38,0.1); color: #ef4444; border-color: rgba(220,38,38,0.2);">Multiplayer</span>
+                        <h4 class="rec-title">Orb Clash</h4>
+                        <p class="rec-desc">Engage in fast-paced arena battle using bouncing projectiles, shield dynamics and elastic collision physics.</p>
+                        <a href="play-orb-clash.html" style="font-weight:600; font-size:13px; color: #ef4444;">Play Orb Clash →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <img src="assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                        <span class="nav-title">Corelume Tech</span>
+                    </div>
+                    <p>Building innovative applications and engaging free web games that make a difference.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="/">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Games</h4>
+                    <a href="game-hub.html">Game Hub</a>
+                    <a href="play-war-tanks.html">Play War Tanks</a>
+                    <a href="play-hex-blast.html">Play Hex Blast</a>
+                    <a href="play-sky-dodge.html">Play Sky Dodge</a>
+                    <a href="play-orb-clash.html">Play Orb Clash</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Corelume Tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ══ SCRIPTS ═════════════════════════════════════════ -->
+    <script>
+        function reloadGame() {
+            const iframe = document.getElementById('gameFrame');
+            iframe.src = iframe.src;
+        }
+
+        function toggleFullscreen() {
+            const iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
