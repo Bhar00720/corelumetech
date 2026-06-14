@@ -587,6 +587,23 @@ function setLanguage(lang) {
 
 // ── NAVBAR ──────────────────────────────────────────────
 const navbar = document.getElementById('navbar');
+const topBanner = document.querySelector('.top-app-banner');
+
+function updateNavbarPosition() {
+    if (!navbar) return;
+    let scrollY = window.scrollY;
+    if (topBanner) {
+        const bannerHeight = topBanner.offsetHeight;
+        if (scrollY > bannerHeight) {
+            navbar.style.top = '0px';
+        } else {
+            navbar.style.top = (bannerHeight - scrollY) + 'px';
+        }
+    }
+}
+window.addEventListener('scroll', updateNavbarPosition);
+updateNavbarPosition();
+
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
