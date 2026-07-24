@@ -666,3 +666,59 @@ document.querySelectorAll('.feature-card, .about-card, .contact-email-card, .con
 
 // ── INIT ─────────────────────────────────────────────────
 setLanguage(getCurrentLang());
+
+
+// --- FOCUS FLOW POPUP LOGIC ---
+(function() {
+    // Wait for DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if popup was shown in the last 24 hours
+        const lastSeen = localStorage.getItem('focusFlowPopupSeen');
+        const now = new Date().getTime();
+        
+        // 24 hours in milliseconds (86400000)
+        if (lastSeen && (now - parseInt(lastSeen)) < 86400000) {
+            return; 
+        }
+
+        // Create modal HTML
+        const modalHtml = `
+            <div id="focusFlowModal" class="ff-modal-overlay">
+                <div class="ff-modal-content">
+                    <button class="ff-modal-close" id="ffModalClose">&times;</button>
+                    <div class="ff-modal-icon">🌳</div>
+                    <h2>Supercharge Your Focus!</h2>
+                    <p>Before you play, try <strong>FocusFlow</strong>. Grow a beautiful virtual forest while you work or study.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.focusflow.corelumetech" target="_blank" class="btn btn-primary ff-modal-btn">Get it on Google Play</a>
+                    <button class="ff-modal-text-btn" id="ffModalDismiss">No thanks, let me play</button>
+                </div>
+            </div>
+        `;
+
+        // Inject into body
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+        // Add event listeners
+        const modal = document.getElementById('focusFlowModal');
+        const closeBtn = document.getElementById('ffModalClose');
+        const dismissBtn = document.getElementById('ffModalDismiss');
+        const playStoreBtn = document.querySelector('.ff-modal-btn');
+
+        function closeModal() {
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
+            localStorage.setItem('focusFlowPopupSeen', now.toString());
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        dismissBtn.addEventListener('click', closeModal);
+        playStoreBtn.addEventListener('click', closeModal);
+        
+        // Show modal after 3 seconds
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 3000);
+    });
+})();
