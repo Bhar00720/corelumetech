@@ -165,4 +165,18 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.corelumetech.in/articles/monetag-review-best-ad-network-for-publishers.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.corelumetech.in/articles/mangools-review-best-seo-tools-for-beginners.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
