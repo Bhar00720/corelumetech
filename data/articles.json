@@ -133,5 +133,33 @@
     "generatedAt": "2026-04-28T12:00:00.000Z",
     "publishedAt": "2026-04-28",
     "fileUrl": "articles/procedural-sound-generation-in-web-games.html"
+  },
+  {
+    "id": "a4e91c7d-82f3-4b5a-9d01-7c8e2f1a3b56",
+    "title": "Monetag Review: Best Ad Network for Publishers in 2026?",
+    "slug": "monetag-review-best-ad-network-for-publishers",
+    "excerpt": "An in-depth review of Monetag, covering CPM rates, ad formats like Popunder and SmartLink, and an honest comparison with Google AdSense for website monetization.",
+    "category": "Website Monetization & Ad Networks",
+    "tags": ["monetag", "ad network", "website monetization", "CPM", "popunder ads", "publisher revenue"],
+    "author": "Corelume Tech Editorial Team",
+    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-08-14T12:00:00.000Z",
+    "publishedAt": "2026-08-14",
+    "fileUrl": "articles/monetag-review-best-ad-network-for-publishers.html"
+  },
+  {
+    "id": "b5f02d8e-93g4-5c6b-ae12-8d9f3g2b4c67",
+    "title": "Mangools Review: Best SEO Tools for Beginners in 2026",
+    "slug": "mangools-review-best-seo-tools-for-beginners",
+    "excerpt": "A comprehensive review of the Mangools SEO suite — KWFinder, SERPChecker, SERPWatcher, LinkMiner, and SiteProfiler — with pricing, comparisons, and a practical walkthrough.",
+    "category": "SEO Tools & Keyword Research",
+    "tags": ["mangools", "kwfinder", "seo tools", "keyword research", "serp analysis", "seo for beginners"],
+    "author": "Corelume Tech Editorial Team",
+    "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-08-14T12:00:00.000Z",
+    "publishedAt": "2026-08-14",
+    "fileUrl": "articles/mangools-review-best-seo-tools-for-beginners.html"
   }
 ]
