@@ -668,57 +668,299 @@ document.querySelectorAll('.feature-card, .about-card, .contact-email-card, .con
 setLanguage(getCurrentLang());
 
 
-// --- FOCUS FLOW POPUP LOGIC ---
+// ══ FOCUS FLOW INTERACTIVE GOOGLE PLAY MODAL LOGIC ════════════
 (function() {
-    // Wait for DOM
     document.addEventListener('DOMContentLoaded', function() {
-        // Check if popup was shown in the last 24 hours
-        const lastSeen = localStorage.getItem('focusFlowPopupSeen');
-        const now = new Date().getTime();
-        
-        // 24 hours in milliseconds (86400000)
-        if (lastSeen && (now - parseInt(lastSeen)) < 86400000) {
-            return; 
+        // --- 1. FREQUENCY CONTROL: Daily 5 times with a 20-minute gap ---
+        const FREQ_STORAGE_KEY = 'focusFlowDailyPopupStats_v2';
+        const MAX_DAILY_SHOWS = 5; // Max 5 times per day
+        const MIN_GAP_MS = 20 * 60 * 1000; // 20 minutes gap between displays
+        const now = Date.now();
+        const todayStr = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+        let stats = { date: todayStr, count: 0, lastSeen: 0 };
+        try {
+            const stored = localStorage.getItem(FREQ_STORAGE_KEY);
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                if (parsed && parsed.date === todayStr) {
+                    stats = parsed;
+                }
+            }
+        } catch (err) {
+            // Fallback for private browsing storage quirks
         }
 
-        // Create modal HTML
+        // Check if limit of 5 per day is reached
+        if (stats.count >= MAX_DAILY_SHOWS) {
+            return;
+        }
+
+        // Check if specific time gap (20 minutes) has elapsed since last appearance
+        if (stats.lastSeen && (now - stats.lastSeen) < MIN_GAP_MS) {
+            return;
+        }
+
+        // --- 2. MODAL HTML: Official Google Play Style with Interactive Slider ---
         const modalHtml = `
-            <div id="focusFlowModal" class="ff-modal-overlay">
-                <div class="ff-modal-content">
-                    <button class="ff-modal-close" id="ffModalClose">&times;</button>
-                    <div class="ff-modal-icon">🌳</div>
-                    <h2>Supercharge Your Focus!</h2>
-                    <p>Before you play, try <strong>FocusFlow</strong>. Grow a beautiful virtual forest while you work or study.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.focusflow.corelumetech" target="_blank" class="btn btn-primary ff-modal-btn">Get it on Google Play</a>
-                    <button class="ff-modal-text-btn" id="ffModalDismiss">No thanks, let me play</button>
+            <div id="focusFlowModal" class="ff-modal-overlay" role="dialog" aria-modal="true" aria-label="FocusFlow Google Play App Preview">
+                <div class="ff-playstore-modal">
+                    <button class="ff-modal-close" id="ffModalClose" aria-label="Close dialog">&times;</button>
+                    
+                    <!-- Google Play Header -->
+                    <div class="ff-ps-header">
+                        <div class="ff-ps-logo">
+                            <svg width="20" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M3.6 1.8L13.8 12 3.6 22.2c-.4-.4-.6-1-.6-1.7V3.5c0-.7.2-1.3.6-1.7z" fill="#00D3FF"/>
+                                <path d="M17.3 8.5L4.8 1.3C4.4 1 4 1 3.6 1.1l10.2 10.9L17.3 8.5z" fill="#00F076"/>
+                                <path d="M17.3 15.5l-3.5-3.5L3.6 22.9c.4.1.8.1 1.2-.1l12.5-7.3z" fill="#FF3A44"/>
+                                <path d="M21.2 10.8l-3.9-2.3-3.5 3.5 3.5 3.5 3.9-2.3c1.1-.7 1.1-1.7 0-2.4z" fill="#FFC400"/>
+                            </svg>
+                            <span>Google Play</span>
+                        </div>
+                        <span class="ff-ps-verified">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="#01875f"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                            Verified by Play Protect
+                        </span>
+                    </div>
+
+                    <!-- App Title & Icon -->
+                    <div class="ff-ps-app-info">
+                        <img src="https://play-lh.googleusercontent.com/eybZas3vIvN726oSLvZwNpVH2but_2bIATsRUCTvFZfAPPAj_61LAg1Y6EmJ4qgCqoSk7flW10xMfGiwG7g0ZQ=w240-h480" alt="FocusFlow Icon" class="ff-ps-app-icon" onerror="this.src='https://play-lh.googleusercontent.com/eybZas3vIvN726oSLvZwNpVH2but_2bIATsRUCTvFZfAPPAj_61LAg1Y6EmJ4qgCqoSk7flW10xMfGiwG7g0ZQ'">
+                        <div class="ff-ps-meta">
+                            <h2 class="ff-ps-title">FocusFlow: Focus Garden Timer</h2>
+                            <div class="ff-ps-dev">Corelume Tech</div>
+                            <div class="ff-ps-tags">
+                                <span class="ff-tag">#1 In Productivity</span>
+                                <span class="ff-tag">ADHD Friendly</span>
+                                <span class="ff-tag">100% Free</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Play Store Stats Matrix -->
+                    <div class="ff-ps-metrics">
+                        <div class="ff-metric-item">
+                            <div class="ff-metric-val">4.8 <span class="ff-star">★</span></div>
+                            <div class="ff-metric-label">1.2K reviews</div>
+                        </div>
+                        <div class="ff-metric-divider"></div>
+                        <div class="ff-metric-item">
+                            <div class="ff-metric-val">10K+</div>
+                            <div class="ff-metric-label">Downloads</div>
+                        </div>
+                        <div class="ff-metric-divider"></div>
+                        <div class="ff-metric-item">
+                            <div class="ff-metric-val"><span class="ff-badge-age">3+</span></div>
+                            <div class="ff-metric-label">Rated for 3+</div>
+                        </div>
+                        <div class="ff-metric-divider"></div>
+                        <div class="ff-metric-item">
+                            <div class="ff-metric-val">🌱 3D</div>
+                            <div class="ff-metric-label">Focus Forest</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Play Style Slider -->
+                    <div class="ff-slider-wrapper" id="ffSliderWrap">
+                        <button class="ff-slider-btn ff-slider-prev" id="ffSlidePrev" aria-label="Previous screenshot">&#10094;</button>
+                        <div class="ff-slider-track" id="ffSliderTrack">
+                            <div class="ff-slide" data-index="0">
+                                <img src="https://play-lh.googleusercontent.com/MsXid35WhkBr6xzMvS7lMRsxJGyKICPtsp2OMhk4aIFqifaNjFmF_va0-psAgG7v8lCdREzGM4d5wpvfngQIBw=w720-h1280" alt="Grow a Living 3D Garden As You Focus" loading="lazy">
+                                <div class="ff-slide-caption">🌳 Grow a Living 3D Garden As You Focus</div>
+                            </div>
+                            <div class="ff-slide" data-index="1">
+                                <img src="https://play-lh.googleusercontent.com/Ja97AZbUpa-w2uSSMr4rjDQkDdlXhI2urjQjgGx9Gy__VPWe1jhWHjnYSuT465J3dgqkjV6QLll8JnubHfX5zUc=w720-h1280" alt="Calming ADHD-Friendly Pomodoro Timer" loading="lazy">
+                                <div class="ff-slide-caption">⏱️ Calming ADHD-Friendly Pomodoro Timer</div>
+                            </div>
+                            <div class="ff-slide" data-index="2">
+                                <img src="https://play-lh.googleusercontent.com/tDuTKsQW-sqtMMdlhI6y7p3EUDde5OhBeWBqx1pCC6C_4g9g8Wc8iiaVOaCFCDrH1tH0xVylIhKc6ig4F2bXTg=w720-h1280" alt="Unlock Majestic Tree Species" loading="lazy">
+                                <div class="ff-slide-caption">🌸 Unlock Majestic Tree Species & Flora</div>
+                            </div>
+                            <div class="ff-slide" data-index="3">
+                                <img src="https://play-lh.googleusercontent.com/06j6i3sRgd_6Z43DOr3Vf5oRLg-u2bXHjd2AFtN2nGZ2QDhTOZPia8VzAuweF7dwKI8ehnv8wug9A8b7IWCm=w720-h1280" alt="10+ Soothing Ambient Soundscapes" loading="lazy">
+                                <div class="ff-slide-caption">🎧 10+ Soothing Ambient Nature Sounds</div>
+                            </div>
+                            <div class="ff-slide" data-index="4">
+                                <img src="https://play-lh.googleusercontent.com/PlEmN7ETOLADL3yb1eFGYwHEyOKdSapp6QDj0s_dK5P_ft1Iqt_Fy39PLo_LyAmcBzavQOno9g7n2VM5WPgN=w720-h1280" alt="Track Daily Streaks & Productivity Stats" loading="lazy">
+                                <div class="ff-slide-caption">📊 Track Daily Streaks & Productivity Stats</div>
+                            </div>
+                            <div class="ff-slide" data-index="5">
+                                <img src="https://play-lh.googleusercontent.com/NKifG-yxQmT2Aw_G-WkKWqhra57KaaRutkrXEoKIQi8qBCqLFtDBqu7MLahxqogGNe9eYnw2V1dQmjaXQ1SyOoY=w720-h1280" alt="Turn Boring Study Hours into Gameplay" loading="lazy">
+                                <div class="ff-slide-caption">🚀 Turn Study Hours Into An Engaging Game</div>
+                            </div>
+                            <div class="ff-slide" data-index="6">
+                                <img src="https://play-lh.googleusercontent.com/ec_ZDr1zF5SDfvbosvpB_FmeG-mUqXPWM7f_PciS5r0lncVWLIwfa36O0dMeOoiJ9mv7pxyBVJQfsQAKT9pj=w720-h1280" alt="Fully Customizable Work & Break Intervals" loading="lazy">
+                                <div class="ff-slide-caption">⚙️ Customizable Focus & Break Intervals</div>
+                            </div>
+                            <div class="ff-slide" data-index="7">
+                                <img src="https://play-lh.googleusercontent.com/ofrLGj2YID94MBQocFNXwPSPND6h-kl_1D_8FBbaiOEUhUVtC4c2Fx-0tRD3agnE-9Dd0bzsk4w9lPtCNZcE4g=w720-h1280" alt="Master Self-Discipline Without Stress" loading="lazy">
+                                <div class="ff-slide-caption">✨ Master Focus & Beat Procrastination</div>
+                            </div>
+                        </div>
+                        <button class="ff-slider-btn ff-slider-next" id="ffSlideNext" aria-label="Next screenshot">&#10095;</button>
+                    </div>
+
+                    <!-- Slide Pagination Dots -->
+                    <div class="ff-slider-dots" id="ffSliderDots">
+                        <span class="ff-dot active" data-dot="0"></span>
+                        <span class="ff-dot" data-dot="1"></span>
+                        <span class="ff-dot" data-dot="2"></span>
+                        <span class="ff-dot" data-dot="3"></span>
+                        <span class="ff-dot" data-dot="4"></span>
+                        <span class="ff-dot" data-dot="5"></span>
+                        <span class="ff-dot" data-dot="6"></span>
+                        <span class="ff-dot" data-dot="7"></span>
+                    </div>
+
+                    <!-- Short Description -->
+                    <div class="ff-ps-desc">
+                        <p><strong>Transform your focus sessions into a blooming virtual sanctuary.</strong> When minutes feel abstract, FocusFlow gives time living shape. Beat procrastination, stay on task, and build lasting productivity habits.</p>
+                    </div>
+
+                    <!-- High-Converting Action Button -->
+                    <div class="ff-ps-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.focusflow.corelumetech&hl=en_IN" target="_blank" rel="noopener" class="ff-ps-install-btn" id="ffInstallBtn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                            </svg>
+                            <span>Install on Google Play — Free</span>
+                        </a>
+                        <div class="ff-ps-subactions">
+                            <button class="ff-modal-text-btn" id="ffModalDismiss">Continue to Website</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
 
-        // Inject into body
+        // Inject modal into document body
         document.body.insertAdjacentHTML('beforeend', modalHtml);
 
-        // Add event listeners
         const modal = document.getElementById('focusFlowModal');
         const closeBtn = document.getElementById('ffModalClose');
         const dismissBtn = document.getElementById('ffModalDismiss');
-        const playStoreBtn = document.querySelector('.ff-modal-btn');
+        const installBtn = document.getElementById('ffInstallBtn');
+        const sliderTrack = document.getElementById('ffSliderTrack');
+        const prevBtn = document.getElementById('ffSlidePrev');
+        const nextBtn = document.getElementById('ffSlideNext');
+        const dots = document.querySelectorAll('.ff-dot');
+        const sliderWrap = document.getElementById('ffSliderWrap');
 
+        let currentSlide = 0;
+        const totalSlides = 8;
+        let autoPlayTimer = null;
+
+        // Slide navigation function
+        function goToSlide(index) {
+            currentSlide = (index + totalSlides) % totalSlides;
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        // Auto-advance every 3.8 seconds
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayTimer = setInterval(nextSlide, 3800);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayTimer) {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = null;
+            }
+        }
+
+        // Slider Listeners
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoPlay(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoPlay(); });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const dotIdx = parseInt(e.target.dataset.dot);
+                goToSlide(dotIdx);
+                startAutoPlay();
+            });
+        });
+
+        // Pause autoplay on mouse enter / resume on leave
+        if (sliderWrap) {
+            sliderWrap.addEventListener('mouseenter', stopAutoPlay);
+            sliderWrap.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Touch swipe support on mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        if (sliderTrack) {
+            sliderTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoPlay();
+            }, { passive: true });
+
+            sliderTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 45) {
+                    nextSlide(); // Swiped left
+                } else if (touchEndX - touchStartX > 45) {
+                    prevSlide(); // Swiped right
+                }
+                startAutoPlay();
+            }, { passive: true });
+        }
+
+        // --- Record impression in localStorage ---
+        function markPopupSeen() {
+            stats.count++;
+            stats.lastSeen = Date.now();
+            stats.date = todayStr;
+            try {
+                localStorage.setItem(FREQ_STORAGE_KEY, JSON.stringify(stats));
+            } catch (e) {}
+        }
+
+        // Close Modal handler
         function closeModal() {
+            stopAutoPlay();
             modal.style.opacity = '0';
             setTimeout(() => {
                 modal.style.display = 'none';
-            }, 400);
-            localStorage.setItem('focusFlowPopupSeen', now.toString());
+            }, 350);
+            markPopupSeen();
         }
 
-        closeBtn.addEventListener('click', closeModal);
-        dismissBtn.addEventListener('click', closeModal);
-        playStoreBtn.addEventListener('click', closeModal);
-        
-        // Show modal after 3 seconds
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
+        if (installBtn) installBtn.addEventListener('click', closeModal);
+
+        // Close on clicking outside modal
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
+        // Display modal after 2.5 seconds on eligible page views
         setTimeout(() => {
             modal.classList.add('show');
-        }, 3000);
+            startAutoPlay();
+        }, 2500);
     });
 })();
