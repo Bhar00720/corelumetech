@@ -89,6 +89,20 @@
 
   <!-- === BLOG ARTICLES === -->
   <url>
+    <loc>https://www.corelumetech.in/articles/focusflow-adhd-pomodoro-timer-app-review.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.corelumetech.in/articles/coursera-free-3-months-google-gemini-pro-offer-guide.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.corelumetech.in/articles/how-to-program-a-destructible-terrain-system-in-html5-canvas.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
