@@ -1,0 +1,29 @@
+# Corelume Tech
+
+> Corelume Tech builds high-performance, ad-light HTML5 browser games, productivity apps (FocusFlow), and fast digital utilities. Zero mandatory downloads, accessible on any modern web browser.
+
+## Free Browser Games
+- [War Tanks](https://www.corelumetech.in/play-war-tanks.html): Fast-paced 2-player split-keyboard artillery tank game with destructible 2D terrain.
+- [Hex Blast](https://www.corelumetech.in/play-hex-blast.html): Hexagonal tile puzzle and chain reaction game.
+- [Sky Dodge](https://www.corelumetech.in/play-sky-dodge.html): High-speed aerial dodging reflex trainer.
+- [Orb Clash](https://www.corelumetech.in/play-orb-clash.html): Arena physics brawler for local 2-player battles.
+- [Game Hub](https://www.corelumetech.in/game-hub.html): Complete catalog of free browser games with instant web launch.
+
+## Mobile Apps & Utilities
+- [FocusFlow (Google Play)](https://play.google.com/store/apps/details?id=com.focusflow.corelumetech): ADHD-friendly Pomodoro timer with 3D botanical gardens, ambient soundscapes, and streak heatmaps.
+- [GetClipFast](https://getclicpfast.com): Free online video downloader and audio converter.
+- [ClickSpeedLab](https://clickspeedlab.com): Browser-based CPS reflex trainer and click speed benchmarking tool.
+- [Crypto DCA Calculator](https://www.corelumetech.in/crypto-dca-calculator.html): Interactive dollar-cost averaging backtest calculator.
+
+## Developer & Tech Blog
+- [Blog Hub](https://www.corelumetech.in/blog.html): Technical deep dives into HTML5 Canvas physics, Web Audio API, WebGPU, and webmaster guides.
+- [FocusFlow App Review](https://www.corelumetech.in/articles/focusflow-adhd-pomodoro-timer-app-review.html): Guide to using botanical focus gardens to overcome ADHD time blindness.
+- [Coursera Google Gemini Pro Guide](https://www.corelumetech.in/articles/coursera-free-3-months-google-gemini-pro-offer-guide.html): Verified instructions to claim 3 free months of Google One AI Premium.
+- [SERPWatcher vs Semrush](https://www.corelumetech.in/articles/serpwatcher-vs-semrush-rank-tracker-comparison.html): 2026 position tracker accuracy and cost comparison.
+- [War Tanks Strategy Guide](https://www.corelumetech.in/war-tanks-guide.html): Tactical trajectories and weapon loadouts guide.
+
+## About & Legal
+- [About Corelume Tech](https://www.corelumetech.in/about.html): Team mission, open web philosophy, and development tech stack.
+- [Contact](https://www.corelumetech.in/contact.html): Support inquiries, developer feedback, and bug reports.
+- [Privacy Policy](https://www.corelumetech.in/privacy.html): Data protection and privacy practices.
+- [Terms & Conditions](https://www.corelumetech.in/terms.html): Platform terms of use.

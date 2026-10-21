@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Corelume Tech - Free HTML5 Games &amp; Developer Guides</title>
+    <link>https://www.corelumetech.in/</link>
+    <description>Original HTML5 browser games, game development deep dives, SEO tools comparisons, and productivity apps from Corelume Tech.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.corelumetech.in/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>FocusFlow: The ADHD-Friendly Pomodoro Timer App with 3D Botanical Gardens</title>
+      <link>https://www.corelumetech.in/articles/focusflow-adhd-pomodoro-timer-app-review.html</link>
+      <guid>https://www.corelumetech.in/articles/focusflow-adhd-pomodoro-timer-app-review.html</guid>
+      <pubDate>Mon, 19 Oct 2026 15:20:00 GMT</pubDate>
+      <description>Discover FocusFlow on Google Play: 3D botanical gardens, ADHD time-blindness solutions, binaural soundscapes, and streak tracking to maximize daily productivity.</description>
+    </item>
+
+    <item>
+      <title>How to Claim 3 Months of Google Gemini Pro / AI Premium Free via Coursera</title>
+      <link>https://www.corelumetech.in/articles/coursera-free-3-months-google-gemini-pro-offer-guide.html</link>
+      <guid>https://www.corelumetech.in/articles/coursera-free-3-months-google-gemini-pro-offer-guide.html</guid>
+      <pubDate>Mon, 19 Oct 2026 15:15:00 GMT</pubDate>
+      <description>Claim 3 months free of Google One AI Premium ($60 value / 2TB + Gemini Advanced) through Coursera. Complete breakdown of eligible courses, claim steps, and ineligibility conditions.</description>
+    </item>
+
+    <item>
+      <title>SERPWatcher vs Semrush (2026): Which Rank Tracker is Actually Worth It?</title>
+      <link>https://www.corelumetech.in/articles/serpwatcher-vs-semrush-rank-tracker-comparison.html</link>
+      <guid>https://www.corelumetech.in/articles/serpwatcher-vs-semrush-rank-tracker-comparison.html</guid>
+      <pubDate>Sat, 05 Sep 2026 16:00:00 GMT</pubDate>
+      <description>Compare Mangools SERPWatcher vs Semrush Position Tracking in 2026. Discover Dominance Index math, daily rank tracking accuracy, and pricing.</description>
+    </item>
+
+    <item>
+      <title>Adsterra Review 2026: Best CPM Ad Network for Publishers?</title>
+      <link>https://www.corelumetech.in/articles/adsterra-review-best-cpm-ad-network-for-publishers.html</link>
+      <guid>https://www.corelumetech.in/articles/adsterra-review-best-cpm-ad-network-for-publishers.html</guid>
+      <pubDate>Sat, 05 Sep 2026 15:45:00 GMT</pubDate>
+      <description>Monetize your website with Adsterra: High-paying Popunder &amp; Social Bar CPM rates, instant 10-minute approval, Net-15 bi-weekly payouts, and 5% lifetime referral earnings.</description>
+    </item>
+
+    <item>
+      <title>GetClipFast (getclicpfast.com) Review: Free Video Downloader &amp; MP3 Converter</title>
+      <link>https://www.corelumetech.in/articles/getclicpfast-free-youtube-instagram-video-downloader-review.html</link>
+      <guid>https://www.corelumetech.in/articles/getclicpfast-free-youtube-instagram-video-downloader-review.html</guid>
+      <pubDate>Sat, 05 Sep 2026 01:30:00 GMT</pubDate>
+      <description>Download YouTube videos, Shorts, Instagram Reels, and convert to MP3 audio free on getclicpfast.com with zero watermarks or signups.</description>
+    </item>
+
+    <item>
+      <title>WebGPU vs WebGL (2026): Why Browser Games Now Look Like Console Titles</title>
+      <link>https://www.corelumetech.in/articles/webgpu-vs-webgl-future-of-browser-games-2026.html</link>
+      <guid>https://www.corelumetech.in/articles/webgpu-vs-webgl-future-of-browser-games-2026.html</guid>
+      <pubDate>Sat, 29 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Explore the generational leap from WebGL to WebGPU in 2026. Benchmark draw calls, compute shaders, and modern rendering architectures in browser games.</description>
+    </item>
+  </channel>
+</rss>
