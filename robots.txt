@@ -6,11 +6,31 @@ Allow: /
 Allow: /css/
 Allow: /js/
 Allow: /assets/
+Allow: /llms.txt
+Allow: /feed.xml
 Disallow: /data/
 Disallow: /focusflow/
 Disallow: /submit-indexnow.sh
 Disallow: /submit-indexnow.ps1
 
-# Sitemap
-Sitemap: https://www.corelumetech.in/sitemap.xml
+# Explicit AI Search Engine Crawlers
+User-agent: GPTBot
+Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Feeds & Maps
+Sitemap: https://www.corelumetech.in/sitemap.xml
+# LLMs.txt
+# https://llmstxt.org
+# llms.txt: https://www.corelumetech.in/llms.txt
