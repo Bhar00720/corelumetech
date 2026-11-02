@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FocusFlow Redirecting...</title>
+  <script>
+    // GitHub Pages SPA Redirector for Deep Links
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+
+    // If visiting any route under /focusflow/, redirect to /focusflow/index.html preserving query params
+    if (path.indexOf('/focusflow') !== -1) {
+      window.location.replace('/focusflow/index.html' + search + hash);
+    } else {
+      window.location.replace('/' + search + hash);
+    }
+  </script>
+</head>
+<body style="background: #0b0f19; color: #fff; font-family: sans-serif; text-align: center; padding-top: 50px;">
+  <p>Redirecting to FocusFlow...</p>
+</body>
+</html>
