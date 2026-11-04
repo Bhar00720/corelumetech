@@ -4,9 +4,11 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.focusflow.corelumetech",
-      "sha256_cert_fingerprints":
-        ["06:9D:2B:48:57:55:B6:4B:75:0A:B4:B7:37:31:EF:85:C2:60:26:C4:09:FD:D2:57:85:D9:01:8C:21:65:06:03",
-        "73:C5:6C:7D:B6:04:19:1C:B5:1E:31:66:C3:64:F9:3B:A3:8C:EE:3B:93:25:AE:1C:FD:7E:0C:72:7E:BE:C2:51"]
+      "sha256_cert_fingerprints": [
+        "6D:76:F0:BA:4E:C2:6B:0B:A9:91:8B:AA:88:ED:F9:81:D5:58:A1:B9:F0:D0:B4:8E:66:94:58:75:88:C2:9D:C0",
+        "06:9D:2B:48:57:55:B6:4B:75:0A:B4:B7:37:31:EF:85:C2:60:26:C4:09:FD:D2:57:85:D9:01:8C:21:65:06:03",
+        "73:C5:6C:7D:B6:04:19:1C:B5:1E:31:66:C3:64:F9:3B:A3:8C:EE:3B:93:25:AE:1C:FD:7E:0C:72:7E:BE:C2:51"
+      ]
     }
   }
 ]
