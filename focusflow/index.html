@@ -120,7 +120,7 @@
       border: 1px dashed rgba(245, 158, 11, 0.4);
       border-radius: 20px;
       padding: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       display: none; /* Shown dynamically if ?ref= is present */
     }
 
@@ -134,7 +134,18 @@
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+    }
+
+    .bonus-code-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 6px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      margin: 6px auto 8px;
     }
 
     .bonus-code {
@@ -142,12 +153,32 @@
       font-weight: 800;
       color: #fff;
       letter-spacing: 2px;
-      margin-bottom: 4px;
+    }
+
+    .copy-btn {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: var(--gold);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(245, 158, 11, 0.35);
+      color: #ffffff;
     }
 
     .bonus-desc {
       font-size: 12px;
       color: var(--text-muted);
+      margin-top: 4px;
     }
 
     .cta-btn {
@@ -178,6 +209,23 @@
       width: 22px;
       height: 22px;
       fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .secondary-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      opacity: 0.9;
+      transition: all 0.2s;
+    }
+
+    .secondary-link:hover {
+      opacity: 1;
+      text-decoration: underline;
     }
 
     .features-pill {
@@ -227,16 +275,26 @@
     <!-- Referral Bonus Pill (Activated when URL has ?ref=CODE) -->
     <div id="bonusCard" class="bonus-card">
       <div class="bonus-title">🎁 Friend's Referral Gift</div>
-      <div id="referralCode" class="bonus-code">...</div>
-      <div class="bonus-desc">Install now to automatically receive <strong>+150 Welcome Coins</strong>!</div>
+      <div class="bonus-code-wrapper">
+        <span id="referralCode" class="bonus-code">...</span>
+        <button id="copyBtn" type="button" class="copy-btn" title="Copy Referral Code">
+          📋 <span id="copyText">Copy</span>
+        </button>
+      </div>
+      <div class="bonus-desc">Claim your free <strong>+150 Welcome Coins</strong> instantly!</div>
     </div>
 
     <!-- Download / Open Button -->
     <a id="ctaBtn" href="https://play.google.com/store/apps/details?id=com.focusflow.corelumetech" class="cta-btn">
-      <svg viewBox="0 0 24 24">
+      <svg id="ctaIcon" viewBox="0 0 24 24">
         <path d="M3.609 1.814L13.793 12 3.61 22.186a1.99 1.99 0 0 1-.61-.969V2.783c.15-.36.368-.7.609-.969zm11.258 11.259l2.457 2.457-11.458 6.643 8.999-9.1zm0-2.146l-9-9.1 11.457 6.643-2.457 2.457zm1.488 1.073l3.525-2.045a1.5 1.5 0 0 1 0 2.604l-3.525-2.045z"/>
       </svg>
       <span id="ctaText">Open on Google Play</span>
+    </a>
+
+    <!-- Secondary Direct Store / App Link -->
+    <a id="secondaryLink" href="https://play.google.com/store/apps/details?id=com.focusflow.corelumetech" class="secondary-link" style="display: none;">
+      Don't have the app installed yet? Download on Google Play
     </a>
 
     <div class="features-pill">
@@ -258,46 +316,77 @@
   <script>
     // 1. Extract query parameters from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const refCode = urlParams.get('ref') || urlParams.get('code');
+    const rawCode = urlParams.get('ref') || urlParams.get('code') || '';
+    const refCode = rawCode.trim().toUpperCase();
     const playStoreBase = "https://play.google.com/store/apps/details?id=com.focusflow.corelumetech";
+    const playStoreUrl = refCode
+      ? playStoreBase + "&referrer=ref%3D" + encodeURIComponent(refCode)
+      : playStoreBase;
+
+    const ctaBtn = document.getElementById('ctaBtn');
+    const ctaText = document.getElementById('ctaText');
+    const ctaIcon = document.getElementById('ctaIcon');
+    const secondaryLink = document.getElementById('secondaryLink');
+    const bonusCard = document.getElementById('bonusCard');
+    const referralCodeEl = document.getElementById('referralCode');
+    const copyBtn = document.getElementById('copyBtn');
+    const copyText = document.getElementById('copyText');
 
     // 2. Display referral banner if ref code is present
     if (refCode) {
-      document.getElementById('bonusCard').classList.add('active');
-      document.getElementById('referralCode').innerText = refCode.toUpperCase();
-      
-      // Attach Google Play Install Referrer
-      const referrerUrl = playStoreBase + "&referrer=ref%3D" + encodeURIComponent(refCode.toUpperCase());
-      document.getElementById('ctaBtn').href = referrerUrl;
+      bonusCard.classList.add('active');
+      referralCodeEl.innerText = refCode;
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(refCode).then(function() {
+              copyText.innerText = "Copied!";
+              setTimeout(function() { copyText.innerText = "Copy"; }, 2000);
+            });
+          }
+        });
+      }
     }
 
-    // 3. Smart Android Deep Link Handshake
+    // 3. Android Intent URI vs iOS vs Desktop
     const isAndroid = /Android/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
     if (isAndroid) {
-      document.getElementById('ctaText').innerText = "Open in FocusFlow";
-      
-      // Determine app custom scheme URI
-      let appScheme = "focusflow://join";
-      if (refCode) {
-        appScheme += "?ref=" + encodeURIComponent(refCode.toUpperCase());
-      } else {
-        const fullPath = window.location.pathname.replace('/focusflow', '');
-        appScheme = "focusflow:/" + (fullPath || "/timer") + window.location.search;
+      // Modern Android Chrome Intent format:
+      // Directly opens com.focusflow.corelumetech if installed, or smoothly redirects to Play Store fallback
+      // without annoying modal popup dialogs or fragile timers!
+      const intentPath = refCode ? `join?ref=${encodeURIComponent(refCode)}` : `timer`;
+      const intentUrl = `intent://${intentPath}#Intent;scheme=focusflow;package=com.focusflow.corelumetech;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
+
+      ctaText.innerText = "Open in FocusFlow";
+      // Rocket/launch icon for open app
+      ctaIcon.innerHTML = '<path d="M12 2.5s-4.5 4-4.5 9c0 2.5 1.5 4.5 4.5 4.5s4.5-2 4.5-4.5c0-5-4.5-9-4.5-9zm-1.5 9a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm-5.5 5.5s1.5-1 4-1c.5 1 1.5 2 3 2s2.5-1 3-2c2.5 0 4 1 4 1s-1.5 3-7 3-7-3-7-3z"/>';
+      ctaBtn.href = intentUrl;
+
+      // Show secondary link for users who don't have it installed
+      secondaryLink.style.display = 'inline-block';
+      secondaryLink.href = playStoreUrl;
+
+      // Attempt immediate seamless app launch
+      try {
+        window.location.replace(intentUrl);
+      } catch (err) {
+        console.warn('Auto intent redirect deferred to user tap:', err);
       }
-
-      // Attempt to launch the installed app immediately
-      window.location.href = appScheme;
-
-      // If user doesn't have the app installed, browser stays active:
-      // Redirect to Google Play Store after 1.5s
-      setTimeout(function() {
-        if (!document.hidden) {
-          const targetUrl = refCode 
-            ? playStoreBase + "&referrer=ref%3D" + encodeURIComponent(refCode.toUpperCase())
-            : playStoreBase;
-          window.location.href = targetUrl;
-        }
-      }, 1500);
+    } else if (isIOS) {
+      const iosScheme = refCode ? `focusflow://join?ref=${encodeURIComponent(refCode)}` : `focusflow://timer`;
+      ctaText.innerText = "Open in FocusFlow";
+      ctaBtn.href = iosScheme;
+      secondaryLink.style.display = 'inline-block';
+      secondaryLink.innerText = "Download FocusFlow on Google Play";
+      secondaryLink.href = playStoreUrl;
+    } else {
+      ctaText.innerText = "Get FocusFlow on Google Play";
+      ctaBtn.href = playStoreUrl;
     }
   </script>
 
