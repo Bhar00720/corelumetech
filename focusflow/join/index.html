@@ -205,6 +205,21 @@
       box-shadow: 0 14px 30px rgba(16, 185, 129, 0.45);
     }
 
+    @keyframes pulse-cta {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+      }
+      50% {
+        transform: scale(1.025);
+        box-shadow: 0 14px 35px rgba(16, 185, 129, 0.6);
+      }
+    }
+
+    .cta-btn.pulse {
+      animation: pulse-cta 2s infinite ease-in-out;
+    }
+
     .cta-btn svg {
       width: 22px;
       height: 22px;
@@ -357,34 +372,67 @@
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isAndroid) {
-      document.getElementById('ctaText').innerText = "Open in FocusFlow";
+      document.getElementById('ctaText').innerText = "Open in FocusFlow App";
       
+      const cleanRef = encodeURIComponent(refCode);
       const appScheme = refCode 
-        ? "focusflow://join?ref=" + encodeURIComponent(refCode)
+        ? "focusflow://join?ref=" + cleanRef
         : "focusflow://timer";
 
+      // Official Google Chrome Android Intent format:
+      // Directly targets package and scheme with fallback URL.
+      // Modern Chrome (Android 15 & 16) specifically requires Intent syntax to resolve installed packages.
+      const intentUrl = "intent://join?ref=" + cleanRef + 
+        "#Intent;scheme=focusflow;package=com.focusflow.corelumetech;S.browser_fallback_url=" + 
+        encodeURIComponent(playStoreUrl) + ";end;";
+
       const ctaBtn = document.getElementById('ctaBtn');
-      ctaBtn.href = appScheme;
+      ctaBtn.href = intentUrl;
+      ctaBtn.classList.add('pulse');
+
+      function triggerOpenApp() {
+        try {
+          window.location.href = intentUrl;
+        } catch (_) {
+          window.location.href = appScheme;
+        }
+      }
 
       // Direct tap listener on CTA button
       ctaBtn.addEventListener('click', function(e) {
-        window.location.href = appScheme;
+        triggerOpenApp();
       });
 
-      // Automatically launch installed app immediately (worked like a charm)
-      window.location.href = appScheme;
+      // User tap anywhere on screen qualifies as Chrome user activation on Android 15/16
+      let hasInteracted = false;
+      function onFirstUserTouch() {
+        if (!hasInteracted) {
+          hasInteracted = true;
+          triggerOpenApp();
+        }
+      }
+      document.addEventListener('touchstart', onFirstUserTouch, { once: true, passive: true });
+      document.addEventListener('pointerdown', onFirstUserTouch, { once: true, passive: true });
+      document.addEventListener('click', onFirstUserTouch, { once: true });
+
+      // Automatically attempt launch immediately on load (works on Android 14 and permissive browsers)
+      try {
+        window.location.href = intentUrl;
+      } catch (_) {
+        window.location.href = appScheme;
+      }
 
       // If user doesn't have the app installed, browser stays active:
-      // Redirect to Google Play Store after 1.8s
+      // Redirect to Google Play Store after 2.5s
       setTimeout(function() {
         if (!document.hidden && !document.webkitHidden) {
           window.location.href = playStoreUrl;
         }
-      }, 1800);
+      }, 2500);
 
       // Show secondary link for users who don't have it installed
       secondaryLink.style.display = 'inline-block';
-      secondaryLink.innerText = "Download FocusFlow on Google Play";
+      secondaryLink.innerText = "Don't have FocusFlow? Download on Google Play";
       secondaryLink.href = playStoreUrl;
     } else if (isIOS) {
       const iosScheme = refCode ? `focusflow://join?ref=${encodeURIComponent(refCode)}` : `focusflow://timer`;
