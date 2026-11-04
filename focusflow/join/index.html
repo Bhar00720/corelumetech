@@ -357,27 +357,35 @@
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     if (isAndroid) {
-      // Modern Android Chrome Intent format:
-      // Directly opens com.focusflow.corelumetech if installed, or smoothly redirects to Play Store fallback
-      // without annoying modal popup dialogs or fragile timers!
-      const intentPath = refCode ? `join?ref=${encodeURIComponent(refCode)}` : `timer`;
-      const intentUrl = `intent://${intentPath}#Intent;scheme=focusflow;package=com.focusflow.corelumetech;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
+      document.getElementById('ctaText').innerText = "Open in FocusFlow";
+      
+      const appScheme = refCode 
+        ? "focusflow://join?ref=" + encodeURIComponent(refCode)
+        : "focusflow://timer";
 
-      ctaText.innerText = "Open in FocusFlow";
-      // Rocket/launch icon for open app
-      ctaIcon.innerHTML = '<path d="M12 2.5s-4.5 4-4.5 9c0 2.5 1.5 4.5 4.5 4.5s4.5-2 4.5-4.5c0-5-4.5-9-4.5-9zm-1.5 9a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm-5.5 5.5s1.5-1 4-1c.5 1 1.5 2 3 2s2.5-1 3-2c2.5 0 4 1 4 1s-1.5 3-7 3-7-3-7-3z"/>';
-      ctaBtn.href = intentUrl;
+      const ctaBtn = document.getElementById('ctaBtn');
+      ctaBtn.href = appScheme;
+
+      // Direct tap listener on CTA button
+      ctaBtn.addEventListener('click', function(e) {
+        window.location.href = appScheme;
+      });
+
+      // Automatically launch installed app immediately (worked like a charm)
+      window.location.href = appScheme;
+
+      // If user doesn't have the app installed, browser stays active:
+      // Redirect to Google Play Store after 1.8s
+      setTimeout(function() {
+        if (!document.hidden && !document.webkitHidden) {
+          window.location.href = playStoreUrl;
+        }
+      }, 1800);
 
       // Show secondary link for users who don't have it installed
       secondaryLink.style.display = 'inline-block';
+      secondaryLink.innerText = "Download FocusFlow on Google Play";
       secondaryLink.href = playStoreUrl;
-
-      // Attempt immediate seamless app launch
-      try {
-        window.location.replace(intentUrl);
-      } catch (err) {
-        console.warn('Auto intent redirect deferred to user tap:', err);
-      }
     } else if (isIOS) {
       const iosScheme = refCode ? `focusflow://join?ref=${encodeURIComponent(refCode)}` : `focusflow://timer`;
       ctaText.innerText = "Open in FocusFlow";
