@@ -133,10 +133,6 @@ function initAudio() {
 }</code></pre>
         <p>The secret here is <code>exponentialRampToValueAtTime</code>. This schedules a mathematically smooth exponential curve directly in the browser's hardware clock, guaranteeing zero-latency, lag-free pitch shifts.</p>
 
-        <div class="adsense-box">
-            <span>[Advertisement Slot - AdSense Approved]</span>
-        </div>
-
         <h2>Phase 3: Synthesizing a Realistic Explosion Sound</h2>
         <p>An explosion is a far more complex sound. You cannot generate a convincing explosion using a standard musical tone generator. Explosions are fundamentally **white noise** paired with low-frequency rumble.</p>
         <p>To create white noise procedurally, we generate a buffer filled with random mathematical numbers between <code>-1.0</code> and <code>1.0</code>. We then pass this noise through a **BiquadFilterNode** configured as a low-pass filter to strip away the harsh high frequencies, leaving a heavy, rumbling explosion tail.</p>
