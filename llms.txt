@@ -15,7 +15,18 @@
 - [ClickSpeedLab](https://clickspeedlab.com): Browser-based CPS reflex trainer and click speed benchmarking tool.
 - [Crypto DCA Calculator](https://www.corelumetech.in/crypto-dca-calculator.html): Interactive dollar-cost averaging backtest calculator.
 
+## Chrome Extensions
+- [JobPulse (Chrome Web Store)](https://chromewebstore.google.com/detail/jobpulse-ghost-job-detect/ilhggbbploadlmibdpjiigjbmichfhnf): Real-time ghost job detector and ATS resume matcher on LinkedIn and Indeed.
+- [TabVault (Chrome Web Store)](https://chromewebstore.google.com/detail/tabvault-workspace-memory/kfhngacahibccdjofgmaaepnekhnlcdl): Offline-first Chrome tab workspace manager and RAM freezer (cuts memory by up to 85%).
+
 ## Developer & Tech Blog
+- [JobPulse Review](https://www.corelumetech.in/articles/jobpulse-ghost-job-detector-ats-resume-matcher-review.html): Guide to detecting ghost jobs and scoring ATS match percentages on LinkedIn.
+- [TabVault Review](https://www.corelumetech.in/articles/tabvault-workspace-memory-chrome-tab-manager-review.html): Freezing background tabs and organizing project workspaces.
+- [Unblocked Games 76 & 66](https://www.corelumetech.in/articles/unblocked-games-76-66-best-free-browser-games.html): Top 15 browser games for school Chromebooks with zero downloads.
+- [DeepSeek V3 vs ChatGPT-4o](https://www.corelumetech.in/articles/deepseek-v3-vs-chatgpt-4o-free-ai-comparison.html): 2026 AI benchmark, coding tests, and API token economics.
+- [Google NotebookLM Guide](https://www.corelumetech.in/articles/google-notebooklm-guide-generate-ai-podcasts.html): How to create two-host conversational AI podcasts from any document.
+- [Best ADHD Apps & Focus Timers](https://www.corelumetech.in/articles/best-adhd-apps-gamified-pomodoro-focus-timers.html): Neurodivergent-friendly gamified Pomodoro timers and Focus Flow.
+- [Butterfly vs Jitter vs Drag Clicking](https://www.corelumetech.in/articles/butterfly-vs-jitter-vs-drag-clicking-cps-guide.html): Complete speed guide to reaching 20+ CPS safely.
 - [Blog Hub](https://www.corelumetech.in/blog.html): Technical deep dives into HTML5 Canvas physics, Web Audio API, WebGPU, and webmaster guides.
 - [FocusFlow App Review](https://www.corelumetech.in/articles/focusflow-adhd-pomodoro-timer-app-review.html): Guide to using botanical focus gardens to overcome ADHD time blindness.
 - [Coursera Google Gemini Pro Guide](https://www.corelumetech.in/articles/coursera-free-3-months-google-gemini-pro-offer-guide.html): Verified instructions to claim 3 free months of Google One AI Premium.
