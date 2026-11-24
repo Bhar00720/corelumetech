@@ -28,38 +28,38 @@ const translations = {
         apps_title_1: "Crafted with ",
         apps_title_2: "Passion",
         apps_subtitle: "Discover our apps designed to enhance your daily productivity",
-        app_name: "Focus Flow",
-        app_tagline: "Stay Focused. Grow Your Forest.",
+        app_name: "FocusFlow: ADHD Pomodoro Timer",
+        app_tagline: "Grow a focus garden for time blindness.",
         app_badge_prod: "Productivity",
         app_badge_free: "Free",
         app_badge_lang: "5 Languages",
-        app_info_title: "Your Ultimate Focus Companion",
-        app_info_desc: "Transform your focus sessions into a beautiful virtual forest. Use the Pomodoro technique with ambient sounds, track habits, and watch your productivity bloom.",
-        app_feat_1: "Pomodoro timer with customizable intervals",
-        app_feat_2: "Grow virtual trees across 3 unique species",
-        app_feat_3: "10+ calming ambient sounds for focus & breaks",
-        app_feat_4: "Daily habit tracking with streaks",
-        app_feat_5: "Detailed productivity statistics",
-        app_feat_6: "Available in 5 languages",
+        app_info_title: "Calm ADHD Focus & 3D Botanical Sanctuary",
+        app_info_desc: "Grow a 3D focus garden for time blindness. Beat procrastination with a curved rotary task dial, aesthetic Pomodoro desk clock, brown & pink noise, and daily habit streaks.",
+        app_feat_1: "Curved rotary task dial with Intention Anchors",
+        app_feat_2: "3D Focus Garden: Oak, Pine, Saguaro, Sunflower & Sakura",
+        app_feat_3: "Brown noise, pink noise, rain & deep study lo-fi",
+        app_feat_4: "Habit cards, 1-tap session links & Streak Shields",
+        app_feat_5: "Aesthetic Pomodoro desk clock & Dynamic Island capsule",
+        app_feat_6: "Refer & earn coins + shareable daily scorecards",
         app_btn_playstore: "Get it on Google Play",
 
         // Features
-        feat_badge: "Focus Flow Features",
+        feat_badge: "FocusFlow Features",
         feat_title_1: "Everything You Need to ",
-        feat_title_2: "Stay Focused",
-        feat_subtitle: "A beautifully crafted productivity companion that makes focusing fun",
-        feat_trees_title: "Grow Virtual Trees",
-        feat_trees_desc: "Plant and grow realistic trees during focus sessions. Different species and growth stages make every session unique.",
-        feat_timer_title: "Pomodoro Timer",
-        feat_timer_desc: "Customizable focus and break intervals. Start a session, stay focused, and watch your tree grow as you complete each cycle.",
-        feat_sounds_title: "Ambient Sounds",
-        feat_sounds_desc: "10+ calming sounds categorized into Focus and Break modes — from gentle rain and brown noise to birdsong and café chatter.",
-        feat_forest_title: "Your Forest",
-        feat_forest_desc: "Every completed session adds a tree to your personal forest. Watch it grow over time as a visual record of your productivity.",
-        feat_habits_title: "Habit Tracking",
-        feat_habits_desc: "Build positive habits alongside your focus practice. Track daily habits with streaks, reminders, and completion history.",
-        feat_stats_title: "Statistics",
-        feat_stats_desc: "Detailed analytics of your focus time, sessions completed, habits tracked, and productivity trends over days and weeks.",
+        feat_title_2: "Defeat Time Blindness",
+        feat_subtitle: "A calming ADHD Pomodoro timer that turns deep work into a living 3D sanctuary",
+        feat_trees_title: "3D Focus Garden",
+        feat_trees_desc: "Grow Oak, Pine, Saguaro, Sunflower & Sakura trees on a 360° rotatable island. Leave the app and your sapling withers; stay focused and watch it thrive.",
+        feat_timer_title: "Curved Rotary Task Dial",
+        feat_timer_desc: "Pin micro-tasks straight onto your circular countdown ring with Intention Anchors (Study, Coding, Writing, Reading) and reliable break alarms.",
+        feat_sounds_title: "Brown & Pink Noise",
+        feat_sounds_desc: "Calibrated brown noise, pink noise, white noise, gentle rain, and deep study lo-fi engineered to quiet racing ADHD minds.",
+        feat_forest_title: "Aesthetic Desk Clock",
+        feat_forest_desc: "Minimalist cozy desk clock display with fluid ambient animations, Dynamic Island live capsule, and sensory pacing instead of stressful digits.",
+        feat_habits_title: "Habit Cards & Shields",
+        feat_habits_desc: "Organize morning, afternoon, and evening rituals. Tap 'Focus' on any habit card to launch a linked session with automatic Streak Shields.",
+        feat_stats_title: "Scorecards & Rewards",
+        feat_stats_desc: "Share visual daily scorecards of your thriving forest and earn bonus coins when friends and study partners join via your referral link.",
 
         // CTA
         cta_title: "Ready to Boost Your Focus?",
@@ -728,12 +728,12 @@ setLanguage(getCurrentLang());
                     <div class="ff-ps-app-info">
                         <img src="https://play-lh.googleusercontent.com/eybZas3vIvN726oSLvZwNpVH2but_2bIATsRUCTvFZfAPPAj_61LAg1Y6EmJ4qgCqoSk7flW10xMfGiwG7g0ZQ=w240-h480" alt="FocusFlow Icon" class="ff-ps-app-icon" onerror="this.src='https://play-lh.googleusercontent.com/eybZas3vIvN726oSLvZwNpVH2but_2bIATsRUCTvFZfAPPAj_61LAg1Y6EmJ4qgCqoSk7flW10xMfGiwG7g0ZQ'">
                         <div class="ff-ps-meta">
-                            <h2 class="ff-ps-title">FocusFlow: Focus Garden Timer</h2>
+                            <h2 class="ff-ps-title">FocusFlow: ADHD Pomodoro Timer</h2>
                             <div class="ff-ps-dev">Corelume Tech</div>
                             <div class="ff-ps-tags">
-                                <span class="ff-tag">#1 In Productivity</span>
                                 <span class="ff-tag">ADHD Friendly</span>
-                                <span class="ff-tag">100% Free</span>
+                                <span class="ff-tag">3D Focus Garden</span>
+                                <span class="ff-tag">Free on Android</span>
                             </div>
                         </div>
                     </div>
@@ -741,13 +741,13 @@ setLanguage(getCurrentLang());
                     <!-- Play Store Stats Matrix -->
                     <div class="ff-ps-metrics">
                         <div class="ff-metric-item">
-                            <div class="ff-metric-val">4.8 <span class="ff-star">★</span></div>
-                            <div class="ff-metric-label">1.2K reviews</div>
+                            <div class="ff-metric-val">🌱 3D</div>
+                            <div class="ff-metric-label">5 Tree Species</div>
                         </div>
                         <div class="ff-metric-divider"></div>
                         <div class="ff-metric-item">
-                            <div class="ff-metric-val">10K+</div>
-                            <div class="ff-metric-label">Downloads</div>
+                            <div class="ff-metric-val">🌀 Dial</div>
+                            <div class="ff-metric-label">Rotary Task Ring</div>
                         </div>
                         <div class="ff-metric-divider"></div>
                         <div class="ff-metric-item">
@@ -756,8 +756,8 @@ setLanguage(getCurrentLang());
                         </div>
                         <div class="ff-metric-divider"></div>
                         <div class="ff-metric-item">
-                            <div class="ff-metric-val">🌱 3D</div>
-                            <div class="ff-metric-label">Focus Forest</div>
+                            <div class="ff-metric-val">🎧 Audio</div>
+                            <div class="ff-metric-label">Brown & Pink Noise</div>
                         </div>
                     </div>
 
@@ -766,36 +766,36 @@ setLanguage(getCurrentLang());
                         <button class="ff-slider-btn ff-slider-prev" id="ffSlidePrev" aria-label="Previous screenshot">&#10094;</button>
                         <div class="ff-slider-track" id="ffSliderTrack">
                             <div class="ff-slide" data-index="0">
-                                <img src="https://play-lh.googleusercontent.com/MsXid35WhkBr6xzMvS7lMRsxJGyKICPtsp2OMhk4aIFqifaNjFmF_va0-psAgG7v8lCdREzGM4d5wpvfngQIBw=w720-h1280" alt="Grow a Living 3D Garden As You Focus" loading="lazy">
-                                <div class="ff-slide-caption">🌳 Grow a Living 3D Garden As You Focus</div>
+                                <img src="https://play-lh.googleusercontent.com/MsXid35WhkBr6xzMvS7lMRsxJGyKICPtsp2OMhk4aIFqifaNjFmF_va0-psAgG7v8lCdREzGM4d5wpvfngQIBw=w720-h1280" alt="3D Focus Garden & Tree Growth" loading="lazy">
+                                <div class="ff-slide-caption">🌳 3D Focus Garden: Oak, Pine, Saguaro &amp; Sakura</div>
                             </div>
                             <div class="ff-slide" data-index="1">
-                                <img src="https://play-lh.googleusercontent.com/Ja97AZbUpa-w2uSSMr4rjDQkDdlXhI2urjQjgGx9Gy__VPWe1jhWHjnYSuT465J3dgqkjV6QLll8JnubHfX5zUc=w720-h1280" alt="Calming ADHD-Friendly Pomodoro Timer" loading="lazy">
-                                <div class="ff-slide-caption">⏱️ Calming ADHD-Friendly Pomodoro Timer</div>
+                                <img src="https://play-lh.googleusercontent.com/Ja97AZbUpa-w2uSSMr4rjDQkDdlXhI2urjQjgGx9Gy__VPWe1jhWHjnYSuT465J3dgqkjV6QLll8JnubHfX5zUc=w720-h1280" alt="Curved Rotary Task Dial for ADHD" loading="lazy">
+                                <div class="ff-slide-caption">🌀 Curved Rotary Task Dial &amp; Intention Anchors</div>
                             </div>
                             <div class="ff-slide" data-index="2">
-                                <img src="https://play-lh.googleusercontent.com/tDuTKsQW-sqtMMdlhI6y7p3EUDde5OhBeWBqx1pCC6C_4g9g8Wc8iiaVOaCFCDrH1tH0xVylIhKc6ig4F2bXTg=w720-h1280" alt="Unlock Majestic Tree Species" loading="lazy">
-                                <div class="ff-slide-caption">🌸 Unlock Majestic Tree Species & Flora</div>
+                                <img src="https://play-lh.googleusercontent.com/tDuTKsQW-sqtMMdlhI6y7p3EUDde5OhBeWBqx1pCC6C_4g9g8Wc8iiaVOaCFCDrH1tH0xVylIhKc6ig4F2bXTg=w720-h1280" alt="Aesthetic Pomodoro Desk Clock" loading="lazy">
+                                <div class="ff-slide-caption">🍅 Aesthetic Pomodoro Desk Clock &amp; Sensory Pacing</div>
                             </div>
                             <div class="ff-slide" data-index="3">
-                                <img src="https://play-lh.googleusercontent.com/06j6i3sRgd_6Z43DOr3Vf5oRLg-u2bXHjd2AFtN2nGZ2QDhTOZPia8VzAuweF7dwKI8ehnv8wug9A8b7IWCm=w720-h1280" alt="10+ Soothing Ambient Soundscapes" loading="lazy">
-                                <div class="ff-slide-caption">🎧 10+ Soothing Ambient Nature Sounds</div>
+                                <img src="https://play-lh.googleusercontent.com/06j6i3sRgd_6Z43DOr3Vf5oRLg-u2bXHjd2AFtN2nGZ2QDhTOZPia8VzAuweF7dwKI8ehnv8wug9A8b7IWCm=w720-h1280" alt="Brown Noise, Pink Noise & Lo-Fi Sounds" loading="lazy">
+                                <div class="ff-slide-caption">🎧 Brown Noise, Pink Noise, Rain &amp; Study Lo-Fi</div>
                             </div>
                             <div class="ff-slide" data-index="4">
-                                <img src="https://play-lh.googleusercontent.com/PlEmN7ETOLADL3yb1eFGYwHEyOKdSapp6QDj0s_dK5P_ft1Iqt_Fy39PLo_LyAmcBzavQOno9g7n2VM5WPgN=w720-h1280" alt="Track Daily Streaks & Productivity Stats" loading="lazy">
-                                <div class="ff-slide-caption">📊 Track Daily Streaks & Productivity Stats</div>
+                                <img src="https://play-lh.googleusercontent.com/PlEmN7ETOLADL3yb1eFGYwHEyOKdSapp6QDj0s_dK5P_ft1Iqt_Fy39PLo_LyAmcBzavQOno9g7n2VM5WPgN=w720-h1280" alt="Habit Cards & Streak Shields" loading="lazy">
+                                <div class="ff-slide-caption">🔥 Habit Cards, 1-Tap Focus Links &amp; Streak Shields</div>
                             </div>
                             <div class="ff-slide" data-index="5">
-                                <img src="https://play-lh.googleusercontent.com/NKifG-yxQmT2Aw_G-WkKWqhra57KaaRutkrXEoKIQi8qBCqLFtDBqu7MLahxqogGNe9eYnw2V1dQmjaXQ1SyOoY=w720-h1280" alt="Turn Boring Study Hours into Gameplay" loading="lazy">
-                                <div class="ff-slide-caption">🚀 Turn Study Hours Into An Engaging Game</div>
+                                <img src="https://play-lh.googleusercontent.com/NKifG-yxQmT2Aw_G-WkKWqhra57KaaRutkrXEoKIQi8qBCqLFtDBqu7MLahxqogGNe9eYnw2V1dQmjaXQ1SyOoY=w720-h1280" alt="Sensory ADHD Timer for Time Blindness" loading="lazy">
+                                <div class="ff-slide-caption">🧠 Beat Time Blindness &amp; Executive Dysfunction</div>
                             </div>
                             <div class="ff-slide" data-index="6">
-                                <img src="https://play-lh.googleusercontent.com/ec_ZDr1zF5SDfvbosvpB_FmeG-mUqXPWM7f_PciS5r0lncVWLIwfa36O0dMeOoiJ9mv7pxyBVJQfsQAKT9pj=w720-h1280" alt="Fully Customizable Work & Break Intervals" loading="lazy">
-                                <div class="ff-slide-caption">⚙️ Customizable Focus & Break Intervals</div>
+                                <img src="https://play-lh.googleusercontent.com/ec_ZDr1zF5SDfvbosvpB_FmeG-mUqXPWM7f_PciS5r0lncVWLIwfa36O0dMeOoiJ9mv7pxyBVJQfsQAKT9pj=w720-h1280" alt="Dynamic Island Live Capsule" loading="lazy">
+                                <div class="ff-slide-caption">⏱️ Dynamic Island Live Capsule &amp; Loud Break Alarms</div>
                             </div>
                             <div class="ff-slide" data-index="7">
-                                <img src="https://play-lh.googleusercontent.com/ofrLGj2YID94MBQocFNXwPSPND6h-kl_1D_8FBbaiOEUhUVtC4c2Fx-0tRD3agnE-9Dd0bzsk4w9lPtCNZcE4g=w720-h1280" alt="Master Self-Discipline Without Stress" loading="lazy">
-                                <div class="ff-slide-caption">✨ Master Focus & Beat Procrastination</div>
+                                <img src="https://play-lh.googleusercontent.com/ofrLGj2YID94MBQocFNXwPSPND6h-kl_1D_8FBbaiOEUhUVtC4c2Fx-0tRD3agnE-9Dd0bzsk4w9lPtCNZcE4g=w720-h1280" alt="Refer & Earn Coins + Shareable Scorecards" loading="lazy">
+                                <div class="ff-slide-caption">🎁 Refer &amp; Earn Coins + Shareable Daily Scorecards</div>
                             </div>
                         </div>
                         <button class="ff-slider-btn ff-slider-next" id="ffSlideNext" aria-label="Next screenshot">&#10095;</button>
@@ -815,7 +815,7 @@ setLanguage(getCurrentLang());
 
                     <!-- Short Description -->
                     <div class="ff-ps-desc">
-                        <p><strong>Transform your focus sessions into a blooming virtual sanctuary.</strong> When minutes feel abstract, FocusFlow gives time living shape. Beat procrastination, stay on task, and build lasting productivity habits.</p>
+                        <p><strong>Grow a focus garden for time blindness.</strong> Beat procrastination with a 3D botanical sanctuary (Oak, Pine, Saguaro, Sunflower &amp; Sakura), curved rotary task dial, brown &amp; pink noise, and habit streaks.</p>
                     </div>
 
                     <!-- High-Converting Action Button -->
