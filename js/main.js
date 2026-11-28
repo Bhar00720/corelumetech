@@ -33,33 +33,33 @@ const translations = {
         app_badge_prod: "Productivity",
         app_badge_free: "Free",
         app_badge_lang: "5 Languages",
-        app_info_title: "Calm ADHD Focus & 3D Botanical Sanctuary",
-        app_info_desc: "Grow a 3D focus garden for time blindness. Beat procrastination with a curved rotary task dial, aesthetic Pomodoro desk clock, brown & pink noise, and daily habit streaks.",
-        app_feat_1: "Curved rotary task dial with Intention Anchors",
-        app_feat_2: "3D Focus Garden: Oak, Pine, Saguaro, Sunflower & Sakura",
-        app_feat_3: "Brown noise, pink noise, rain & deep study lo-fi",
-        app_feat_4: "Habit cards, 1-tap session links & Streak Shields",
-        app_feat_5: "Aesthetic Pomodoro desk clock & Dynamic Island capsule",
-        app_feat_6: "Refer & earn coins + shareable daily scorecards",
+        app_info_title: "Calm ADHD Focus, Focus Hearts & 3D Sanctuary",
+        app_info_desc: "Grow a living focus garden for time blindness. Features Focus Hearts & 5s–25s Leave Guard, Daily Quests, full To-Do Workspace, Mood Journal & Flow Insights, Mythical Species Mastery, and Zen Mode.",
+        app_feat_1: "Focus Hearts & 5s–25s Pause-and-Breathe Leave Guard",
+        app_feat_2: "Daily Focus Quests, Combo Streaks & Chest Bonuses",
+        app_feat_3: "Full To-Do Workspace: Subtasks, Priorities & Recurring Tasks",
+        app_feat_4: "Mood Journal, Flow Insights & Peak Focus Hours",
+        app_feat_5: "Species Mastery (Bronze to Mythic) & Mythical Trees",
+        app_feat_6: "Zen Mode, Brown/Pink Noise, Dual AI Voice & Coin Vault",
         app_btn_playstore: "Get it on Google Play",
 
         // Features
         feat_badge: "FocusFlow Features",
         feat_title_1: "Everything You Need to ",
         feat_title_2: "Defeat Time Blindness",
-        feat_subtitle: "A calming ADHD Pomodoro timer that turns deep work into a living 3D sanctuary",
-        feat_trees_title: "3D Focus Garden",
-        feat_trees_desc: "Grow Oak, Pine, Saguaro, Sunflower & Sakura trees on a 360° rotatable island. Leave the app and your sapling withers; stay focused and watch it thrive.",
-        feat_timer_title: "Curved Rotary Task Dial",
-        feat_timer_desc: "Pin micro-tasks straight onto your circular countdown ring with Intention Anchors (Study, Coding, Writing, Reading) and reliable break alarms.",
-        feat_sounds_title: "Brown & Pink Noise",
-        feat_sounds_desc: "Calibrated brown noise, pink noise, white noise, gentle rain, and deep study lo-fi engineered to quiet racing ADHD minds.",
-        feat_forest_title: "Aesthetic Desk Clock",
-        feat_forest_desc: "Minimalist cozy desk clock display with fluid ambient animations, Dynamic Island live capsule, and sensory pacing instead of stressful digits.",
-        feat_habits_title: "Habit Cards & Shields",
-        feat_habits_desc: "Organize morning, afternoon, and evening rituals. Tap 'Focus' on any habit card to launch a linked session with automatic Streak Shields.",
-        feat_stats_title: "Scorecards & Rewards",
-        feat_stats_desc: "Share visual daily scorecards of your thriving forest and earn bonus coins when friends and study partners join via your referral link.",
+        feat_subtitle: "A calming ADHD Pomodoro & study timer with Focus Hearts, Daily Quests, and 3D Species Mastery",
+        feat_trees_title: "Focus Hearts & Leave Guard",
+        feat_trees_desc: "Step away mid-session? A customizable 5s–25s grace countdown reminds you to return, while Focus Hearts shield your tree from withering.",
+        feat_timer_title: "Daily Quests & Combos",
+        feat_timer_desc: "Clear 3 bite-sized Daily Quests every day for Coin & Heart chest bonuses, stack Combo Streaks, and protect momentum with Streak Freeze Shields.",
+        feat_sounds_title: "To-Do & Recurring Tasks",
+        feat_sounds_desc: "Full To-Do Workspace with subtasks, priorities, due dates, Pomodoro targets, and Daily, Weekday, or Weekly repeat schedules linked to your dial.",
+        feat_forest_title: "Mood Journal & Insights",
+        feat_forest_desc: "Log quick 1-tap post-session moods and reflection notes, then unlock Flow Insights to discover your peak focus hours and mood correlations.",
+        feat_habits_title: "Mythical Species Mastery",
+        feat_habits_desc: "Level up trees from Bronze to Gold and Mythic aura. Unlock Golden Ginkgo, Celestial Willow, Royal Jacaranda, World Tree Yggdrasil & Fire Tree.",
+        feat_stats_title: "Zen Mode & Coin Vault",
+        feat_stats_desc: "Enter Zen Mode with guided breathing, rain/brown/pink noise & dual AI voice guidance, and unlock perks via the Flexible Coin Vault.",
 
         // CTA
         cta_title: "Ready to Boost Your Focus?",
@@ -741,13 +741,13 @@ setLanguage(getCurrentLang());
                     <!-- Play Store Stats Matrix -->
                     <div class="ff-ps-metrics">
                         <div class="ff-metric-item">
-                            <div class="ff-metric-val">🌱 3D</div>
-                            <div class="ff-metric-label">5 Tree Species</div>
+                            <div class="ff-metric-val">❤️ Hearts</div>
+                            <div class="ff-metric-label">Leave Guard</div>
                         </div>
                         <div class="ff-metric-divider"></div>
                         <div class="ff-metric-item">
-                            <div class="ff-metric-val">🌀 Dial</div>
-                            <div class="ff-metric-label">Rotary Task Ring</div>
+                            <div class="ff-metric-val">🎯 Quests</div>
+                            <div class="ff-metric-label">Daily Combos</div>
                         </div>
                         <div class="ff-metric-divider"></div>
                         <div class="ff-metric-item">
@@ -756,8 +756,8 @@ setLanguage(getCurrentLang());
                         </div>
                         <div class="ff-metric-divider"></div>
                         <div class="ff-metric-item">
-                            <div class="ff-metric-val">🎧 Audio</div>
-                            <div class="ff-metric-label">Brown & Pink Noise</div>
+                            <div class="ff-metric-val">🌳 Mythic</div>
+                            <div class="ff-metric-label">Species Mastery</div>
                         </div>
                     </div>
 
@@ -766,36 +766,36 @@ setLanguage(getCurrentLang());
                         <button class="ff-slider-btn ff-slider-prev" id="ffSlidePrev" aria-label="Previous screenshot">&#10094;</button>
                         <div class="ff-slider-track" id="ffSliderTrack">
                             <div class="ff-slide" data-index="0">
-                                <img src="https://play-lh.googleusercontent.com/MsXid35WhkBr6xzMvS7lMRsxJGyKICPtsp2OMhk4aIFqifaNjFmF_va0-psAgG7v8lCdREzGM4d5wpvfngQIBw=w720-h1280" alt="3D Focus Garden & Tree Growth" loading="lazy">
-                                <div class="ff-slide-caption">🌳 3D Focus Garden: Oak, Pine, Saguaro &amp; Sakura</div>
+                                <img src="https://play-lh.googleusercontent.com/MsXid35WhkBr6xzMvS7lMRsxJGyKICPtsp2OMhk4aIFqifaNjFmF_va0-psAgG7v8lCdREzGM4d5wpvfngQIBw=w720-h1280" alt="3D Focus Garden & Species Mastery" loading="lazy">
+                                <div class="ff-slide-caption">🌳 3D Focus Garden &amp; Mythic Species Mastery</div>
                             </div>
                             <div class="ff-slide" data-index="1">
-                                <img src="https://play-lh.googleusercontent.com/Ja97AZbUpa-w2uSSMr4rjDQkDdlXhI2urjQjgGx9Gy__VPWe1jhWHjnYSuT465J3dgqkjV6QLll8JnubHfX5zUc=w720-h1280" alt="Curved Rotary Task Dial for ADHD" loading="lazy">
-                                <div class="ff-slide-caption">🌀 Curved Rotary Task Dial &amp; Intention Anchors</div>
+                                <img src="https://play-lh.googleusercontent.com/Ja97AZbUpa-w2uSSMr4rjDQkDdlXhI2urjQjgGx9Gy__VPWe1jhWHjnYSuT465J3dgqkjV6QLll8JnubHfX5zUc=w720-h1280" alt="Focus Hearts & 5s-25s Leave Guard" loading="lazy">
+                                <div class="ff-slide-caption">❤️ Focus Hearts &amp; 5s–25s Leave Guard Protection</div>
                             </div>
                             <div class="ff-slide" data-index="2">
-                                <img src="https://play-lh.googleusercontent.com/tDuTKsQW-sqtMMdlhI6y7p3EUDde5OhBeWBqx1pCC6C_4g9g8Wc8iiaVOaCFCDrH1tH0xVylIhKc6ig4F2bXTg=w720-h1280" alt="Aesthetic Pomodoro Desk Clock" loading="lazy">
-                                <div class="ff-slide-caption">🍅 Aesthetic Pomodoro Desk Clock &amp; Sensory Pacing</div>
+                                <img src="https://play-lh.googleusercontent.com/tDuTKsQW-sqtMMdlhI6y7p3EUDde5OhBeWBqx1pCC6C_4g9g8Wc8iiaVOaCFCDrH1tH0xVylIhKc6ig4F2bXTg=w720-h1280" alt="Daily Focus Quests & Combo Streaks" loading="lazy">
+                                <div class="ff-slide-caption">🎯 Daily Focus Quests, Chests &amp; Combo Streaks</div>
                             </div>
                             <div class="ff-slide" data-index="3">
-                                <img src="https://play-lh.googleusercontent.com/06j6i3sRgd_6Z43DOr3Vf5oRLg-u2bXHjd2AFtN2nGZ2QDhTOZPia8VzAuweF7dwKI8ehnv8wug9A8b7IWCm=w720-h1280" alt="Brown Noise, Pink Noise & Lo-Fi Sounds" loading="lazy">
-                                <div class="ff-slide-caption">🎧 Brown Noise, Pink Noise, Rain &amp; Study Lo-Fi</div>
+                                <img src="https://play-lh.googleusercontent.com/06j6i3sRgd_6Z43DOr3Vf5oRLg-u2bXHjd2AFtN2nGZ2QDhTOZPia8VzAuweF7dwKI8ehnv8wug9A8b7IWCm=w720-h1280" alt="Zen Mode & Spatial Audio" loading="lazy">
+                                <div class="ff-slide-caption">🧘 Zen Mode, Pink/Brown Noise &amp; Dual AI Voice</div>
                             </div>
                             <div class="ff-slide" data-index="4">
-                                <img src="https://play-lh.googleusercontent.com/PlEmN7ETOLADL3yb1eFGYwHEyOKdSapp6QDj0s_dK5P_ft1Iqt_Fy39PLo_LyAmcBzavQOno9g7n2VM5WPgN=w720-h1280" alt="Habit Cards & Streak Shields" loading="lazy">
-                                <div class="ff-slide-caption">🔥 Habit Cards, 1-Tap Focus Links &amp; Streak Shields</div>
+                                <img src="https://play-lh.googleusercontent.com/PlEmN7ETOLADL3yb1eFGYwHEyOKdSapp6QDj0s_dK5P_ft1Iqt_Fy39PLo_LyAmcBzavQOno9g7n2VM5WPgN=w720-h1280" alt="Mood Journal & Flow Insights" loading="lazy">
+                                <div class="ff-slide-caption">📊 Mood Journal, Pure Focus Score &amp; Flow Insights</div>
                             </div>
                             <div class="ff-slide" data-index="5">
-                                <img src="https://play-lh.googleusercontent.com/NKifG-yxQmT2Aw_G-WkKWqhra57KaaRutkrXEoKIQi8qBCqLFtDBqu7MLahxqogGNe9eYnw2V1dQmjaXQ1SyOoY=w720-h1280" alt="Sensory ADHD Timer for Time Blindness" loading="lazy">
-                                <div class="ff-slide-caption">🧠 Beat Time Blindness &amp; Executive Dysfunction</div>
+                                <img src="https://play-lh.googleusercontent.com/NKifG-yxQmT2Aw_G-WkKWqhra57KaaRutkrXEoKIQi8qBCqLFtDBqu7MLahxqogGNe9eYnw2V1dQmjaXQ1SyOoY=w720-h1280" alt="Full To-Do Workspace & Subtasks" loading="lazy">
+                                <div class="ff-slide-caption">✅ Full To-Do Workspace, Subtasks &amp; Repeat Rules</div>
                             </div>
                             <div class="ff-slide" data-index="6">
-                                <img src="https://play-lh.googleusercontent.com/ec_ZDr1zF5SDfvbosvpB_FmeG-mUqXPWM7f_PciS5r0lncVWLIwfa36O0dMeOoiJ9mv7pxyBVJQfsQAKT9pj=w720-h1280" alt="Dynamic Island Live Capsule" loading="lazy">
-                                <div class="ff-slide-caption">⏱️ Dynamic Island Live Capsule &amp; Loud Break Alarms</div>
+                                <img src="https://play-lh.googleusercontent.com/ec_ZDr1zF5SDfvbosvpB_FmeG-mUqXPWM7f_PciS5r0lncVWLIwfa36O0dMeOoiJ9mv7pxyBVJQfsQAKT9pj=w720-h1280" alt="Mythical Trees & Botanical Headers" loading="lazy">
+                                <div class="ff-slide-caption">✨ Unlock Golden Ginkgo, Celestial Willow &amp; Yggdrasil</div>
                             </div>
                             <div class="ff-slide" data-index="7">
-                                <img src="https://play-lh.googleusercontent.com/ofrLGj2YID94MBQocFNXwPSPND6h-kl_1D_8FBbaiOEUhUVtC4c2Fx-0tRD3agnE-9Dd0bzsk4w9lPtCNZcE4g=w720-h1280" alt="Refer & Earn Coins + Shareable Scorecards" loading="lazy">
-                                <div class="ff-slide-caption">🎁 Refer &amp; Earn Coins + Shareable Daily Scorecards</div>
+                                <img src="https://play-lh.googleusercontent.com/ofrLGj2YID94MBQocFNXwPSPND6h-kl_1D_8FBbaiOEUhUVtC4c2Fx-0tRD3agnE-9Dd0bzsk4w9lPtCNZcE4g=w720-h1280" alt="Flexible Coin Vault & Rewards" loading="lazy">
+                                <div class="ff-slide-caption">🪙 Flexible Coin Vault, Perks &amp; Referral Rewards</div>
                             </div>
                         </div>
                         <button class="ff-slider-btn ff-slider-next" id="ffSlideNext" aria-label="Next screenshot">&#10095;</button>
@@ -815,7 +815,7 @@ setLanguage(getCurrentLang());
 
                     <!-- Short Description -->
                     <div class="ff-ps-desc">
-                        <p><strong>Grow a focus garden for time blindness.</strong> Beat procrastination with a 3D botanical sanctuary (Oak, Pine, Saguaro, Sunflower &amp; Sakura), curved rotary task dial, brown &amp; pink noise, and habit streaks.</p>
+                        <p><strong>Grow a focus garden for time blindness.</strong> Now featuring <strong>Focus Hearts &amp; 5s–25s Leave Guard</strong>, <strong>Daily Focus Quests</strong>, a full <strong>To-Do Workspace</strong>, <strong>Mood Journal &amp; Flow Insights</strong>, <strong>Mythical Species Mastery</strong>, and <strong>Zen Mode</strong> with pink noise.</p>
                     </div>
 
                     <!-- High-Converting Action Button -->
