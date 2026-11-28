@@ -5,9 +5,17 @@
     <link>https://www.corelumetech.in/</link>
     <description>Original HTML5 browser games, game development deep dives, SEO tools comparisons, and productivity apps from Corelume Tech.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2026 12:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 12:39:00 GMT</lastBuildDate>
     <atom:link href="https://www.corelumetech.in/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title>How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide)</title>
+      <link>https://www.corelumetech.in/articles/diy-bluetooth-speaker.html</link>
+      <guid>https://www.corelumetech.in/articles/diy-bluetooth-speaker.html</guid>
+      <pubDate>Sat, 28 Nov 2026 12:39:00 GMT</pubDate>
+      <description>A zero-fluff engineering guide to building a 30W DIY Bluetooth speaker using a TPA3110 Class-D amplifier, 12V 3S lithium-ion battery pack, and LM2596 buck converter.</description>
+    </item>
+
         <item>
       <title>JobPulse Review: Detect Ghost Jobs &amp; Boost ATS Score (2026)</title>
       <link>https://www.corelumetech.in/articles/jobpulse-ghost-job-detector-ats-resume-matcher-review.html</link>

@@ -18,7 +18,7 @@
 
   <url>
     <loc>https://www.corelumetech.in/blog.html</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -350,6 +350,13 @@
   <url>
     <loc>https://www.corelumetech.in/articles/butterfly-vs-jitter-vs-drag-clicking-cps-guide.html</loc>
     <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.corelumetech.in/articles/diy-bluetooth-speaker.html</loc>
+    <lastmod>2026-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
