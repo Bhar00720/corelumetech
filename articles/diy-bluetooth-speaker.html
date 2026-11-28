@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to build a custom 30W DIY Bluetooth speaker using a TPA3110 Class-D amplifier, 12V 3S lithium-ion battery pack, and LM2596 buck converter. Full wiring diagram &amp; BOM.">
+    <meta name="keywords" content="how to build a custom bluetooth speaker, diy bluetooth speaker, tpa3110 amplifier wiring, 12v lithium-ion speaker battery, lm2596 buck converter audio, 30w portable bluetooth speaker build, custom tws speaker">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide) | Corelume Tech</title>
+    <link rel="icon" href="../assets/logo.png" type="image/png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.corelumetech.in/articles/diy-bluetooth-speaker.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide)">
+    <meta property="og:description" content="Zero-BS engineering guide to building a 30W DIY Bluetooth speaker with a TPA3110 Class-D amp, 12V lithium-ion battery pack, and LM2596 buck regulator.">
+    <meta property="og:url" content="https://www.corelumetech.in/articles/diy-bluetooth-speaker.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide)">
+    <meta name="twitter:description" content="Complete power-bus wiring diagram, star-grounding guide, and parts BOM for a 30W DIY Bluetooth speaker.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.corelumetech.in/articles/diy-bluetooth-speaker.html"
+      },
+      "headline": "How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide)",
+      "description": "A zero-fluff engineering guide to building a 30W DIY Bluetooth speaker using a TPA3110 Class-D amplifier, 12V 3S lithium-ion battery pack, and LM2596 buck converter.",
+      "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Organization",
+        "name": "Corelume Tech",
+        "url": "https://www.corelumetech.in/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Corelume Tech",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.corelumetech.in/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28"
+    }
+    </script>
+
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why use an LM2596 buck converter with a TPA3110 amplifier?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The TPA3110 runs directly off a 12V 3S lithium-ion battery pack, while external Bluetooth receivers, status LEDs, and auxiliary logic need a regulated 5.0V rail. Using an LM2596 buck converter prevents over-voltage damage and isolates logic power."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bridge L- and R- speaker outputs on a TPA3110 board?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. TPA3110 outputs are Bridge-Tied Load (BTL), meaning both positive and negative terminals are actively driven. Connecting L- and R- together or to ground will trigger protection or damage the amplifier IC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I stop Bluetooth ground-loop whine in a DIY speaker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a star-ground wiring topology where the TPA3110 ground and LM2596 ground meet at a single physical node near the battery BMS negative terminal rather than daisy-chaining ground wires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What battery pack is best for a 30W TPA3110 Bluetooth speaker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 12V 3S lithium-ion battery pack (11.1V nominal, 12.6V full charge) with an integrated 10A+ BMS handles 3A+ bass transient peaks without voltage sag or premature brownouts."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Ad Network Tags -->
+    <meta name="ad-enabled" content="true">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4265727209161072" crossorigin="anonymous"></script>
+
+    <style>
+        .article-container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+        }
+        .article-header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+        .article-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-3);
+            margin-bottom: 20px;
+        }
+        .article-breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .article-title {
+            font-size: clamp(28px, 4.5vw, 44px);
+            font-weight: 800;
+            line-height: 1.25;
+            color: #ffffff;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 14px;
+            color: var(--text-2);
+            flex-wrap: wrap;
+        }
+        .article-featured-img {
+            width: 100%;
+            height: auto;
+            max-height: 440px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin: 25px 0 40px;
+        }
+        .article-body {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-1);
+        }
+        .article-body h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 48px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-body h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 32px 0 14px;
+        }
+        .article-body p {
+            margin-bottom: 22px;
+            color: var(--text-2);
+        }
+        .article-body ul, .article-body ol {
+            margin: 15px 0 25px 24px;
+            color: var(--text-2);
+        }
+        .article-body li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .article-body strong {
+            color: #ffffff;
+        }
+        .article-body a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .article-body code {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #6ee7b7;
+        }
+        .wiring-diagram {
+            background: #0b0f19;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            overflow-x: auto;
+            margin: 26px 0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: #93c5fd;
+        }
+        .alert-box {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid #10b981;
+            padding: 18px 22px;
+            border-radius: 0 12px 12px 0;
+            margin: 28px 0;
+            font-size: 15px;
+            color: var(--text-2);
+        }
+        .alert-box strong {
+            color: #ffffff;
+        }
+        .bom-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px;
+            margin: 28px 0;
+        }
+        .bom-card ul {
+            margin: 0 0 0 20px;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 16px;
+        }
+        .faq-item h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+            color: #ffffff;
+        }
+        .faq-item p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--text-2);
+            line-height: 1.6;
+        }
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 50px 0;
+        }
+        .author-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+        .author-info h3 {
+            margin: 0 0 6px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .author-info p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-3);
+            line-height: 1.5;
+        }
+        .related-links {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px;
+            margin-top: 40px;
+        }
+        .related-links h3 {
+            margin: 0 0 16px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .related-links a {
+            display: block;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 15px;
+            transition: transform 0.2s;
+        }
+        .related-links a:hover {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/logo.png" alt="Corelume Tech" class="nav-logo-img">
+                <span class="nav-title">Corelume Tech</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="../index.html#apps" data-nav="apps">Our Apps</a></li>
+                <li><a href="../game-hub.html">Game Hub</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ══ MAIN ARTICLE ════════════════════════════════════ -->
+    <main class="article-container">
+        <header class="article-header">
+            <div class="article-breadcrumb">
+                <a href="/">Home</a> &rsaquo;
+                <a href="../blog.html">Blog</a> &rsaquo;
+                <span>DIY 30W Bluetooth Speaker</span>
+            </div>
+            <h1 class="article-title">How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide)</h1>
+            <div class="article-meta">
+                <span>By Corelume Tech Editorial Team</span>
+                <span>•</span>
+                <span>November 28, 2026</span>
+                <span>•</span>
+                <span>6 Min Read</span>
+                <span>•</span>
+                <span style="color: #34d399;">DIY Audio Engineering</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80" alt="Custom 30W DIY Bluetooth Speaker Build with TPA3110 Amplifier" class="article-featured-img">
+
+        <div class="article-body">
+            <p>Off-the-shelf portable speakers trade acoustic volume and repairability for glued-together plastic shells. When you build your own Bluetooth speaker from discrete modules, you control the enclosure volume, driver sensitivity, power rail stability, and thermal headroom.</p>
+
+            <p>This guide walks through a proven, repeatable <strong>2 &times; 15W (30W total) stereo build</strong> powered by a 12V lithium-ion pack. It avoids the classic beginner mistakes&mdash;power-supply whine, brownouts on bass transients, and starved Bluetooth receiver rails.</p>
+
+            <div class="alert-box">
+                <strong>Affiliate Disclosure:</strong> Some hardware links below are affiliate links. As an Amazon Associate, Corelume Tech may earn a small commission from qualifying purchases at no extra cost to you.
+            </div>
+
+            <h2>System Architecture &amp; Power Budget</h2>
+            <p>At full tilt into 4-ohm loads, a dual-channel 15W Class-D stage draws roughly 30W of acoustic power. Accounting for ~88% Class-D efficiency, peak input draw sits near 34W (~2.8A at 12V). Music has a crest factor, so average draw is much lower, but your power bus must handle 3A+ instantaneous peaks without voltage sag.</p>
+            <p>To keep digital Bluetooth noise out of the analog input stage, we split the 12V bus:</p>
+            <ol>
+                <li><strong>Main Amplifier Rail (12V Direct):</strong> Feeds the Class-D output stage directly from the battery BMS.</li>
+                <li><strong>Regulated Logic Rail (5V Buck):</strong> Steps 12V down to a clean 5V for indicator LEDs, auxiliary USB charging, or a standalone 5V Bluetooth receiver.</li>
+            </ol>
+
+            <h2>What You Need (Parts BOM)</h2>
+            <p>Every component below is selected for electrical compatibility and thermal margin. Swap parts only if you verify voltage and current ratings.</p>
+            <div class="bom-card">
+                <ul>
+                    <li><strong><a href="https://link.amazon/B0bvqsdtx" target="_blank" rel="nofollow sponsored noopener">TPA3110 Amplifier</a>:</strong> A 2 &times; 15W Class-D stereo amplifier board (look for variants with integrated Bluetooth 5.0 or pair with a dedicated BT receiver). Operates cleanly from 8V to 24V DC.</li>
+                    <li><strong><a href="https://link.amazon/B0fTFQlm8" target="_blank" rel="nofollow sponsored noopener">12V Lithium-Ion Pack</a>:</strong> A 3S (11.1V nominal, 12.6V peak) lithium-ion battery pack with an integrated 10A+ BMS for over-discharge and short-circuit protection.</li>
+                    <li><strong><a href="https://link.amazon/B0cG4Gm4O" target="_blank" rel="nofollow sponsored noopener">LM2596 Voltage Regulator</a>:</strong> Adjustable DC-DC buck converter to step 12.6V down to a rock-solid 5.0V for auxiliary logic, status LEDs, or an external Bluetooth receiver.</li>
+                    <li><strong>Drivers (&times;2):</strong> 3-inch or 4-inch full-range 4&Omega; speakers rated for 15W&ndash;25W RMS.</li>
+                    <li><strong>Enclosure:</strong> 12mm Baltic birch plywood or 4mm-wall PETG/ABS 3D-printed shell (~2.5L to 3.5L internal volume per driver, sealed or ported).</li>
+                    <li><strong>Hardware:</strong> SPST latching power switch (rated 5A+), DC barrel charging jack (5.5 &times; 2.1mm), 18 AWG silicone wire, and acoustic polyfill.</li>
+                </ul>
+            </div>
+
+            <h2>Step 1: Dial In the LM2596 Buck Converter First</h2>
+            <p><strong>Never connect a load to an uncalibrated buck converter.</strong> Adjustable LM2596 boards often ship set to pass input voltage straight through or sit at an arbitrary 9V.</p>
+            <ol>
+                <li>Wire the <a href="https://link.amazon/B0fTFQlm8" target="_blank" rel="nofollow sponsored noopener">12V Lithium-Ion Pack</a> positive and negative leads to <code>IN+</code> and <code>IN-</code> on the <a href="https://link.amazon/B0cG4Gm4O" target="_blank" rel="nofollow sponsored noopener">LM2596 Voltage Regulator</a>.</li>
+                <li>Probe <code>OUT+</code> and <code>OUT-</code> with a multimeter set to DC volts.</li>
+                <li>Turn the brass potentiometer screw counter-clockwise (often 10&ndash;15 turns) until the meter locks onto <strong>5.00V</strong>.</li>
+                <li>Add a dab of hot glue or nail polish to the pot screw so speaker vibrations don't drift your voltage rail.</li>
+            </ol>
+
+            <h2>Step 2: Star-Ground Wiring &amp; Power Bus</h2>
+            <p>Daisy-chaining ground wires between a high-current Class-D amp and a sensitive 5V logic rail creates a ground loop&mdash;heard as a high-pitched whine whenever Bluetooth is searching or audio is paused. Use a <strong>star-ground topology</strong> where all negative returns meet at one physical node right at the battery/switch.</p>
+
+            <pre class="wiring-diagram">[12V Li-Ion Pack + BMS]
+   │
+   ├──(+)──[ 5A Main Switch ]──┬──(+)──► [TPA3110 Amplifier VCC]
+   │                           │
+   │                           └──(+)──► [LM2596 IN+] ──(5.0V OUT+)──► [BT / LEDs]
+   │
+   └──(-)──[ STAR GROUND NODE ]──┬──(-)──► [TPA3110 Amplifier GND]
+                                 │
+                                 └──(-)──► [LM2596 IN- / OUT-]
+
+[TPA3110 Output]
+   ├── L+ / L- ──(18 AWG)──► Left 4Ω Full-Range Driver
+   └── R+ / R- ──(18 AWG)──► Right 4Ω Full-Range Driver</pre>
+
+            <h3>Wiring Checklist</h3>
+            <ul>
+                <li>Keep speaker leads (<code>L+/L-</code>, <code>R+/R-</code>) twisted together to minimize EMI radiation.</li>
+                <li><strong>Never</strong> bridge <code>L-</code> and <code>R-</code> together on a TPA3110&mdash;Class-D outputs are BTL (Bridge-Tied Load) and both terminals are actively driven. Shorting them to ground or each other will trip protection or fry the IC.</li>
+                <li>Place a 1000&micro;F / 25V low-ESR electrolytic capacitor across the TPA3110 <code>VCC</code> and <code>GND</code> pads if you hear clipping on heavy kick drums.</li>
+            </ul>
+
+            <h2>Step 3: Enclosure Volume &amp; Acoustic Sealing</h2>
+            <p>An unbaffled speaker sounds thin because rear pressure waves cancel front waves (acoustic dipole cancellation).</p>
+            <ul>
+                <li><strong>Sealed vs. Ported:</strong> A sealed box stuffed loosely with acoustic polyfill (~50% fill) gives tight transient response and protects small drivers from over-excursion below resonance.</li>
+                <li><strong>Airtight Joints:</strong> Run a bead of wood glue (or silicone for 3D prints) along every internal seam. Use closed-cell EVA foam gaskets under the speaker frames and terminal cups. Any air leak creates audible chuffing at high volume.</li>
+            </ul>
+
+            <h2>Step 4: Bench Test Before Final Assembly</h2>
+            <p>Before bolting the rear panel shut:</p>
+            <ol>
+                <li>Power on with no audio playing and put your ear 5 cm from the cone. You should hear only a faint thermal hiss&mdash;no clicking or whine.</li>
+                <li>Pair via Bluetooth and sweep a 40Hz&ndash;18kHz tone at 50% volume to catch panel rattles or air leaks early.</li>
+                <li>Monitor the <strong>TPA3110</strong> heatsink and <strong>LM2596</strong> inductor after 15 minutes at 75% volume; both should stay warm to the touch, not scorching.</li>
+            </ol>
+            <p>Once verified, seal the backplate, charge the 3S pack to 12.6V with a dedicated 12.6V CC/CV Li-ion charger, and enjoy clean, repairable 30W wireless audio.</p>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item">
+                <h3>Why use an LM2596 buck converter with a TPA3110 amplifier?</h3>
+                <p>The TPA3110 runs directly off a 12V 3S lithium-ion battery pack, while external Bluetooth receivers, status LEDs, and auxiliary logic need a regulated 5.0V rail. Using an LM2596 buck converter prevents over-voltage damage and isolates logic power.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I bridge L- and R- speaker outputs on a TPA3110 board?</h3>
+                <p>No. TPA3110 outputs are Bridge-Tied Load (BTL), meaning both positive and negative terminals are actively driven. Connecting L- and R- together or to ground will trigger protection or damage the amplifier IC.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I stop Bluetooth ground-loop whine in a DIY speaker?</h3>
+                <p>Use a star-ground wiring topology where the TPA3110 ground and LM2596 ground meet at a single physical node near the battery BMS negative terminal rather than daisy-chaining ground wires.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What battery pack is best for a 30W TPA3110 Bluetooth speaker?</h3>
+                <p>A 12V 3S lithium-ion battery pack (11.1V nominal, 12.6V full charge) with an integrated 10A+ BMS handles 3A+ bass transient peaks without voltage sag or premature brownouts.</p>
+            </div>
+
+            <!-- Author Box -->
+            <div class="author-box">
+                <img src="../assets/logo.png" alt="Corelume Tech Editorial Team" class="author-img">
+                <div class="author-info">
+                    <h3><a href="../about.html" style="color: #ffffff; text-decoration: none;">Corelume Tech Engineering Team</a></h3>
+                    <p>We build practical hardware guides, productivity tools, and web applications for makers, engineers, and developers.</p>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="related-links">
+                <h3>Explore More Hardware &amp; Tech Guides</h3>
+                <a href="mechanical-vs-optical-keyboard-switches-gaming-guide.html">&rarr; Mechanical vs Optical Keyboard Switches: Hardware Guide</a>
+                <a href="mouse-polling-rate-1000hz-vs-4000hz-vs-8000hz-gaming.html">&rarr; Mouse Polling Rate: 1000Hz vs 4000Hz vs 8000Hz Tested</a>
+                <a href="procedural-sound-generation-in-web-games.html">&rarr; Procedural Game Audio Synthesis with Web Audio API</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ══ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-brand"><img src="../assets/logo.png" alt="Corelume Tech" class="nav-logo-img"><span class="nav-title">Corelume Tech</span></div>
+                    <p>DIY hardware guides, developer deep dives, and free web tools.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <a href="/">Home</a>
+                    <a href="../about.html">About Us</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../blog.html">Blog</a>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <a href="../privacy.html">Privacy</a>
+                    <a href="../terms.html">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Corelume Tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
