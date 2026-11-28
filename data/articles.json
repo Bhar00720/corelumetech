@@ -1,5 +1,26 @@
 [
   {
+    "id": "diy-bluetooth-speaker-2026",
+    "title": "How to Build a Custom 30W Bluetooth Speaker (TPA3110 + 12V Li-Ion Guide)",
+    "slug": "diy-bluetooth-speaker",
+    "excerpt": "A zero-fluff engineering guide to building a 30W DIY Bluetooth speaker using a TPA3110 Class-D amplifier, 12V 3S lithium-ion battery pack, and LM2596 buck converter.",
+    "category": "DIY Audio Engineering",
+    "tags": [
+      "how to build a custom bluetooth speaker",
+      "diy bluetooth speaker",
+      "tpa3110 amplifier",
+      "12v lithium-ion pack",
+      "lm2596 voltage regulator",
+      "diy audio"
+    ],
+    "author": "Corelume Tech Editorial Team",
+    "thumbnail": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80",
+    "status": "published",
+    "generatedAt": "2026-11-28T12:39:00.000Z",
+    "publishedAt": "2026-11-28",
+    "fileUrl": "articles/diy-bluetooth-speaker.html"
+  },
+  {
     "id": "jobpulse-review-2026",
     "title": "JobPulse Review: Detect Ghost Jobs & Boost ATS Score (2026)",
     "slug": "jobpulse-ghost-job-detector-ats-resume-matcher-review",
